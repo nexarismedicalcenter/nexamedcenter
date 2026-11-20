@@ -1,0 +1,75 @@
+.nexa-teleconsultation { min-height: 70vh; background: #f6faf8; }
+.nexa-teleconsultation__wrap { width: min(1080px, calc(100% - 40px)); margin-inline: auto; }
+.nexa-teleconsultation__hero { padding: clamp(2.5rem, 7vw, 5rem) 0; color: #fff; background: #1278cc; }
+.nexa-teleconsultation__eyebrow { margin: 0 0 .55rem; color: rgba(255,255,255,.86); font-size: .72rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.nexa-teleconsultation__hero h1 { max-width: 720px; margin: 0; font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.05; letter-spacing: -.04em; }
+.nexa-teleconsultation__hero p:last-child { max-width: 680px; margin: 1rem 0 0; color: rgba(255,255,255,.92); line-height: 1.6; }
+.nexa-teleconsultation__content { display: grid; gap: 1rem; padding-block: 2rem 4rem; }
+.nexa-teleconsultation__card { display: grid; gap: 1rem; padding: clamp(1rem, 3vw, 2rem); border: 1px solid #dce8e2; border-radius: 18px; background: #fff; box-shadow: 0 12px 34px rgba(19,61,57,.07); }
+.nexa-teleconsultation [hidden] { display: none; }
+.nexa-teleconsultation__heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.nexa-teleconsultation__heading h2 { margin: 0; color: #183d36; font-size: clamp(1.3rem, 3vw, 1.8rem); }
+.nexa-teleconsultation__time { margin: .35rem 0 0; color: #526c65; }
+.nexa-teleconsultation__countdown { flex: 0 0 auto; margin: 0; padding: .65rem .85rem; border-radius: 10px; color: #154c40; background: #e8f6ef; font-size: 1.1rem; font-variant-numeric: tabular-nums; font-weight: 850; }
+.nexa-teleconsultation__message,.nexa-teleconsultation__error { margin: 0; padding: .8rem .9rem; border-radius: 10px; font-size: .88rem; line-height: 1.5; }
+.nexa-teleconsultation__message { color: #31554c; background: #f2f8f5; }
+.nexa-teleconsultation__error { color: #8b2929; background: #fff4f2; }
+.nexa-teleconsultation__video-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.nexa-teleconsultation__video-card { display: grid; gap: .55rem; min-width: 0; }
+.nexa-teleconsultation__video-card h3,.nexa-teleconsultation__history h3 { margin: 0; color: #244940; font-size: .96rem; }
+.nexa-teleconsultation__video { position: relative; display: grid; min-height: 230px; place-items: center; overflow: hidden; border-radius: 12px; color: #dcebe5; background: #18312d; text-align: center; }
+.nexa-teleconsultation__video > span { max-width: 250px; padding: 1rem; color: #dcebe5; font-size: .86rem; line-height: 1.5; }
+.nexa-teleconsultation__video video { width: 100%; height: 100%; object-fit: cover; }
+.nexa-teleconsultation__actions { display: flex; flex-wrap: wrap; gap: .65rem; }
+.nexa-teleconsultation__button { min-height: 44px; padding: .65rem .9rem; border: 1px solid #0f493f; border-radius: 9px; color: #fff; background: #0f493f; font: inherit; font-size: .85rem; font-weight: 800; text-decoration: none; cursor: pointer; }
+.nexa-teleconsultation__button:focus-visible { outline: 3px solid #51b89f; outline-offset: 3px; }
+.nexa-teleconsultation__button:disabled { opacity: .6; cursor: wait; }
+.nexa-teleconsultation__button--secondary { border-color: #cbded5; color: #244940; background: #fff; }
+.nexa-teleconsultation__button--quiet { border-color: #d6e4de; color: #244940; background: #f7faf8; }
+.nexa-teleconsultation__button--danger { border-color: #9f3030; background: #9f3030; }
+.nexa-teleconsultation__history { display: grid; gap: .6rem; padding-top: .5rem; border-top: 1px solid #e1ebe6; }
+.nexa-teleconsultation__history p { margin: 0; color: #607a73; font-size: .86rem; }
+.nexa-teleconsultation__history ol { display: grid; gap: .4rem; margin: 0; padding-left: 1.3rem; color: #526c65; font-size: .84rem; }
+.nexa-session-messages { display: grid; gap: .8rem; padding-top: 1rem; border-top: 1px solid #e1ebe6; }
+.nexa-session-messages h3 { margin: 0; color: #244940; font-size: 1rem; }
+.nexa-session-messages__eyebrow { margin: 0 0 .35rem; color: #52766c; font-size: .7rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+.nexa-session-messages__privacy,.nexa-session-messages__empty,.nexa-session-messages__closed { margin: .35rem 0 0; color: #607a73; font-size: .84rem; line-height: 1.5; }
+.nexa-session-messages__list { display: grid; gap: .55rem; max-height: 380px; overflow-y: auto; margin: 0; padding: .2rem .25rem; list-style: none; }
+.nexa-session-messages__item { display: grid; gap: .3rem; width: min(88%, 700px); padding: .75rem .85rem; border: 1px solid #dce8e2; border-radius: 12px 12px 12px 3px; color: #244940; background: #f5f9f7; overflow-wrap: anywhere; }
+.nexa-session-messages__item.is-mine { justify-self: end; border-color: #c8e4d6; border-radius: 12px 12px 3px 12px; background: #eaf6ef; }
+.nexa-session-messages__sender { color: #52766c; font-size: .72rem; font-weight: 850; }
+.nexa-session-messages__text { margin: 0; white-space: pre-wrap; font-size: .9rem; line-height: 1.5; }
+.nexa-session-messages__item time { color: #6c817a; font-size: .68rem; }
+.nexa-session-messages__media { display: grid; justify-items: start; gap: .35rem; min-width: 0; }
+.nexa-session-messages__media img { display: block; max-width: min(100%, 560px); max-height: 420px; border-radius: 9px; object-fit: contain; background: #e6eee9; }
+.nexa-session-messages__media audio { display: block; width: min(100%, 380px); }
+.nexa-session-messages__media small { color: #607a73; font-size: .72rem; }
+.nexa-session-messages__form { display: grid; gap: .5rem; }
+.nexa-session-messages__form[hidden],.nexa-session-messages [hidden] { display: none; }
+.nexa-session-messages__form label { color: #244940; font-size: .84rem; font-weight: 800; }
+.nexa-session-messages__form textarea { width: 100%; min-height: 92px; resize: vertical; padding: .7rem .8rem; border: 1px solid #cbded5; border-radius: 9px; color: #244940; background: #fff; font: inherit; line-height: 1.5; }
+.nexa-session-messages__form textarea:focus-visible { outline: 3px solid #51b89f; outline-offset: 2px; }
+.nexa-session-messages__form-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.nexa-session-messages__form-footer small { color: #607a73; line-height: 1.4; }
+.nexa-session-messages__form-footer button { flex: 0 0 auto; }
+.nexa-session-messages__media-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+.nexa-session-messages__media-actions[hidden] { display: none; }
+.nexa-session-messages__media-actions label { position: relative; display: inline-flex; align-items: center; justify-content: center; min-height: 44px; }
+.nexa-session-messages__media-actions label.is-disabled { opacity: .55; cursor: not-allowed; }
+.nexa-session-messages__file-input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); clip-path: inset(50%); white-space: nowrap; }
+.nexa-session-messages__media-actions label:focus-within { outline: 3px solid #51b89f; outline-offset: 3px; }
+.nexa-session-messages__progress { color: #31554c; font-size: .82rem; line-height: 1.4; }
+.nexa-session-messages__closed { padding: .65rem .75rem; border-radius: 9px; background: #f2f8f5; }
+.nexa-teleconsultation__emergency { margin: 0; padding: .85rem 1rem; border: 1px solid #f0d0cd; border-radius: 10px; color: #7b2e2b; background: #fff8f7; font-size: .86rem; line-height: 1.5; }
+@media (max-width: 680px) {
+  .nexa-teleconsultation__wrap { width: min(100% - 28px, 1080px); }
+  .nexa-teleconsultation__video-grid { grid-template-columns: minmax(0, 1fr); }
+  .nexa-teleconsultation__video { min-height: 210px; }
+  .nexa-teleconsultation__heading { flex-direction: column; }
+  .nexa-teleconsultation__actions { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .nexa-teleconsultation__button { width: 100%; }
+  .nexa-session-messages__item { width: 96%; }
+  .nexa-session-messages__form-footer { align-items: stretch; flex-direction: column; }
+  .nexa-session-messages__media-actions { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .nexa-session-messages__media-actions label { width: 100%; }
+}

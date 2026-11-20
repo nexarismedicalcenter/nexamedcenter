@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0f493f">
+  <title>Créer un compte patient | NEXARIS MEDICAL CENTER</title>
+  <meta name="description" content="Créez votre espace patient NEXARIS sécurisé.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./styles/nexa-health.css">
+  <link rel="stylesheet" href="./styles/nexa-site.css">
+  <link rel="stylesheet" href="./styles/nexa-auth.css">
+</head>
+<body class="nexa-auth-page">
+  <header class="nexa-site-header">
+    <div class="nexa-site-header__inner">
+      <a class="nexa-site-header__brand" href="./index.html" aria-label="NEXARIS MEDICAL CENTER, accueil">
+        <span class="nexa-site-header__logo" aria-hidden="true"><i class="fas fa-plus"></i></span>
+        <span class="nexa-site-header__identity"><span class="nexa-site-header__name">NEXARIS</span><span class="nexa-site-header__label">Medical Center</span></span>
+      </a>
+      <button class="nexa-site-header__toggle" type="button" aria-controls="nexa-navigation" aria-expanded="false" aria-label="Ouvrir le menu"><span class="sr-only">Ouvrir le menu</span><i class="fas fa-bars" aria-hidden="true"></i></button>
+      <nav id="nexa-navigation" class="nexa-site-header__nav" aria-label="Services NEXARIS">
+        <a class="nexa-site-header__link" href="./catalog.html?type=pharmacies">Nexa - Pharma</a>
+        <a class="nexa-site-header__link" href="./catalog.html?type=laboratories">Nexa - Lab</a>
+        <a class="nexa-site-header__link" href="./care.html">Nexa - Care</a>
+        <a class="nexa-site-header__link" href="./catalog.html?type=imaging-centers">Nexa - Imaging</a>
+      </nav>
+      <a class="nexa-site-header__cta" href="./espace-patient.html" aria-label="Mon espace"><i class="fas fa-user" aria-hidden="true"></i><span>Mon espace</span></a>
+    </div>
+  </header>
+  <main class="nexa-auth-layout" id="main-content">
+    <section class="nexa-auth-intro" aria-labelledby="page-title">
+      <p class="nexa-auth-eyebrow">Votre santé, votre espace</p>
+      <h1 id="page-title">Créez votre compte patient.</h1>
+      <p>Votre numéro patient NEXA est attribué automatiquement et de façon unique lors de l’inscription.</p>
+      <div class="nexa-auth-number-example"><span>Exemple de numéro patient</span><strong>NMC-0000001</strong><small>Votre numéro réel sera attribué au serveur.</small></div>
+      <p class="nexa-auth-privacy">Ce numéro identifie votre dossier; il ne remplace pas votre mot de passe. Gardez vos identifiants confidentiels.</p>
+    </section>
+    <section class="nexa-auth-card" aria-labelledby="form-title">
+      <div class="nexa-auth-card__heading"><p class="nexa-auth-eyebrow">Inscription patient</p><h2 id="form-title">Quelques renseignements pour commencer</h2><p>Les champs marqués d’une étoile sont obligatoires.</p></div>
+      <div id="account-notice" class="nexa-auth-account-notice" role="status" hidden></div>
+      <form id="registration-form" class="nexa-auth-form" novalidate>
+        <div class="nexa-auth-grid">
+          <label>Nom <span class="required" aria-hidden="true">*</span><input name="lastName" autocomplete="family-name" maxlength="80" required></label>
+          <label>Prénom <span class="required" aria-hidden="true">*</span><input name="firstName" autocomplete="given-name" maxlength="80" required></label>
+        </div>
+        <div id="credentials-fields">
+          <label>Adresse e-mail <span class="required" aria-hidden="true">*</span><input name="email" type="email" autocomplete="email" maxlength="254" required></label>
+          <div class="nexa-auth-grid">
+            <label>Mot de passe <span class="required" aria-hidden="true">*</span><input name="password" type="password" autocomplete="new-password" minlength="6" required></label>
+            <label>Confirmer le mot de passe <span class="required" aria-hidden="true">*</span><input name="confirmPassword" type="password" autocomplete="new-password" minlength="6" required></label>
+          </div>
+        </div>
+        <div class="nexa-auth-grid">
+          <label>Date de naissance <span class="required" aria-hidden="true">*</span><input name="birthDate" type="date" autocomplete="bday" required></label>
+          <label>Téléphone <span class="required" aria-hidden="true">*</span><input name="phone" type="tel" autocomplete="tel" maxlength="24" required></label>
+        </div>
+        <label>Sexe (facultatif)<select name="sex"><option>Non communiqué</option><option>Femme</option><option>Homme</option><option>Autre</option></select></label>
+        <label>Adresse <span class="required" aria-hidden="true">*</span><input name="addressLine" autocomplete="street-address" maxlength="180" required></label>
+        <div class="nexa-auth-grid nexa-auth-grid--three">
+          <label>Pays <span class="required" aria-hidden="true">*</span><input name="country" autocomplete="country-name" maxlength="80" value="Haïti" required></label>
+          <label>Département <span class="required" aria-hidden="true">*</span><input name="department" maxlength="100" required></label>
+          <label>Commune <span class="required" aria-hidden="true">*</span><input name="commune" maxlength="100" required></label>
+        </div>
+        <label class="nexa-auth-checkbox"><input name="emailMarketingConsent" type="checkbox"><span>Je souhaite recevoir les nouvelles et informations de NEXA. Je pourrai me désinscrire à tout moment.</span></label>
+        <label class="nexa-auth-checkbox"><input name="termsAccepted" type="checkbox" required><span>J’accepte les <a href="./conditions.html" target="_blank" rel="noopener">conditions d’utilisation</a> et j’ai lu la <a href="./confidentialite.html" target="_blank" rel="noopener">politique de confidentialité</a>.</span></label>
+        <p id="registration-error" class="nexa-auth-message nexa-auth-message--error" role="alert" hidden></p>
+        <p id="registration-status" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite" hidden></p>
+        <button id="registration-submit" class="nexa-auth-button nexa-auth-button--wide" type="submit">Créer mon compte patient</button>
+        <div id="social-signup" class="nexa-auth-form"><div class="nexa-auth-divider"><span>ou</span></div><button id="google-signup" class="nexa-auth-button nexa-auth-button--google nexa-auth-button--wide" type="button"><i class="fab fa-google" aria-hidden="true"></i> Continuer avec Google</button></div>
+        <p class="nexa-auth-switch">Vous avez déjà un compte ? <a id="login-link" href="./connexion.html">Se connecter</a></p>
+      </form>
+      <section id="registration-success" class="nexa-auth-success" aria-live="polite" hidden>
+        <span class="nexa-auth-success__mark" aria-hidden="true">✓</span><p class="nexa-auth-eyebrow">Compte patient créé</p><h2>Bienvenue chez NEXA.</h2><p>Conservez votre numéro patient. Il vous aidera à retrouver votre dossier.</p><strong id="patient-number" class="nexa-auth-success__number"></strong><p>Ce numéro n’est pas un mot de passe et ne permet pas de se connecter.</p><p id="verification-notice" class="nexa-auth-message nexa-auth-message--notice" hidden></p><a id="continue-link" class="nexa-auth-button" href="./espace-patient.html">Continuer vers mon espace</a>
+      </section>
+    </section>
+  </main>
+  <footer class="nexa-auth-footer">© <span id="current-year"></span> NEXARIS MEDICAL CENTER</footer>
+  <script type="module" src="./app.js"></script>
+  <script type="module" src="./inscription.js"></script>
+</body>
+</html>

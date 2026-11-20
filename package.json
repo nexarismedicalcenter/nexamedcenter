@@ -1,0 +1,40 @@
+{
+  "name": "nexamedcenter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "node --conditions=react-server --experimental-strip-types --import ./tests/register-ts-alias-loader.mjs --test tests/patient-number-format.test.mjs tests/clinical-access-policy.test.mjs tests/nursing-period-rules.test.mjs tests/nexa-results-scanner.test.mjs tests/moncash-gateway.test.mjs tests/pharmacy-stock.test.mjs tests/diagnostic-result-requirements.test.mjs tests/prescription-availability.unit.test.mjs",
+    "test:emulator": "npx --yes firebase-tools@15.35.0 emulators:exec --project demo-nexaris --only firestore,auth,storage,functions \"node --conditions=react-server --experimental-strip-types --import ./tests/register-ts-alias-loader.mjs --test --test-concurrency=1 tests/patient-number.test.mjs tests/patient-profile-initialize-functions.test.mjs tests/appointment-booking.test.mjs tests/clinical-access.test.mjs tests/clinical-access-grants.test.mjs tests/patient-medical-profile.test.mjs tests/doctor-patient-medical-profile-functions.test.mjs tests/clinical-record-functions.test.mjs tests/clinical-history.test.mjs tests/teleconsultation-presence.test.mjs tests/teleconsultation-token.test.mjs tests/teleconsultation-no-show-functions.test.mjs tests/moncash-settlement.test.mjs tests/pharmacy-workflow.test.mjs tests/appointment-management.test.mjs tests/diagnostic-results-storage.test.mjs tests/patient-result-submissions.test.mjs tests/clinical-attachments-storage.test.mjs tests/session-media-storage.test.mjs tests/admin-access.test.mjs tests/admin-diagnostic-offers.test.mjs tests/admin-diagnostic-partner-report.test.mjs tests/admin-diagnostic-result-issues.test.mjs tests/admin-diagnostic-partner-contracts.test.mjs tests/lab-support.test.mjs tests/home-visit-requests.test.mjs tests/home-visit-booking-boundary.test.mjs tests/provider-clinical-records.test.mjs tests/provider-diagnostic-orders.test.mjs tests/provider-activity-history.test.mjs tests/transaction-fees-and-refunds.test.mjs tests/prescription-availability.test.mjs tests/clinical-prescriptions-functions.test.mjs tests/prescription-pdf-functions.test.mjs\""
+  },
+  "dependencies": {
+    "agora-rtc-sdk-ng": "4.24.8",
+    "agora-token": "^2.0.7",
+    "firebase": "^13.2.0",
+    "firebase-admin": "^14.5.0",
+    "google-auth-library": "11.3.3",
+    "next": "16.4.5",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.5",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "overrides": {
+    "@grpc/grpc-js": "1.14.7",
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "11.0.5"
+    }
+  }
+}

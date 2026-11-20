@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f493f">
+  <title>NEXARIS MEDICAL CENTER | Votre santé, plus simple</title>
+  <meta name="description" content="NEXARIS MEDICAL CENTER réunit pharmacie, laboratoire, soins Nexa Care et imagerie médicale.">
+  <link rel="canonical" href="https://nexarishaiti.com/">
+  <meta property="og:site_name" content="NEXARIS MEDICAL CENTER">
+  <meta property="og:locale" content="fr_HT">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nexarishaiti.com/">
+  <meta property="og:title" content="NEXARIS MEDICAL CENTER | Votre santé, plus simple">
+  <meta property="og:description" content="Pharmacie, laboratoire, soins Nexa Care et imagerie médicale.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="./styles/nexa-health.css">
+  <link rel="stylesheet" href="./styles/home-redesign.css">
+  <link rel="stylesheet" href="./styles/home-template.css?v=20261120-health-hero-crop-1">
+  <link rel="stylesheet" href="./styles/nexa-site.css">
+</head>
+<body>
+  <header id="nexa-header-root" class="nexa-site-header" data-nexa-header>
+    <div class="nexa-site-header__inner">
+      <a class="nexa-site-header__brand" href="./index.html" aria-label="NEXARIS MEDICAL CENTER, accueil">
+        <span class="nexa-site-header__logo" aria-hidden="true"><i class="fas fa-plus"></i></span>
+        <span class="nexa-site-header__identity">
+          <span class="nexa-site-header__name">NEXARIS</span>
+          <span class="nexa-site-header__label">Medical Center</span>
+        </span>
+      </a>
+      <button class="nexa-site-header__toggle" type="button" aria-controls="nexa-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="sr-only">Ouvrir le menu</span><i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <nav id="nexa-navigation" class="nexa-site-header__nav" aria-label="Services NEXARIS">
+        <a class="nexa-site-header__link" href="./catalog.html?type=pharmacies">Nexa - Pharma</a>
+        <a class="nexa-site-header__link" href="./catalog.html?type=laboratories">Nexa - Lab</a>
+        <a class="nexa-site-header__link" href="./care.html">Nexa - Care</a>
+        <a class="nexa-site-header__link" href="./catalog.html?type=imaging-centers">Nexa - Imaging</a>
+      </nav>
+      <a class="nexa-site-header__avatar" href="./espace-patient.html" aria-label="Mon espace"><i class="fas fa-user" aria-hidden="true"></i></a>
+    </div>
+  </header>
+
+  <main id="nexa-root">
+    <div class="nexa-shell nexa-home-redesign">
+      <section class="nexa-home-hero" aria-labelledby="nexa-home-title">
+        <div class="nexa-home-wrap nexa-home-hero__inner">
+          <div class="nexa-home-hero__copy" data-home-reveal>
+            <span class="nexa-home-eyebrow"><i class="fas fa-heart-pulse" aria-hidden="true"></i> NEXARIS MEDICAL CENTER</span>
+            <h1 id="nexa-home-title">Vivez en meilleure santé</h1>
+            <p>Les soins essentiels, les professionnels et les services de santé réunis au même endroit. Trouvez simplement le service qu’il vous faut.</p>
+            <div class="nexa-home-hero__search" aria-label="Accès rapide aux soins">
+              <a class="nexa-home-hero__search-choice" href="./catalog.html?type=doctors"><i class="fas fa-search" aria-hidden="true"></i><span>Médecin, spécialité, consultation</span></a>
+              <a class="nexa-home-hero__search-choice" href="./catalog.html?type=pharmacies"><i class="fas fa-location-dot" aria-hidden="true"></i><span>Pharmacie et médicaments</span></a>
+              <a class="nexa-home-hero__search-submit" href="./catalog.html?type=doctors" aria-label="Rechercher un médecin et des services de santé"><span>Rechercher</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="nexa-home-hero__visual" data-home-reveal>
+            <div class="nexa-home-hero__image-frame"><img class="nexa-home-hero__doctor" src="./assets/health/heroes/template-home-hero.webp" alt="Consultation médicale entre une patiente et une médecin" fetchpriority="high"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="nexa-home-promo-wrap" aria-label="Accès à votre espace santé">
+        <article class="nexa-home-promo" data-home-reveal>
+          <div class="nexa-home-promo__copy"><span class="nexa-home-kicker">NEXARIS MEDICAL CENTER</span><h2>Votre santé, plus simple au quotidien</h2><a href="./espace-patient.html">Découvrir mon espace <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
+          <div class="nexa-home-promo__image"><img src="./assets/health/heroes/template-home-promo.webp" alt="Deux personnes échangent au sujet de leur santé" loading="lazy"></div>
+        </article>
+      </section>
+
+      <section id="services" class="nexa-home-services" aria-label="Services de NEXARIS MEDICAL CENTER">
+        <div class="nexa-home-wrap nexa-home-services__heading" data-home-reveal>
+          <h2>Votre compagnon de santé au quotidien</h2>
+        </div>
+        <div class="nexa-home-wrap nexa-home-services__grid">
+          <article id="nexa-care" class="nexa-home-service" data-home-reveal>
+            <img class="nexa-home-service__icon" src="./assets/health/home-icons/template-benefit-calendar.svg" alt="" aria-hidden="true" width="78" height="78">
+            <strong>Accédez aux soins plus facilement</strong><small>Retrouvez les professionnels et choisissez la façon de consulter.</small>
+            <a href="./care.html">Choisir un service Care</a>
+          </article>
+          <article id="nexa-pharma" class="nexa-home-service" data-home-reveal>
+            <img class="nexa-home-service__icon" src="./assets/health/home-icons/template-benefit-messaging.svg" alt="" aria-hidden="true" width="78" height="78">
+            <strong>Trouvez vos médicaments facilement</strong><small>Parcourez les pharmacies partenaires et leurs produits disponibles.</small>
+            <a href="./catalog.html?type=pharmacies">Découvrir les pharmacies</a>
+          </article>
+          <article id="nexa-health-services" class="nexa-home-service" data-home-reveal>
+            <img class="nexa-home-service__icon" src="./assets/health/home-icons/template-benefit-heart.svg" alt="" aria-hidden="true" width="78" height="78">
+            <strong>Gérez votre santé</strong><small>Accédez aux examens de laboratoire et aux centres d’imagerie.</small>
+            <span class="nexa-home-service__links"><a href="./catalog.html?type=laboratories">Laboratoires</a><a href="./catalog.html?type=imaging-centers">Imagerie</a></span>
+          </article>
+        </div>
+      </section>
+
+      <section class="nexa-home-stats nexa-home-wrap" aria-label="Les services NEXARIS">
+        <h2>NEXARIS MEDICAL CENTER</h2>
+        <div class="nexa-home-stat"><strong>4</strong><span>pôles de santé</span></div>
+        <div class="nexa-home-stat"><strong>Un seul accès</strong><span>pour vos démarches de santé</span></div>
+        <div class="nexa-home-stat"><strong>En ligne</strong><span>accédez aux services depuis vos appareils</span></div>
+      </section>
+
+      <div class="nexa-home-directory nexa-home-main">
+        <section id="patient-space" class="nexa-home-benefits nexa-home-wrap" aria-labelledby="nexa-home-benefits-title">
+          <div class="nexa-home-benefits__visual" data-home-reveal><img src="./assets/health/heroes/template-home-privacy.webp" alt="Une personne consulte ses informations de santé en ligne" loading="lazy"></div>
+          <div class="nexa-home-benefits__copy" data-home-reveal><span class="nexa-home-kicker">VOTRE ESPACE SANTÉ</span><h2 id="nexa-home-benefits-title">Votre santé. Vos informations.</h2><p>Retrouvez vos services et vos démarches NEXARIS depuis votre espace personnel sécurisé.</p><a class="nexa-home-text-link" href="./espace-patient.html">Découvrir mon espace santé <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
+        </section>
+
+        <section class="nexa-home-app nexa-home-wrap" aria-labelledby="nexa-home-app-title" data-home-reveal>
+          <div class="nexa-home-app__copy"><span class="nexa-home-kicker">NEXARIS, PARTOUT AVEC VOUS</span><h2 id="nexa-home-app-title">Vos services de santé, à portée de main</h2><p>Retrouvez les quatre pôles NEXARIS depuis votre téléphone ou votre ordinateur.</p><a class="nexa-home-button nexa-home-button--primary" href="#services">Découvrir les services <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
+          <div class="nexa-home-app__visual"><img src="./assets/health/heroes/patient-space.webp" alt="Une professionnelle de santé accompagne une patiente" loading="lazy"></div>
+        </section>
+
+        <section id="professionals" class="nexa-home-pro" aria-labelledby="nexa-home-pro-title" data-home-reveal>
+          <div class="nexa-home-wrap nexa-home-pro__inner">
+            <div class="nexa-home-pro__visual"><img src="./assets/health/heroes/template-home-professionals.webp" alt="Une professionnelle échange avec une patiente" loading="lazy"></div>
+            <div class="nexa-home-pro__copy"><span class="nexa-home-kicker">VOUS ÊTES SOIGNANT ?</span><h2 id="nexa-home-pro-title">Rejoignez NEXARIS</h2><strong>Découvrez les parcours destinés aux professionnels de santé.</strong><ul><li>Présentez vos services aux patients</li><li>Proposez des consultations et des soins à domicile</li><li>Rejoignez un pôle NEXARIS adapté à votre activité</li></ul><a class="nexa-home-button nexa-home-button--primary" href="./professionnels.html">Découvrir les candidatures <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="nexa-footer">
+    <div class="nexa-footer__inner">
+      <section class="nexa-footer__brand" aria-label="À propos de NEXARIS">
+        <span class="nexa-footer__mark" aria-hidden="true">N</span>
+        <strong>NEXARIS MEDICAL CENTER</strong>
+        <p>Pharmacie, laboratoire, soins et imagerie réunis dans un même espace santé.</p>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-services">
+        <h2 class="nexa-footer__heading" id="nexa-footer-services">NOS SERVICES</h2>
+        <nav aria-label="Services NEXARIS">
+          <a href="./catalog.html?type=pharmacies">Nexa - Pharma</a>
+          <a href="./catalog.html?type=laboratories">Nexa - Lab</a>
+          <a href="./care.html">Nexa - Care</a>
+          <a href="./catalog.html?type=imaging-centers">Nexa - Imaging</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-professionals">
+        <h2 class="nexa-footer__heading" id="nexa-footer-professionals">ESPACE PROFESSIONNEL</h2>
+        <nav aria-label="Candidatures et accès professionnels">
+          <a href="./candidature-medecin.html">Candidature médecin</a>
+          <a href="./candidature-infirmier.html">Candidature infirmière</a>
+          <a href="./candidature-partenaire.html">Candidature pharmacie, laboratoire ou imagerie</a>
+          <a href="./espace-professionnel.html">Accès médecin</a>
+          <a href="./espace-professionnel-infirmier.html">Accès infirmier</a>
+          <a href="./espace-centre.html">Accès laboratoire ou imagerie</a>
+          <a href="./espace-pharmacie.html">Accès pharmacie</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-information">
+        <h2 class="nexa-footer__heading" id="nexa-footer-information">INFORMATIONS</h2>
+        <nav aria-label="Informations légales">
+          <a href="./conditions.html">Conditions</a>
+          <a href="./confidentialite.html">Confidentialité</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-payments">
+        <h2 class="nexa-footer__heading" id="nexa-footer-payments">PAIEMENTS ACCEPTÉS</h2>
+        <div class="nexa-footer__payments" aria-label="MonCash et Wallet NEXA">
+          <span class="nexa-footer__payment"><i class="fas fa-mobile-screen-button" aria-hidden="true"></i> MonCash</span>
+          <span class="nexa-footer__payment"><i class="fas fa-wallet" aria-hidden="true"></i> Wallet NEXA</span>
+        </div>
+      </section>
+      <div class="nexa-footer__copyright">
+        <span>© <span id="current-year"></span> NEXARIS MEDICAL CENTER. Tous droits réservés.</span>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

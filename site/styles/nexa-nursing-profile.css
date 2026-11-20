@@ -1,0 +1,71 @@
+.nursing-page{width:min(100% - 2rem,920px);margin:0 auto 4rem;color:#183d36}
+.nursing-hero{padding:clamp(2.5rem,7vw,5rem) 0 1.8rem}
+.nursing-eyebrow{margin:0 0 .55rem;color:#0c8069;font-size:.72rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
+.nursing-hero h1{margin:0;color:#153d35;font-size:clamp(2rem,5vw,3.15rem);line-height:1.08}
+.nursing-hero>p:last-child{max-width:650px;margin:.85rem 0 0;color:#5e756f;font-size:1rem;line-height:1.65}
+.nursing-card{padding:clamp(1rem,4vw,2rem);border:1px solid #dfebe5;border-radius:20px;background:#fff;box-shadow:0 18px 48px #143b2c0d}
+.nursing-card h2{margin:0;color:#183d36;font-size:1.35rem}
+.nursing-card p{color:#5e756f;line-height:1.6}
+.nursing-status{margin:0}
+.nursing-profile-status{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding-bottom:1rem;border-bottom:1px solid #e5eee9}
+.nursing-profile-status strong{display:block;color:#174a3f}
+.nursing-profile-status .nursing-eyebrow{margin-bottom:.3rem;font-size:.64rem}
+.nursing-form{display:grid;gap:1.25rem;margin-top:1.25rem}
+.nursing-field{display:grid;gap:.45rem;max-width:460px;color:#31554c;font-size:.88rem;font-weight:750}
+.nursing-field input{box-sizing:border-box;min-height:46px;padding:.65rem .75rem;border:1px solid #cbdad4;border-radius:9px;background:#fff;color:#203a36;font:inherit}
+.nursing-fieldset{min-width:0;margin:0;padding:1rem;border:1px solid #e0ebe6;border-radius:13px}
+.nursing-fieldset legend{padding:0 .35rem;color:#214c42;font-weight:850}
+.nursing-fieldset>p{margin:.1rem 0 .9rem;font-size:.84rem}
+.nursing-photo-consent{display:flex;align-items:flex-start;gap:.65rem;max-width:650px;margin:.8rem 0;color:#31554c;font-size:.84rem;line-height:1.55;cursor:pointer}
+.nursing-photo-consent input{flex:0 0 auto;width:18px;height:18px;margin:.1rem 0 0;accent-color:#08735e}
+.nursing-photo-preview{display:block;width:112px;height:112px;border:1px solid #d7e5df;border-radius:50%;object-fit:cover;background:#f5faf7}
+.nursing-photo-message{margin:.1rem 0;color:#245747!important;font-size:.84rem}
+.nursing-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:.65rem}
+.nursing-option{display:flex;align-items:flex-start;gap:.65rem;padding:.75rem;border:1px solid #e0ebe6;border-radius:10px;background:#fbfdfc;cursor:pointer}
+.nursing-option:has(input:checked){border-color:#62ae98;background:#f1faf6}
+.nursing-option input{flex:0 0 auto;width:18px;height:18px;margin:.1rem 0 0;accent-color:#08735e}
+.nursing-option span,.nursing-week-list li>span{display:grid;gap:.25rem;min-width:0}
+.nursing-option strong,.nursing-week-list strong{color:#244940;font-size:.87rem}
+.nursing-option small,.nursing-week-list small{color:#607a73;font-size:.76rem;line-height:1.5;overflow-wrap:anywhere}
+.nursing-week-builder{display:grid;gap:.85rem;padding:1rem;border-radius:12px;background:#f6faf8}
+.nursing-week-list{display:grid;gap:.65rem;margin:1rem 0 0;padding:0;list-style:none}
+.nursing-week-list li{display:flex;justify-content:space-between;align-items:center;gap:.8rem;padding:.75rem;border:1px solid #e0ebe6;border-radius:10px}
+.nursing-muted{font-size:.85rem}
+.nursing-note{padding:.85rem 1rem;border-left:3px solid #66ad96;background:#f2faf6;font-size:.84rem}
+.nursing-alert,.nursing-notice{padding:.8rem 1rem;border-radius:9px;font-size:.86rem}
+.nursing-alert{color:#7d332c!important;background:#fff3f1}
+.nursing-notice{color:#245747!important;background:#eef8f1}
+.nursing-button{display:inline-flex;min-height:44px;align-items:center;justify-content:center;justify-self:start;padding:.7rem 1rem;border:1px solid #0f493f;border-radius:9px;background:#0f493f;color:#fff;font:inherit;font-weight:800;text-decoration:none;cursor:pointer}
+.nursing-button--quiet{border-color:#cbded5;background:#fff;color:#285348}
+.nursing-button:disabled{opacity:.6;cursor:not-allowed}
+.nursing-orders{display:grid;gap:.8rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid #dce9e3}
+.nursing-orders__heading{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nursing-orders__heading h2{margin:.1rem 0;color:#173f35;font-size:1.35rem}
+.nursing-order-list{display:grid;gap:.75rem;margin:0;padding:0;list-style:none}
+.nursing-order-card{display:grid;gap:.4rem;padding:1rem;border:1px solid #dce9e3;border-radius:12px;background:#fff}
+.nursing-order-card h3{margin:0;color:#183f35;font-size:1rem}
+.nursing-order-card p{margin:0;color:#526b63;font-size:.83rem;line-height:1.5;overflow-wrap:anywhere}
+.nursing-order-card__status{color:#14735c!important;font-weight:800}
+.nursing-order-card__subheading{margin:.5rem 0 0;color:#183f35;font-size:.95rem}
+.nursing-order-card__hint{font-size:.8rem!important}
+.nursing-visit-list{display:grid;gap:.55rem;margin:.2rem 0;padding:0;list-style:none}
+.nursing-visit-card{display:grid;gap:.35rem;padding:.75rem;border:1px solid #dce9e3;border-radius:10px;background:#f8fbf9;color:#526b63;font-size:.82rem;overflow-wrap:anywhere}
+.nursing-visit-card__status{color:#14735c;font-weight:700}
+.nursing-visit-code-form__services{display:grid;gap:.45rem;margin:.4rem 0;padding:.75rem;border:1px solid #dce9e3;border-radius:9px}
+.nursing-visit-code-form__services label{display:flex;align-items:flex-start;gap:.45rem;font-size:.82rem}
+.nursing-visit-code-form__services input{width:auto;min-height:auto;margin:.15rem 0 0}
+.nursing-visit-card__clinical-record{display:grid;gap:.4rem;padding:.75rem;border-left:3px solid #5b9e82;border-radius:0 8px 8px 0;background:#f3f8f5}
+.nursing-visit-card__clinical-record p{margin:0}
+.nursing-visit-card__clinical-note{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.55}
+.nursing-visit-plan-form,.nursing-visit-code-form{display:grid;gap:.65rem;margin-top:.6rem;padding:.8rem;border:1px solid #dce9e3;border-radius:10px;background:#f8fbf9}
+.nursing-visit-plan-form label,.nursing-visit-code-form label{display:grid;gap:.3rem;color:#294a40;font-size:.82rem;font-weight:700}
+.nursing-visit-plan-form input,.nursing-visit-code-form input{min-width:0;max-width:100%;padding:.65rem;border:1px solid #cbd9d2;border-radius:8px;background:#fff;color:#183f35;font:inherit}
+.nursing-visit-plan-form fieldset{min-width:0;margin:0;padding:.65rem;border:1px solid #dce9e3;border-radius:8px}
+.nursing-visit-plan-form legend{padding:0 .25rem;color:#294a40;font-size:.82rem;font-weight:700}
+.nursing-visit-service-choices{display:grid;gap:.45rem}
+.nursing-visit-service-choices label{display:flex;align-items:flex-start;gap:.45rem;font-weight:500}
+.nursing-visit-card__message{color:#14735c!important;font-weight:700}
+@media(max-width:560px){.nursing-visit-plan-form,.nursing-visit-code-form{padding:.65rem}.nursing-visit-plan-form button,.nursing-visit-code-form button{width:100%}}
+.nursing-field input:focus-visible,.nursing-option input:focus-visible,.nursing-photo-consent input:focus-visible,.nursing-button:focus-visible{outline:3px solid #51b89f;outline-offset:3px}
+[hidden]{display:none!important}
+@media(max-width:620px){.nursing-page{width:min(100% - 1rem,920px)}.nursing-profile-status,.nursing-week-list li{align-items:flex-start;flex-direction:column}.nursing-week-list .nursing-button{align-self:flex-start}}

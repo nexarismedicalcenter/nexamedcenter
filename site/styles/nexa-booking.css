@@ -1,0 +1,53 @@
+.nexa-availability { min-height: calc(100vh - var(--nexa-header-height,70px)); background: #f6faf8; }
+.nexa-availability__wrap { width: min(1000px,calc(100% - 40px)); margin-inline: auto; }
+.nexa-availability__intro { padding: clamp(2rem,6vw,4rem) 0 3rem; color: #fff; background: #1278cc; }
+.nexa-availability__back { display: inline-flex; align-items: center; gap: .5rem; color: #fff; font-size: .82rem; font-weight: 700; text-decoration: none; }
+.nexa-availability__back:hover { text-decoration: underline; }
+.nexa-availability__eyebrow { margin: 1.6rem 0 .5rem; font-size: .72rem; font-weight: 800; letter-spacing: .14em; }
+.nexa-availability__intro h1 { margin: 0; font-size: clamp(2rem,5vw,3.5rem); line-height: 1.05; letter-spacing: -.04em; }
+.nexa-availability__intro > .nexa-availability__wrap > p:last-child { max-width: 650px; margin: .9rem 0 0; color: rgba(255,255,255,.9); font-size: 1rem; line-height: 1.6; }
+.nexa-availability__content { padding-block: 2rem 4rem; }
+.nexa-availability__card { display: grid; gap: 1rem; padding: clamp(1.1rem,3vw,2rem); border: 1px solid #e0e9e5; border-radius: 18px; background: #fff; box-shadow: 0 14px 38px rgba(19,61,57,.08); }
+.nexa-availability__status,.nexa-availability__error { margin: 0; padding: .8rem .9rem; border-radius: 10px; font-size: .88rem; line-height: 1.5; }
+.nexa-availability__status { color: #245a49; background: #f0faf4; }
+.nexa-availability__error { color: #8b2929; background: #fff5f4; }
+.nexa-availability__provider { padding-bottom: 1rem; border-bottom: 1px solid #e1ebe6; }
+.nexa-availability__provider[hidden],.nexa-availability__home-visit[hidden],.nexa-availability__error[hidden],.nexa-availability__empty[hidden],.nexa-availability__notice[hidden] { display: none; }
+.nexa-availability__provider-label { margin: 0 0 .35rem; color: #0c7a64; font-size: .7rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.nexa-availability__provider h2 { margin: 0; color: #183d36; font-size: clamp(1.25rem,3vw,1.8rem); }
+.nexa-availability__provider > p:not(.nexa-availability__provider-label) { margin: .45rem 0 0; color: #5d756f; line-height: 1.5; }
+.nexa-availability__provider .nexa-availability__price { color: #0f6958; font-weight: 800; }
+.nexa-availability__home-visit { display: grid; gap: .5rem; margin-top: 1rem; }
+.nexa-availability__home-visit label,.nexa-availability__service-picker legend { color: #31554c; font-size: .84rem; font-weight: 800; }
+.nexa-availability__home-visit select { box-sizing: border-box; width: 100%; min-height: 46px; padding: .65rem .75rem; border: 1px solid #cadbd4; border-radius: 9px; color: #203a36; background: #fff; font: inherit; }
+.nexa-availability__home-visit p { margin: 0; color: #607a73; font-size: .82rem; line-height: 1.55; }
+.nexa-availability__service-picker { display: grid; gap: .65rem; margin: 0; padding: 1rem; border: 1px solid #e1ebe6; border-radius: 12px; }
+.nexa-availability__service-picker label { display: flex; align-items: flex-start; gap: .65rem; color: #38564f; font-size: .88rem; line-height: 1.45; }
+.nexa-availability__service-picker input { width: 17px; height: 17px; margin: .1rem 0 0; accent-color: #0f806b; }
+.nexa-availability__slots-title { margin: .4rem 0 0; color: #183d36; font-size: 1.1rem; }
+.nexa-availability__slots { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .65rem; margin: 0; padding: 0; list-style: none; }
+.nexa-availability__slots li { min-width: 0; display: flex; align-items: center; gap: .65rem; padding: .85rem; border: 1px solid #e1ebe6; border-radius: 10px; color: #345b51; background: #fbfdfc; font-size: .86rem; line-height: 1.45; }
+.nexa-availability__slots li span { flex: 1 1 auto; }
+.nexa-availability__slots li .nexa-availability__button { flex: 0 0 auto; min-height: 38px; padding: .45rem .7rem; }
+.nexa-availability__slots i { flex: 0 0 auto; color: #0f806b; }
+.nexa-availability__empty,.nexa-availability__notice { margin: 0; padding: .9rem 1rem; border-radius: 10px; color: #526c65; background: #f4f8f6; font-size: .86rem; line-height: 1.6; }
+.nexa-availability__button { justify-self: start; min-height: 44px; padding: .65rem .9rem; border: 1px solid #0f493f; border-radius: 9px; color: #fff; background: #0f493f; font: inherit; font-size: .84rem; font-weight: 800; cursor: pointer; }
+.nexa-availability__button[hidden],.nexa-booking-panel[hidden],.nexa-booking-form__address[hidden],.nexa-booking-panel__payment[hidden] { display: none; }
+.nexa-availability__button--secondary { color: #254a43; border-color: #d6e4de; background: #fff; }
+.nexa-availability__button:disabled { opacity: .65; cursor: wait; }
+.nexa-availability__button:focus-visible,.nexa-availability__home-visit select:focus-visible,.nexa-booking-form input:focus-visible,.nexa-booking-form textarea:focus-visible,.nexa-booking-form select:focus-visible { outline: 3px solid #51b89f; outline-offset: 3px; }
+.nexa-booking-panel { display: grid; gap: .9rem; margin-top: .5rem; padding: 1rem; border: 1px solid #cce2d9; border-radius: 13px; background: #f6fbf8; }
+.nexa-booking-panel h2,.nexa-booking-panel h3 { margin: 0; color: #183d36; }
+.nexa-booking-panel h2 { font-size: 1.1rem; }
+.nexa-booking-panel h3 { font-size: 1rem; }
+.nexa-booking-panel__selected,.nexa-booking-panel__payment p { margin: 0; color: #426359; font-size: .88rem; line-height: 1.6; }
+.nexa-booking-panel__payment > a { justify-self: start; color: #08735e; font-size: .88rem; font-weight: 800; text-decoration: none; }
+.nexa-booking-panel__payment > a:hover { text-decoration: underline; }
+.nexa-booking-form,.nexa-booking-panel__payment { display: grid; gap: .8rem; }
+.nexa-booking-form__address { display: grid; gap: .55rem; margin: 0; padding: .9rem; border: 1px solid #dbe8e2; border-radius: 10px; }
+.nexa-booking-form__address legend { padding-inline: .25rem; color: #31554c; font-size: .85rem; font-weight: 800; }
+.nexa-booking-form__address label { color: #31554c; font-size: .82rem; font-weight: 700; }
+.nexa-booking-form input,.nexa-booking-form textarea,.nexa-booking-form select { box-sizing: border-box; width: 100%; min-height: 44px; padding: .65rem .75rem; border: 1px solid #cadbd4; border-radius: 9px; color: #203a36; background: #fff; font: inherit; }
+.nexa-booking-form__address p { margin: 0; color: #607a73; font-size: .78rem; line-height: 1.5; }
+.nexa-booking-panel__payment { padding-top: .8rem; border-top: 1px solid #dce9e3; }
+@media(max-width:620px) { .nexa-availability__wrap { width: min(100% - 24px,1000px); } .nexa-availability__slots { grid-template-columns: 1fr; } .nexa-availability__card { padding: 1rem; border-radius: 15px; } }

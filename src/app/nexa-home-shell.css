@@ -1,0 +1,338 @@
+.nexa-home {
+  min-height: 100vh;
+  color: #153b3a;
+  background: #fff;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.nexa-home-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 70px;
+  border-bottom: 1px solid #e3ebe8;
+  background: #fff;
+  box-shadow: 0 3px 14px rgba(16, 40, 45, .08);
+}
+
+.nexa-home-header__inner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  width: min(calc(100% - 24px), 1760px);
+  height: 100%;
+  margin-inline: auto;
+  padding-inline: .75rem;
+  border: 1px solid #e6eeeb;
+  border-radius: 0 0 18px 18px;
+  background: #fff;
+}
+
+.nexa-home__brand {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: .72rem;
+  color: #153b3a;
+  text-decoration: none;
+}
+
+.nexa-home__mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid #e6eeeb;
+  border-radius: 8px;
+  background: #0b625f;
+  color: #fff;
+  font-family: Montserrat, Roboto, Arial, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.nexa-home__identity {
+  display: grid;
+  gap: 1px;
+}
+
+.nexa-home__name {
+  font-size: .98rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.nexa-home__label {
+  color: #52766f;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.nexa-home__nav {
+  display: flex;
+  align-items: center;
+  gap: .15rem;
+  margin-left: auto;
+}
+
+.nexa-home__nav a,
+.nexa-home__account,
+.nexa-home__menu-nav a,
+.nexa-home__menu-account {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .42rem;
+  min-height: 40px;
+  padding: 0 .75rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #405a56;
+  font-size: .84rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .18s ease, color .18s ease;
+}
+
+.nexa-home__nav a:hover,
+.nexa-home__nav a:focus-visible,
+.nexa-home__account:hover,
+.nexa-home__account:focus-visible,
+.nexa-home__menu-nav a:hover,
+.nexa-home__menu-nav a:focus-visible,
+.nexa-home__menu-account:hover,
+.nexa-home__menu-account:focus-visible {
+  color: #0b625f;
+  background: #eef6f4;
+  outline: none;
+}
+
+.nexa-home__account {
+  display: grid;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  margin-left: .35rem;
+  padding: 0;
+  border-color: #d6e3df;
+  border-radius: 999px;
+  background: #f7faf9;
+}
+.nexa-home__account svg { width: 20px; height: 20px; }
+
+.nexa-home__menu-button { display: none; }
+.nexa-home__mobile-backdrop,
+.nexa-home__mobile-navigation { display: none; }
+
+.nexa-home__footer {
+  margin-top: 1.2rem;
+  color: #fff;
+  background: #062c50;
+}
+
+.nexa-home__footer-inner {
+  display: grid;
+  grid-template-columns: minmax(230px, 1.35fr) repeat(2, minmax(170px, .8fr));
+  gap: 2rem;
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+  padding-block: 3rem 2rem;
+}
+
+.nexa-home__footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  color: #fff;
+  font-size: .95rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-decoration: none;
+}
+
+.nexa-home__footer-brand .nexa-home__mark {
+  width: 38px;
+  height: 38px;
+  border-color: rgba(255,255,255,.3);
+  background: #147ac8;
+}
+
+.nexa-home__footer-brand small {
+  display: block;
+  margin-top: 3px;
+  color: #b8d9ed;
+  font-size: .6rem;
+  letter-spacing: .12em;
+}
+
+.nexa-home__footer-intro p {
+  max-width: 310px;
+  margin: 1rem 0 0;
+  color: rgba(255,255,255,.78);
+  font-size: .9rem;
+  line-height: 1.7;
+}
+
+.nexa-home__footer-column h2 {
+  margin: 0 0 .9rem;
+  color: #8edbff;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.nexa-home__footer-column nav {
+  display: grid;
+  justify-items: start;
+  gap: .55rem;
+}
+
+.nexa-home__footer-column a {
+  color: rgba(255,255,255,.84);
+  font-size: .86rem;
+  text-decoration: none;
+}
+
+.nexa-home__footer-column a:hover { color: #fff; text-decoration: underline; }
+
+.nexa-home__copyright {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 1rem 0 1.5rem;
+  border-top: 1px solid rgba(255,255,255,.18);
+  color: rgba(255,255,255,.68);
+  font-size: .75rem;
+}
+
+.nexa-home__search-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: 17px;
+  height: 17px;
+  color: #42566b;
+}
+
+.nexa-home__search-icon svg { width: 100%; height: 100%; }
+
+@media (max-width: 1100px) {
+  .nexa-home-header { height: 62px; }
+  .nexa-home-header__inner { gap: .7rem; }
+  .nexa-home__mark { width: 36px; height: 36px; font-size: 1.2rem; }
+  .nexa-home__name { font-size: .9rem; }
+  .nexa-home__label { font-size: .62rem; }
+  .nexa-home__nav { display: none; }
+  .nexa-home__account { display: grid; margin-left: 0; }
+  .nexa-home__menu-button {
+    position: relative;
+    display: grid;
+    width: 42px;
+    height: 42px;
+    margin-left: auto;
+    place-items: center;
+    border: 1px solid #d6e3df;
+    border-radius: 8px;
+    color: #153b3a;
+    background: #fff;
+    cursor: pointer;
+    font-size: 1.25rem;
+  }
+  .nexa-home__menu-button:focus-visible,
+  .nexa-home__menu-close:focus-visible,
+  .nexa-home__mobile-backdrop:focus-visible {
+    outline: 2px solid #8edbff;
+    outline-offset: 3px;
+  }
+  .nexa-home__mobile-backdrop {
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100dvh;
+    border: 0;
+    background: rgba(3, 20, 24, .5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .28s ease, visibility .28s ease;
+  }
+  .nexa-home-header.is-menu-open .nexa-home__mobile-backdrop { opacity: 1; visibility: visible; }
+  .nexa-home__mobile-navigation {
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    right: 0;
+    display: flex;
+    width: min(88vw, 380px);
+    height: 100dvh;
+    max-height: 100dvh;
+    flex-direction: column;
+    align-items: stretch;
+    gap: .35rem;
+    margin: 0;
+    padding: 4.75rem .8rem 1.25rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-left: 1px solid rgba(255,255,255,.18);
+    border-radius: 18px 0 0 18px;
+    background: linear-gradient(180deg, rgba(7,59,70,.98), rgba(6,42,49,.99));
+    box-shadow: -18px 0 44px rgba(7,43,36,.28);
+    transform: translateX(105%);
+    visibility: hidden;
+    transition: transform .28s ease, visibility .28s ease;
+  }
+  .nexa-home-header.is-menu-open .nexa-home__mobile-navigation { transform: translateX(0); visibility: visible; }
+  .nexa-home__menu-nav { display: flex; flex-direction: column; gap: .35rem; }
+  .nexa-home__menu-nav a,
+  .nexa-home__menu-account {
+    width: 100%;
+    min-height: 52px;
+    justify-content: flex-start;
+    padding: .75rem .9rem;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 12px;
+    color: #fff;
+    background: rgba(255,255,255,.055);
+    font-size: .9rem;
+  }
+  .nexa-home__menu-nav a:hover,
+  .nexa-home__menu-nav a:focus-visible,
+  .nexa-home__menu-account:hover,
+  .nexa-home__menu-account:focus-visible {
+    color: #fff;
+    background: rgba(255,255,255,.16);
+    border-color: rgba(255,255,255,.24);
+  }
+  .nexa-home__menu-close {
+    position: absolute;
+    top: 1rem;
+    right: .8rem;
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 12px;
+    color: #fff;
+    background: rgba(255,255,255,.1);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .nexa-home__menu-close:hover { background: rgba(255,255,255,.2); }
+  .nexa-menu-lock { overflow: hidden; }
+}
+
+@media (max-width: 700px) {
+  .nexa-home__footer-inner { grid-template-columns: 1fr 1fr; gap: 1.5rem 1rem; }
+  .nexa-home__footer-intro { grid-column: 1 / -1; }
+}
+
+@media (max-width: 440px) {
+  .nexa-home-header__inner { width: calc(100% - 16px); padding-inline: .5rem; }
+  .nexa-home__footer-inner,
+  .nexa-home__copyright { width: calc(100% - 32px); }
+  .nexa-home__mobile-navigation { width: min(92vw, 360px); }
+}

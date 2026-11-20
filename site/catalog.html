@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f493f">
+  <title>Répertoire NEXARIS MEDICAL CENTER</title>
+  <meta name="description" content="Consultez les services et professionnels publiquement répertoriés par NEXARIS MEDICAL CENTER.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://nexarishaiti.com/catalog.html">
+  <meta property="og:site_name" content="NEXARIS MEDICAL CENTER">
+  <meta property="og:locale" content="fr_HT">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Répertoire NEXARIS MEDICAL CENTER">
+  <meta property="og:description" content="Consultez les services et professionnels publiquement répertoriés par NEXARIS MEDICAL CENTER.">
+  <meta property="og:url" content="https://nexarishaiti.com/catalog.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./styles/nexa-health.css">
+  <link rel="stylesheet" href="./styles/nexa-site.css">
+  <link rel="stylesheet" href="./styles/nexa-catalog.css">
+</head>
+<body>
+  <header id="nexa-header-root" class="nexa-site-header">
+    <div class="nexa-site-header__inner">
+      <a class="nexa-site-header__brand" href="./index.html" aria-label="NEXARIS MEDICAL CENTER, accueil">
+        <span class="nexa-site-header__logo" aria-hidden="true"><i class="fas fa-plus"></i></span>
+        <span class="nexa-site-header__identity"><span class="nexa-site-header__name">NEXARIS</span><span class="nexa-site-header__label">Medical Center</span></span>
+      </a>
+      <button class="nexa-site-header__toggle" type="button" aria-controls="nexa-navigation" aria-expanded="false">
+        <span class="sr-only">Ouvrir le menu</span><i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <nav id="nexa-navigation" class="nexa-site-header__nav" aria-label="Services NEXARIS">
+        <a href="./catalog.html?type=pharmacies">Nexa - Pharma</a>
+        <a href="./catalog.html?type=laboratories">Nexa - Lab</a>
+        <a href="./care.html">Nexa - Care</a>
+        <a href="./catalog.html?type=imaging-centers">Nexa - Imaging</a>
+      </nav>
+      <a class="nexa-site-header__cta" href="./espace-patient.html"><i class="fas fa-user" aria-hidden="true"></i><span>Mon espace</span></a>
+    </div>
+  </header>
+
+  <main class="nexa-catalog">
+    <section class="nexa-catalog__intro" aria-labelledby="catalog-title">
+      <div class="nexa-catalog__wrap">
+        <a class="nexa-catalog__back" href="./index.html"><i class="fas fa-arrow-left" aria-hidden="true"></i> Accueil NEXARIS</a>
+        <p class="nexa-catalog__eyebrow">NEXARIS MEDICAL CENTER</p>
+        <h1 id="catalog-title">Répertoire des services</h1>
+        <p id="catalog-description">Trouvez le service de santé dont vous avez besoin.</p>
+      </div>
+    </section>
+
+    <section class="nexa-catalog__content nexa-catalog__wrap" aria-label="Recherche dans le répertoire">
+      <form id="catalog-search" class="nexa-catalog__filters">
+        <label for="catalog-query">Rechercher un nom, un service ou une spécialité</label>
+        <div class="nexa-catalog__filter-row">
+          <input id="catalog-query" name="q" type="search" maxlength="100" autocomplete="off">
+          <label class="nexa-catalog__department" for="catalog-department">Département
+            <input id="catalog-department" name="department" type="search" maxlength="80" autocomplete="address-level1">
+          </label>
+          <button class="nexa-catalog__submit" type="submit"><i class="fas fa-magnifying-glass" aria-hidden="true"></i> Rechercher</button>
+        </div>
+        <label id="home-visit-filter" class="nexa-catalog__home-visit" hidden>
+          <input id="home-visit-only" type="checkbox">
+          Afficher les médecins offrant des visites à domicile
+        </label>
+      </form>
+
+      <p id="catalog-status" class="nexa-catalog__status" role="status" aria-live="polite">Chargement du répertoire…</p>
+      <div id="catalog-results" class="nexa-catalog__results"></div>
+      <button id="nursing-provider-more" class="nexa-catalog-card__action nexa-catalog-card__action--button" type="button" hidden>Afficher plus d’infirmier·ères</button>
+      <section id="pharmacy-product-section" class="nexa-catalog__offer-section" aria-labelledby="pharmacy-product-heading" hidden>
+        <div class="nexa-catalog__offer-heading">
+          <div>
+            <p class="nexa-catalog__offer-eyebrow">PRODUITS PUBLIÉS PAR LES PHARMACIES</p>
+            <h2 id="pharmacy-product-heading">Catalogue Nexa - Pharma</h2>
+          </div>
+          <p>Le prix et le stock sont revérifiés avant la commande. Retrait en pharmacie uniquement pour le moment.</p>
+        </div>
+        <aside id="pharmacy-cart-panel" class="nexa-catalog-cart" hidden aria-label="Votre panier de pharmacie">
+          <div class="nexa-catalog-cart__heading"><div><p class="nexa-catalog-offer-eyebrow">VOTRE SÉLECTION</p><h3>Panier Nexa - Pharma</h3></div><span id="pharmacy-cart-count">0 produit</span></div>
+          <ol id="pharmacy-cart-items" class="nexa-catalog-cart__items"></ol>
+          <div class="nexa-catalog-cart__footer"><p>Sous-total des produits <strong id="pharmacy-cart-subtotal">—</strong><br><small>Les frais et le total seront calculés par NEXA avant le paiement. Les frais ne sont pas remboursables.</small></p><button id="pharmacy-cart-checkout" class="nexa-catalog-card__action" type="button">Continuer vers la commande</button></div>
+        </aside>
+        <div id="pharmacy-product-results" class="nexa-catalog__offers"></div>
+      </section>
+      <section id="diagnostic-offer-section" class="nexa-catalog__offer-section" aria-labelledby="diagnostic-offer-heading" hidden>
+        <div class="nexa-catalog__offer-heading">
+          <div>
+            <p class="nexa-catalog__offer-eyebrow">OFFRES PUBLIÉES PAR LES CENTRES</p>
+            <h2 id="diagnostic-offer-heading">Examens et services disponibles</h2>
+          </div>
+          <p>Les modalités de rendez-vous, d’ordonnance et de prélèvement sont précisées pour chaque offre.</p>
+        </div>
+        <aside id="diagnostic-cart-panel" class="nexa-catalog-cart" hidden aria-label="Votre panier d’examens">
+          <div class="nexa-catalog-cart__heading"><div><p class="nexa-catalog-offer-eyebrow">VOTRE SÉLECTION</p><h3>Panier d’examens</h3></div><span id="diagnostic-cart-count">0 examen</span></div>
+          <ol id="diagnostic-cart-items" class="nexa-catalog-cart__items"></ol>
+          <div class="nexa-catalog-cart__footer"><p>Sous-total des services <strong id="diagnostic-cart-subtotal">—</strong><br><small>Les frais et le total seront confirmés par NEXA avant paiement.</small></p><button id="diagnostic-cart-checkout" class="nexa-catalog-card__action" type="button">Continuer vers la commande</button></div>
+        </aside>
+        <div id="diagnostic-offer-results" class="nexa-catalog__offers"></div>
+        <button id="diagnostic-offer-more" class="nexa-catalog-card__action nexa-catalog-card__action--button" type="button" hidden>Charger les offres suivantes</button>
+      </section>
+    </section>
+  </main>
+
+  <dialog id="diagnostic-checkout-dialog" class="nexa-catalog-checkout" aria-labelledby="diagnostic-checkout-title">
+    <div class="nexa-catalog-checkout__inner">
+      <button id="diagnostic-checkout-close" class="nexa-catalog-checkout__close" type="button" aria-label="Fermer">×</button>
+      <p class="nexa-catalog-offer-eyebrow">COMMANDE NEXARIS</p>
+      <h2 id="diagnostic-checkout-title">Confirmer les examens</h2>
+      <p>Le centre, les disponibilités, l’ordonnance et les frais sont vérifiés côté NEXA avant le paiement.</p>
+      <label for="diagnostic-checkout-prescription">Ordonnance validée <span id="diagnostic-prescription-optional">(facultatif)</span></label>
+      <select id="diagnostic-checkout-prescription"><option value="">Aucune ordonnance</option></select>
+      <p id="diagnostic-checkout-error" class="nexa-catalog-checkout__error" role="alert" hidden></p>
+      <p id="diagnostic-checkout-status" role="status" aria-live="polite"></p>
+      <button id="diagnostic-checkout-create" class="nexa-catalog-card__action" type="button">Créer la commande sécurisée</button>
+    </div>
+  </dialog>
+
+  <dialog id="nursing-booking-dialog" class="nexa-catalog-checkout" aria-labelledby="nursing-booking-title">
+    <form id="nursing-booking-form" class="nexa-catalog-checkout__inner">
+      <button id="nursing-booking-close" class="nexa-catalog-checkout__close" type="button" aria-label="Fermer">×</button>
+      <p class="nexa-catalog-offer-eyebrow">NEXA - CARE · SOINS INFIRMIERS</p>
+      <h2 id="nursing-booking-title">Réserver une période de soins</h2>
+      <p id="nursing-booking-provider"></p>
+      <p>Une période complète est réservée à un seul patient pour cet infirmier. La durée exacte des interventions sera coordonnée avec le professionnel après réservation.</p>
+      <p id="nursing-booking-mode-description" class="nexa-nursing-booking__summary"></p>
+      <label for="nursing-booking-zone">Commune de visite</label>
+      <select id="nursing-booking-zone" name="zoneId" required></select>
+      <label for="nursing-booking-week">Semaine proposée</label>
+      <select id="nursing-booking-week" name="weekStart" required></select>
+      <label for="nursing-booking-period">Période</label>
+      <select id="nursing-booking-period" name="period" required></select>
+      <p id="nursing-booking-schedule" class="nexa-nursing-booking__summary" role="status" aria-live="polite"></p>
+      <p id="nursing-booking-price" class="nexa-nursing-booking__summary"></p>
+      <fieldset class="nexa-nursing-booking__fields">
+        <legend>Services souhaités</legend>
+        <div id="nursing-booking-services"></div>
+      </fieldset>
+      <fieldset class="nexa-nursing-booking__fields">
+        <legend>Coordonnées pour la visite</legend>
+        <label for="nursing-booking-phone">Téléphone de contact
+          <input id="nursing-booking-phone" name="phone" type="tel" autocomplete="tel" maxlength="30" required>
+        </label>
+        <label for="nursing-booking-department">Département
+          <input id="nursing-booking-department" name="department" autocomplete="address-level1" maxlength="80" required>
+        </label>
+        <label for="nursing-booking-commune">Commune
+          <input id="nursing-booking-commune" name="commune" autocomplete="address-level2" maxlength="80" required>
+        </label>
+        <label for="nursing-booking-address">Adresse détaillée
+          <textarea id="nursing-booking-address" name="addressLine" autocomplete="street-address" maxlength="220" required></textarea>
+        </label>
+      </fieldset>
+      <p id="nursing-booking-error" class="nexa-catalog-checkout__error" role="alert" hidden></p>
+      <p id="nursing-booking-status" role="status" aria-live="polite"></p>
+      <button id="nursing-booking-submit" class="nexa-catalog-card__action nexa-catalog-card__action--button" type="submit">Confirmer et choisir le paiement</button>
+    </form>
+  </dialog>
+
+  <dialog id="pharmacy-checkout-dialog" class="nexa-catalog-checkout" aria-labelledby="pharmacy-checkout-title">
+    <div class="nexa-catalog-checkout__inner">
+      <button id="pharmacy-checkout-close" class="nexa-catalog-checkout__close" type="button" aria-label="Fermer">×</button>
+      <p class="nexa-catalog-offer-eyebrow">COMMANDE NEXARIS</p>
+      <h2 id="pharmacy-checkout-title">Confirmer les produits</h2>
+      <p>La pharmacie, le stock, les lots, le prix et les frais sont vérifiés côté NEXA. La commande est réservée pendant 30 minutes après sa création.</p>
+      <label for="pharmacy-checkout-prescription">Ordonnance validée <span id="pharmacy-prescription-optional">(facultative)</span></label>
+      <select id="pharmacy-checkout-prescription"><option value="">Aucune ordonnance</option></select>
+      <label for="pharmacy-checkout-delivery-method">Mode de remise</label>
+      <select id="pharmacy-checkout-delivery-method"><option value="pickup">Retrait en pharmacie</option><option id="pharmacy-checkout-delivery-option" value="delivery" hidden>Livraison à domicile</option></select>
+      <fieldset id="pharmacy-checkout-delivery-fields" class="nexa-pharmacy-delivery-fields" hidden>
+        <legend>Adresse de livraison</legend>
+        <label for="pharmacy-checkout-recipient">Nom du destinataire<input id="pharmacy-checkout-recipient" autocomplete="name" maxlength="120" required></label>
+        <label for="pharmacy-checkout-phone">Téléphone<input id="pharmacy-checkout-phone" type="tel" autocomplete="tel" maxlength="32" required></label>
+        <label for="pharmacy-checkout-zone">Zone de livraison<select id="pharmacy-checkout-zone" required><option value="">Choisissez une commune</option></select></label>
+        <label for="pharmacy-checkout-address">Adresse détaillée<input id="pharmacy-checkout-address" autocomplete="street-address" maxlength="300" required></label>
+        <label for="pharmacy-checkout-instructions">Instructions complémentaires (facultatif)<textarea id="pharmacy-checkout-instructions" maxlength="300" rows="2"></textarea></label>
+      </fieldset>
+      <p id="pharmacy-checkout-delivery-note" aria-live="polite">Retrait en pharmacie · Les frais de transaction s’appliquent également au Wallet NEXA.</p>
+      <p id="pharmacy-checkout-error" class="nexa-catalog-checkout__error" role="alert" hidden></p>
+      <p id="pharmacy-checkout-status" role="status" aria-live="polite"></p>
+      <button id="pharmacy-checkout-create" class="nexa-catalog-card__action" type="button">Créer la commande sécurisée</button>
+    </div>
+  </dialog>
+
+    <footer class="nexa-footer">
+    <div class="nexa-footer__inner">
+      <section class="nexa-footer__brand" aria-label="À propos de NEXARIS">
+        <span class="nexa-footer__mark" aria-hidden="true">N</span>
+        <strong>NEXARIS MEDICAL CENTER</strong>
+        <p>Pharmacie, laboratoire, soins et imagerie réunis dans un même espace santé.</p>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-services">
+        <h2 class="nexa-footer__heading" id="nexa-footer-services">NOS SERVICES</h2>
+        <nav aria-label="Services NEXARIS">
+          <a href="./catalog.html?type=pharmacies">Nexa - Pharma</a>
+          <a href="./catalog.html?type=laboratories">Nexa - Lab</a>
+          <a href="./care.html">Nexa - Care</a>
+          <a href="./catalog.html?type=imaging-centers">Nexa - Imaging</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-professionals">
+        <h2 class="nexa-footer__heading" id="nexa-footer-professionals">ESPACE PROFESSIONNEL</h2>
+        <nav aria-label="Candidatures et accès professionnels">
+          <a href="./candidature-medecin.html">Candidature médecin</a>
+          <a href="./candidature-infirmier.html">Candidature infirmière</a>
+          <a href="./candidature-partenaire.html">Candidature pharmacie, laboratoire ou imagerie</a>
+          <a href="./espace-professionnel.html">Accès médecin</a>
+          <a href="./espace-professionnel-infirmier.html">Accès infirmier</a>
+          <a href="./espace-centre.html">Accès laboratoire ou imagerie</a>
+          <a href="./espace-pharmacie.html">Accès pharmacie</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-information">
+        <h2 class="nexa-footer__heading" id="nexa-footer-information">INFORMATIONS</h2>
+        <nav aria-label="Informations légales">
+          <a href="./conditions.html">Conditions</a>
+          <a href="./confidentialite.html">Confidentialité</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-payments">
+        <h2 class="nexa-footer__heading" id="nexa-footer-payments">PAIEMENTS ACCEPTÉS</h2>
+        <div class="nexa-footer__payments" aria-label="MonCash et Wallet NEXA">
+          <span class="nexa-footer__payment"><i class="fas fa-mobile-screen-button" aria-hidden="true"></i> MonCash</span>
+          <span class="nexa-footer__payment"><i class="fas fa-wallet" aria-hidden="true"></i> Wallet NEXA</span>
+        </div>
+      </section>
+      <div class="nexa-footer__copyright">
+        <span>© <span id="current-year"></span> NEXARIS MEDICAL CENTER. Tous droits réservés.</span>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="./app.js"></script>
+  <script type="module" src="./catalog.js"></script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0f493f">
+  <title>Mon espace patient | NEXARIS MEDICAL CENTER</title>
+  <meta name="description" content="Votre espace patient NEXARIS.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./styles/nexa-health.css">
+  <link rel="stylesheet" href="./styles/nexa-site.css">
+  <link rel="stylesheet" href="./styles/nexa-auth.css">
+  <link rel="stylesheet" href="./styles/nexa-notifications.css">
+  <link rel="stylesheet" href="./styles/nexa-patient-results.css">
+</head>
+<body class="nexa-auth-page">
+  <header class="nexa-site-header">
+    <div class="nexa-site-header__inner">
+      <a class="nexa-site-header__brand" href="./index.html" aria-label="NEXARIS MEDICAL CENTER, accueil">
+        <span class="nexa-site-header__logo" aria-hidden="true"><i class="fas fa-plus"></i></span>
+        <span class="nexa-site-header__identity"><span class="nexa-site-header__name">NEXARIS</span><span class="nexa-site-header__label">Medical Center</span></span>
+      </a>
+      <button class="nexa-site-header__toggle" type="button" aria-controls="nexa-navigation" aria-expanded="false" aria-label="Ouvrir le menu"><span class="sr-only">Ouvrir le menu</span><i class="fas fa-bars" aria-hidden="true"></i></button>
+      <nav id="nexa-navigation" class="nexa-site-header__nav" aria-label="Services NEXARIS">
+        <a class="nexa-site-header__link" href="./catalog.html?type=pharmacies">Nexa - Pharma</a>
+        <a class="nexa-site-header__link" href="./catalog.html?type=laboratories">Nexa - Lab</a>
+        <a class="nexa-site-header__link" href="./care.html">Nexa - Care</a>
+        <a class="nexa-site-header__link" href="./catalog.html?type=imaging-centers">Nexa - Imaging</a>
+      </nav>
+      <a class="nexa-site-header__cta" href="./espace-patient.html" aria-label="Mon espace" aria-current="page"><i class="fas fa-user" aria-hidden="true"></i><span>Mon espace</span></a>
+    </div>
+  </header>
+  <main class="nexa-auth-layout nexa-auth-layout--single" id="main-content">
+    <section class="nexa-auth-intro"><p class="nexa-auth-eyebrow">Espace patient sécurisé</p><h1>Votre espace NEXA.</h1><p>Accédez à votre compte patient et conservez votre numéro NEXA.</p></section>
+    <section class="nexa-auth-card nexa-auth-success" aria-labelledby="space-title">
+      <p id="space-loading" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite">Vérification de votre session…</p>
+      <div id="space-content" hidden>
+        <p class="nexa-auth-eyebrow">Compte patient</p><h2 id="space-title">Bienvenue chez NEXA.</h2>
+        <p id="space-identity"></p><p>Votre numéro patient</p><strong id="space-patient-number" class="nexa-auth-success__number"></strong>
+        <p>Ce numéro identifie votre dossier. Il ne remplace pas vos identifiants et ne permet pas de se connecter.</p>
+        <p id="space-error" class="nexa-auth-message nexa-auth-message--error" role="alert" hidden></p>
+        <button id="retry-space" class="nexa-auth-button nexa-auth-button--google" type="button" hidden>Réessayer</button>
+        <button id="sign-out" class="nexa-auth-button" type="button">Se déconnecter</button>
+      </div>
+    </section>
+    <section id="notifications-section" class="nexa-auth-card nexa-notifications" aria-labelledby="notifications-title" hidden>
+      <div class="nexa-notifications__heading">
+        <div><p class="nexa-auth-eyebrow">Votre suivi NEXA</p><h2 id="notifications-title">Notifications</h2></div>
+        <span id="notifications-count" class="nexa-notifications__count" aria-label="Notifications non lues">0</span>
+      </div>
+      <div class="nexa-notifications__settings" aria-label="Préférences de notification">
+        <p class="nexa-notifications__privacy">Les alertes externes restent générales. Les détails sont visibles après connexion à votre espace NEXA.</p>
+        <p id="notification-preferences-loading" class="nexa-auth-message nexa-auth-message--notice" role="status">Chargement des préférences…</p>
+        <label class="nexa-notifications__email-setting" for="notification-email">
+          <input id="notification-email" type="checkbox" disabled>
+          Recevoir une alerte e-mail lorsqu’une notification NEXA est créée
+        </label>
+        <small id="notification-email-hint" class="nexa-notifications__hint"></small>
+        <div class="nexa-notifications__push-setting">
+          <button id="notification-push" class="nexa-auth-button nexa-auth-button--google" type="button" disabled>Activer les notifications push</button>
+          <small id="notification-push-hint" class="nexa-notifications__hint"></small>
+        </div>
+        <p id="notification-preferences-error" class="nexa-auth-message nexa-auth-message--error" role="alert" hidden></p>
+        <p id="notification-preferences-status" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite" hidden></p>
+      </div>
+      <p id="notifications-loading" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite">Chargement de vos notifications…</p>
+      <p id="notifications-error" class="nexa-auth-message nexa-auth-message--error" role="alert" hidden></p>
+      <button id="retry-notifications" class="nexa-auth-button nexa-auth-button--google" type="button" hidden>Recharger les notifications</button>
+      <p id="notifications-empty" class="nexa-notifications__empty" hidden>Vous n’avez pas de notification.</p>
+      <div id="notifications-list" class="health-notification-list" role="list" aria-label="Liste des notifications NEXA"></div>
+    </section>
+    <section id="wallet-section" class="nexa-auth-card nexa-patient-wallet" aria-labelledby="wallet-title" hidden>
+      <p class="nexa-auth-eyebrow">Votre solde NEXA</p>
+      <h2 id="wallet-title">Wallet NEXA</h2>
+      <p id="wallet-loading" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite">Chargement de votre portefeuille…</p>
+      <p id="wallet-error" class="nexa-auth-message nexa-auth-message--error" role="alert" hidden></p>
+      <button id="retry-wallet" class="nexa-auth-button nexa-auth-button--google" type="button" hidden>Recharger le portefeuille</button>
+      <div id="wallet-content" hidden>
+        <p class="nexa-patient-wallet__balance-label">Solde disponible</p>
+        <strong id="wallet-balance" class="nexa-patient-wallet__balance">—</strong>
+        <p id="wallet-status" class="nexa-patient-wallet__note"></p>
+        <p class="nexa-patient-wallet__note">Les crédits proviennent des remboursements NEXA et peuvent servir à payer un autre service. Les frais de transaction s’appliquent aussi aux paiements Wallet. Aucun retrait n’est disponible; un remboursement en espèces est traité manuellement par l’administration.</p>
+        <h3>Mouvements récents</h3>
+        <p id="wallet-empty" class="nexa-patient-wallet__empty" hidden>Aucun mouvement pour le moment.</p>
+        <ol id="wallet-entries" class="nexa-patient-wallet__entries" aria-label="Mouvements récents du Wallet NEXA"></ol>
+      </div>
+    </section>
+    <section id="commandes" class="nexa-auth-card nexa-patient-appointments" aria-labelledby="orders-title" hidden>
+      <p class="nexa-auth-eyebrow">Nexa - Pharma · Nexa - Lab · Nexa - Care · Nexa - Imaging</p>
+      <h2 id="orders-title">Mes commandes et prestations</h2>
+      <p id="orders-loading" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite">Chargement de vos commandes…</p>
+      <p id="orders-error" class="nexa-auth-message nexa-auth-message--error" role="alert" hidden></p>
+      <button id="retry-orders" class="nexa-auth-button nexa-auth-button--google" type="button" hidden>Recharger mes commandes</button>
+      <p id="orders-empty" class="nexa-patient-appointments__empty" hidden>Vous n’avez pas encore de commande ni de prestation.</p>
+      <ol id="orders-list" class="nexa-patient-appointments__list" aria-label="Historique des commandes et prestations"></ol>
+      <p id="patient-nursing-visits-loading" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite" hidden>Chargement des prestations infirmières…</p>
+      <p id="patient-nursing-visits-error" class="nexa-auth-message nexa-auth-message--error" role="alert" hidden></p>
+      <button id="retry-patient-nursing-visits" class="nexa-auth-button nexa-auth-button--google" type="button" hidden>Recharger les prestations infirmières</button>
+      <button id="load-more-patient-nursing-visits" class="nexa-auth-button nexa-auth-button--google" type="button" hidden>Afficher les prestations plus anciennes</button>
+      <button id="load-more-orders" class="nexa-auth-button nexa-auth-button--google" type="button" hidden>Afficher les commandes plus anciennes</button>
+      <a class="nexa-patient-appointments__link" href="./catalog.html?type=laboratories">Découvrir Nexa - Lab <span aria-hidden="true">→</span></a>
+      <a class="nexa-patient-appointments__link" href="./catalog.html?type=imaging-centers">Découvrir Nexa - Imaging <span aria-hidden="true">→</span></a>
+      <p class="nexa-patient-appointments__detail">Les frais de transaction s’appliquent aux paiements MonCash et Wallet. En cas de remboursement, le prix du service est crédité au Wallet; les frais de transaction ne sont pas remboursés.</p>
+    </section>
+    <section id="appointments-section" class="nexa-auth-card nexa-patient-appointments" aria-labelledby="appointments-title" hidden>
+      <p class="nexa-auth-eyebrow">Votre suivi NEXA</p>
+      <h2 id="appointments-title">Mes rendez-vous</h2>
+      <p id="appointments-loading" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite">Chargement de vos rendez-vous…</p>
+      <p id="appointments-error" class="nexa-auth-message nexa-auth-message--error" role="alert" hidden></p>
+      <button id="retry-appointments" class="nexa-auth-button nexa-auth-button--google" type="button" hidden>Recharger mes rendez-vous</button>
+      <p id="appointments-empty" class="nexa-patient-appointments__empty" hidden>Vous n’avez pas encore de rendez-vous.</p>
+      <ol id="appointments-list" class="nexa-patient-appointments__list" aria-label="Historique des rendez-vous"></ol>
+      <button id="load-more-appointments" class="nexa-auth-button nexa-auth-button--google" type="button" hidden>Afficher les rendez-vous plus anciens</button>
+      <a class="nexa-patient-appointments__link" href="./care.html">Découvrir Nexa - Care <span aria-hidden="true">→</span></a>
+    </section>
+    <section id="home-visit-reports-section" class="nexa-auth-card nexa-patient-appointments" aria-labelledby="home-visit-reports-title" hidden>
+      <p class="nexa-auth-eyebrow">Votre suivi à domicile</p>
+      <div class="nexa-patient-results__heading">
+        <h2 id="home-visit-reports-title">Mes comptes rendus de visites à domicile</h2>
+        <button id="reload-home-visit-reports" class="nexa-auth-button nexa-auth-button--google" type="button">Actualiser</button>
+      </div>
+      <p id="home-visit-reports-loading" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite">Chargement de vos comptes rendus de visites…</p>
+      <p id="home-visit-reports-error" class="nexa-auth-message nexa-auth-message--error" role="alert" hidden></p>
+      <p id="home-visit-reports-empty" class="nexa-patient-appointments__empty" hidden>Aucun compte rendu de visite à domicile n’est disponible pour le moment.</p>
+      <ol id="home-visit-reports-list" class="nexa-patient-appointments__list" aria-label="Comptes rendus de visites à domicile"></ol>
+      <div class="nexa-patient-records__pagination">
+        <p id="home-visit-reports-pagination-status" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite" hidden></p>
+        <button id="load-more-home-visit-reports" class="nexa-auth-button nexa-auth-button--google" type="button" hidden>Charger les visites plus anciennes</button>
+      </div>
+    </section>
+    <section id="nursing-reports-section" class="nexa-auth-card nexa-patient-appointments" aria-labelledby="nursing-reports-title" hidden>
+      <p class="nexa-auth-eyebrow">Vos soins infirmiers à domicile</p>
+      <div class="nexa-patient-results__heading">
+        <h2 id="nursing-reports-title">Mes comptes rendus infirmiers</h2>
+        <button id="reload-nursing-reports" class="nexa-auth-button nexa-auth-button--google" type="button">Actualiser</button>
+      </div>
+      <p id="nursing-reports-loading" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite">Chargement de vos comptes rendus infirmiers…</p>
+      <p id="nursing-reports-error" class="nexa-auth-message nexa-auth-message--error" role="alert" hidden></p>
+      <p id="nursing-reports-empty" class="nexa-patient-appointments__empty" hidden>Aucun compte rendu infirmier n’est disponible pour le moment.</p>
+      <ol id="nursing-reports-list" class="nexa-patient-appointments__list" aria-label="Comptes rendus de soins infirmiers à domicile"></ol>
+      <div class="nexa-patient-records__pagination">
+        <p id="nursing-reports-pagination-status" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite" hidden></p>
+        <button id="load-more-nursing-reports" class="nexa-auth-button nexa-auth-button--google" type="button" hidden>Charger les soins plus anciens</button>
+      </div>
+    </section>
+    <section id="standalone-records-section" class="nexa-auth-card nexa-patient-appointments" aria-labelledby="standalone-records-title" hidden>
+      <p class="nexa-auth-eyebrow">Vos dossiers médicaux</p>
+      <div class="nexa-patient-results__heading">
+        <h2 id="standalone-records-title">Mes comptes rendus médicaux</h2>
+        <button id="reload-standalone-records" class="nexa-auth-button nexa-auth-button--google" type="button">Actualiser</button>
+      </div>
+      <p id="standalone-records-loading" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite">Chargement de vos dossiers médicaux…</p>
+      <p id="standalone-records-error" class="nexa-auth-message nexa-auth-message--error" role="alert" hidden></p>
+      <p id="standalone-records-empty" class="nexa-patient-appointments__empty" hidden>Aucun compte rendu autonome n’est disponible pour le moment.</p>
+      <ol id="standalone-records-list" class="nexa-patient-appointments__list" aria-label="Comptes rendus médicaux autonomes"></ol>
+      <div class="nexa-patient-records__pagination">
+        <p id="standalone-records-pagination-status" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite" hidden></p>
+        <button id="load-more-standalone-records" class="nexa-auth-button nexa-auth-button--google" type="button" hidden>Charger les dossiers plus anciens</button>
+      </div>
+    </section>
+    <section id="clinical-access-section" class="nexa-auth-card nexa-clinical-access" aria-labelledby="clinical-access-title" hidden>
+      <p class="nexa-auth-eyebrow">Accès clinique contrôlé</p>
+      <h2 id="clinical-access-title">Autoriser un médecin à ouvrir un dossier</h2>
+      <p class="nexa-clinical-access__intro">Choisissez un médecin NEXA vérifié. Le code temporaire expire après 30 minutes; s’il est utilisé, le médecin accède au dossier pendant 24 heures. Vous pouvez révoquer l’autorisation à tout moment. Votre numéro NMC seul ne donne aucun accès.</p>
+      <form id="clinical-access-form" class="nexa-auth-form">
+        <label for="clinical-access-provider">Médecin destinataire
+          <select id="clinical-access-provider" name="providerUid" required>
+            <option value="">Chargement des médecins…</option>
+          </select>
+        </label>
+        <button id="clinical-access-submit" class="nexa-auth-button" type="submit" disabled>Créer un code d’autorisation</button>
+      </form>
+      <p id="clinical-access-status" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite" hidden></p>
+      <p id="clinical-access-error" class="nexa-auth-message nexa-auth-message--error" role="alert" hidden></p>
+      <div id="clinical-access-code-panel" class="nexa-clinical-access__code" hidden>
+        <strong>Code à transmettre uniquement au médecin sélectionné</strong>
+        <p id="clinical-access-code-provider"></p>
+        <label for="clinical-access-code">Code temporaire
+          <span class="nexa-clinical-access__code-row"><input id="clinical-access-code" type="text" readonly autocomplete="off" spellcheck="false"><button id="clinical-access-copy" class="nexa-auth-button nexa-auth-button--google" type="button">Copier</button></span>
+        </label>
+        <small id="clinical-access-code-expiry"></small>
+      </div>
+      <div class="nexa-clinical-access__list-heading">
+        <h3>Autorisations récentes</h3>
+        <button id="clinical-access-reload" class="nexa-auth-button nexa-auth-button--google" type="button">Actualiser</button>
+      </div>
+      <p id="clinical-access-loading" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite">Chargement des autorisations…</p>
+      <p id="clinical-access-list-error" class="nexa-auth-message nexa-auth-message--error" role="alert" hidden></p>
+      <p id="clinical-access-empty" class="nexa-patient-appointments__empty" hidden>Aucune autorisation clinique récente.</p>
+      <ol id="clinical-access-list" class="nexa-clinical-access__list" aria-label="Autorisations d’accès clinique"></ol>
+    </section>
+    <section id="prescriptions-section" class="nexa-auth-card nexa-patient-appointments" aria-labelledby="prescriptions-title" hidden>
+      <p class="nexa-auth-eyebrow">Vos soins NEXA</p>
+      <h2 id="prescriptions-title">Mes ordonnances</h2>
+      <p id="prescriptions-loading" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite">Chargement de vos ordonnances…</p>
+      <p id="prescriptions-error" class="nexa-auth-message nexa-auth-message--error" role="alert" hidden></p>
+      <button id="retry-prescriptions" class="nexa-auth-button nexa-auth-button--google" type="button" hidden>Recharger mes ordonnances</button>
+      <p id="prescriptions-empty" class="nexa-patient-appointments__empty" hidden>Aucune ordonnance validée pour le moment.</p>
+      <ol id="prescriptions-list" class="nexa-patient-appointments__list" aria-label="Ordonnances validées"></ol>
+    </section>
+    <section id="patient-results-section" class="nexa-auth-card nexa-patient-appointments nexa-patient-results" aria-labelledby="patient-results-title" hidden>
+      <p class="nexa-auth-eyebrow">Résultats et suivi médical</p>
+      <div class="nexa-patient-results__heading">
+        <h2 id="patient-results-title">Mes résultats médicaux</h2>
+        <button id="reload-patient-results" class="nexa-auth-button nexa-auth-button--google" type="button">Actualiser</button>
+      </div>
+      <p id="patient-results-loading" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite">Chargement de vos résultats…</p>
+      <p id="patient-results-error" class="nexa-auth-message nexa-auth-message--error" role="alert" hidden></p>
+      <p id="patient-results-notice" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite" hidden></p>
+      <div id="patient-results-upload-list" class="nexa-patient-results__uploads" hidden></div>
+      <p id="patient-results-empty" class="nexa-patient-appointments__empty" hidden>Aucun résultat médical ni examen prescrit en attente de document.</p>
+      <ol id="patient-results-list" class="nexa-patient-appointments__list" aria-label="Résultats médicaux transmis et reçus"></ol>
+      <p class="nexa-patient-results__privacy">Les fichiers envoyés au médecin prescripteur ou transmis par un centre restent privés. Un résultat de centre devient accessible après contrôle de sécurité et validation NEXA.</p>
+    </section>
+    <section id="medical-profile-section" class="nexa-auth-card nexa-medical-card" aria-labelledby="medical-profile-title" hidden>
+      <p class="nexa-auth-eyebrow">Informations confidentielles</p>
+      <h2 id="medical-profile-title">Ma fiche médicale initiale</h2>
+      <p class="nexa-medical-card__intro">Cette fiche contient des renseignements de santé. Sa création et sa modification resteront désactivées jusqu’à l’approbation des documents de confidentialité et d’un consentement clair. Tant que l’activation n’est pas faite, une fiche existante est consultable en lecture seule. Elle ne remplace pas l’évaluation d’un professionnel.</p>
+      <div class="nexa-medical-identity" aria-label="Informations de votre compte">
+        <p><span>Nom</span><strong id="medical-identity-name">—</strong></p>
+        <p><span>Date de naissance</span><strong id="medical-identity-birth-date">—</strong></p>
+        <p><span>Âge calculé</span><strong id="medical-identity-age">—</strong></p>
+        <p><span>Sexe</span><strong id="medical-identity-sex">—</strong></p>
+      </div>
+      <p id="medical-loading" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite">Chargement de votre fiche médicale…</p>
+      <p id="medical-error" class="nexa-auth-message nexa-auth-message--error" role="alert" hidden></p>
+      <p id="medical-notice" class="nexa-auth-message nexa-auth-message--notice" role="status" hidden></p>
+      <button id="retry-medical" class="nexa-auth-button nexa-auth-button--google" type="button" hidden>Recharger la fiche</button>
+      <form id="medical-profile-form" class="nexa-auth-form nexa-medical-form" hidden>
+        <fieldset class="nexa-medical-fieldset">
+          <legend>Langues préférées <span aria-hidden="true">*</span></legend>
+          <p class="nexa-medical-help" id="language-help">Choisissez au moins une langue.</p>
+          <div class="nexa-medical-languages" aria-describedby="language-help">
+            <label class="nexa-auth-checkbox"><input type="checkbox" name="language" value="creole">Créole haïtien</label>
+            <label class="nexa-auth-checkbox"><input type="checkbox" name="language" value="french">Français</label>
+            <label class="nexa-auth-checkbox"><input type="checkbox" name="language" value="english">Anglais</label>
+            <label class="nexa-auth-checkbox"><input type="checkbox" name="language" value="spanish">Espagnol</label>
+          </div>
+        </fieldset>
+        <fieldset class="nexa-medical-fieldset" data-answer="allergies">
+          <legend>Avez-vous des allergies connues ?</legend>
+          <label for="medical-allergies-answer">Réponse</label>
+          <select id="medical-allergies-answer" name="allergies" required><option value="">Choisissez une réponse</option><option value="yes">Oui</option><option value="no">Non</option></select>
+          <label class="nexa-medical-detail" hidden for="medical-allergies-details">Précisez les allergies<textarea id="medical-allergies-details" name="allergiesDetails" maxlength="500" rows="3"></textarea></label>
+        </fieldset>
+        <fieldset class="nexa-medical-fieldset" data-condition="diabetes">
+          <legend>Diabète diagnostiqué ?</legend>
+          <label for="medical-diabetes-answer">Réponse</label>
+          <select id="medical-diabetes-answer" name="diabetes" required><option value="">Choisissez une réponse</option><option value="yes">Oui</option><option value="no">Non</option></select>
+          <label class="nexa-medical-detail" hidden for="medical-diabetes-month">Mois et année du diagnostic<input id="medical-diabetes-month" name="diabetesMonth" type="month"></label>
+        </fieldset>
+        <fieldset class="nexa-medical-fieldset" data-condition="hypertension">
+          <legend>Hypertension diagnostiquée ?</legend>
+          <label for="medical-hypertension-answer">Réponse</label>
+          <select id="medical-hypertension-answer" name="hypertension" required><option value="">Choisissez une réponse</option><option value="yes">Oui</option><option value="no">Non</option></select>
+          <label class="nexa-medical-detail" hidden for="medical-hypertension-month">Mois et année du diagnostic<input id="medical-hypertension-month" name="hypertensionMonth" type="month"></label>
+        </fieldset>
+        <fieldset class="nexa-medical-fieldset" data-answer="tobacco">
+          <legend>Consommez-vous du tabac ?</legend>
+          <label for="medical-tobacco-answer">Réponse</label>
+          <select id="medical-tobacco-answer" name="tobacco" required><option value="">Choisissez une réponse</option><option value="yes">Oui</option><option value="no">Non</option></select>
+          <label class="nexa-medical-detail" hidden for="medical-tobacco-details">Quantité ou fréquence<textarea id="medical-tobacco-details" name="tobaccoDetails" maxlength="500" rows="3"></textarea></label>
+        </fieldset>
+        <fieldset class="nexa-medical-fieldset" data-answer="alcohol">
+          <legend>Consommez-vous de l’alcool ?</legend>
+          <label for="medical-alcohol-answer">Réponse</label>
+          <select id="medical-alcohol-answer" name="alcohol" required><option value="">Choisissez une réponse</option><option value="yes">Oui</option><option value="no">Non</option></select>
+          <label class="nexa-medical-detail" hidden for="medical-alcohol-details">Quantité ou fréquence<textarea id="medical-alcohol-details" name="alcoholDetails" maxlength="500" rows="3"></textarea></label>
+        </fieldset>
+        <fieldset class="nexa-medical-fieldset" data-answer="coffee">
+          <legend>Consommez-vous du café ?</legend>
+          <label for="medical-coffee-answer">Réponse</label>
+          <select id="medical-coffee-answer" name="coffee" required><option value="">Choisissez une réponse</option><option value="yes">Oui</option><option value="no">Non</option></select>
+          <label class="nexa-medical-detail" hidden for="medical-coffee-details">Quantité ou fréquence<textarea id="medical-coffee-details" name="coffeeDetails" maxlength="500" rows="3"></textarea></label>
+        </fieldset>
+        <fieldset class="nexa-medical-fieldset" data-answer="tea">
+          <legend>Consommez-vous du thé ?</legend>
+          <label for="medical-tea-answer">Réponse</label>
+          <select id="medical-tea-answer" name="tea" required><option value="">Choisissez une réponse</option><option value="yes">Oui</option><option value="no">Non</option></select>
+          <label class="nexa-medical-detail" hidden for="medical-tea-details">Quantité ou fréquence<textarea id="medical-tea-details" name="teaDetails" maxlength="500" rows="3"></textarea></label>
+        </fieldset>
+        <p class="nexa-medical-card__privacy">Seul le médecin NEXA vérifié associé à une consultation payée peut consulter cette fiche. L’accès commence au démarrage effectif de la consultation et expire après 24 heures.</p>
+        <button id="save-medical-profile" class="nexa-auth-button" type="submit">Enregistrer ma fiche médicale</button>
+      </form>
+    </section>
+  </main>
+  <footer class="nexa-auth-footer">© <span id="current-year"></span> NEXARIS MEDICAL CENTER</footer>
+  <script type="module" src="./app.js"></script>
+  <script type="module" src="./espace-patient.js"></script>
+</body>
+</html>

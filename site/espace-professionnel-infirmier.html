@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0f493f">
+  <title>Espace infirmier | NEXARIS MEDICAL CENTER</title>
+  <meta name="description" content="Configurez votre profil de soins infirmiers à domicile et indiquez les semaines et périodes où vous travaillez avec NEXARIS.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./styles/nexa-site.css">
+  <link rel="stylesheet" href="./styles/nexa-nursing-profile.css">
+</head>
+<body>
+  <header class="nexa-site-header">
+    <div class="nexa-site-header__inner">
+      <a class="nexa-site-header__brand" href="./index.html" aria-label="NEXARIS MEDICAL CENTER, accueil">
+        <span class="nexa-site-header__logo" aria-hidden="true">+</span>
+        <span class="nexa-site-header__identity"><span class="nexa-site-header__name">NEXARIS</span><span class="nexa-site-header__label">Medical Center</span></span>
+      </a>
+      <button class="nexa-site-header__toggle" type="button" aria-controls="nexa-navigation" aria-expanded="false" aria-label="Ouvrir le menu"><i class="fas fa-bars" aria-hidden="true"></i></button>
+      <nav id="nexa-navigation" class="nexa-site-header__nav" aria-label="Services NEXARIS">
+        <a href="./catalog.html?type=pharmacies">Nexa - Pharma</a>
+        <a href="./catalog.html?type=laboratories">Nexa - Lab</a>
+        <a href="./care.html">Nexa - Care</a>
+        <a href="./catalog.html?type=imaging-centers">Nexa - Imaging</a>
+      </nav>
+      <a class="nexa-site-header__cta" href="./espace-patient.html">Mon espace</a>
+    </div>
+  </header>
+
+  <main class="nursing-page">
+    <section class="nursing-hero" aria-labelledby="nursing-title">
+      <p class="nursing-eyebrow">NEXA - CARE · ESPACE PROFESSIONNEL</p>
+      <h1 id="nursing-title">Profil infirmier à domicile</h1>
+      <p>Présentez les soins que vous pouvez réaliser et choisissez les semaines et les périodes où vous êtes disponible.</p>
+    </section>
+
+    <section id="nursing-access" class="nursing-card" aria-live="polite">
+      <p id="nursing-loading" class="nursing-status" role="status">Vérification de votre accès…</p>
+      <div id="nursing-login" hidden>
+        <h2>Connexion professionnelle requise</h2>
+        <p>Connectez-vous au compte NEXA associé à votre profil infirmier vérifié, puis revenez sur cette page.</p>
+        <a class="nursing-button" href="./connexion.html?next=./espace-professionnel-infirmier.html">Se connecter</a>
+      </div>
+      <div id="nursing-denied" hidden>
+        <h2 id="nursing-denied-title">Profil infirmier vérifié requis</h2>
+        <p id="nursing-denied-message">Cette page est réservée aux infirmiers dont le profil et les qualifications ont été vérifiés par NEXA.</p>
+        <a class="nursing-button" href="./candidature-infirmier.html">Déposer une candidature infirmière</a>
+        <a class="nursing-button nursing-button--quiet" href="./index.html#professionals">Retour à NEXARIS</a>
+      </div>
+      <div id="nursing-editor" hidden>
+        <div class="nursing-profile-status">
+          <div><p class="nursing-eyebrow">ÉTAT DU PROFIL</p><strong id="nursing-profile-status">À compléter</strong></div>
+          <p id="nursing-review-reason" class="nursing-alert" hidden></p>
+        </div>
+        <p id="nursing-notice" class="nursing-notice" role="status" hidden></p>
+        <p id="nursing-error" class="nursing-alert" role="alert" hidden></p>
+
+        <form id="nursing-profile-form" class="nursing-form">
+          <fieldset class="nursing-fieldset">
+            <legend>Photo de profil professionnelle</legend>
+            <p>La photo est ré-encodée et analysée par NEXA. Elle reste privée jusqu’à l’approbation du profil, puis apparaît dans l’annuaire public des soins infirmiers.</p>
+            <label class="nursing-field" for="nursing-profile-photo">Choisir une photo JPEG, PNG ou WebP
+              <input id="nursing-profile-photo" name="profilePhoto" type="file" accept="image/jpeg,image/png,image/webp">
+            </label>
+            <label class="nursing-photo-consent" for="nursing-photo-public-consent">
+              <input id="nursing-photo-public-consent" type="checkbox">
+              <span>J’accepte que cette photo soit affichée publiquement dans l’annuaire NEXA après approbation de mon profil.</span>
+            </label>
+            <button id="nursing-photo-upload" class="nursing-button nursing-button--quiet" type="button">Téléverser la photo</button>
+            <p id="nursing-photo-message" class="nursing-photo-message" role="status" aria-live="polite"></p>
+            <img id="nursing-photo-preview" class="nursing-photo-preview" alt="Aperçu de la photo de profil" hidden>
+          </fieldset>
+
+          <label class="nursing-field" for="experience-start-year">Année de début d’activité infirmière
+            <input id="experience-start-year" name="experienceStartYear" type="number" min="1950" required>
+          </label>
+
+          <fieldset class="nursing-fieldset">
+            <legend>Services proposés</legend>
+            <p>Choisissez uniquement les soins correspondant à vos qualifications vérifiées. Le rôle infirmier ne peut pas prescrire de médicaments.</p>
+            <div id="nursing-services" class="nursing-options"></div>
+          </fieldset>
+
+          <fieldset class="nursing-fieldset">
+            <legend>Zones desservies et tarifs de la période</legend>
+            <p>Les tarifs sont fixés par l’administration NEXA. Chaque montant correspond à la période complète et peut rester indisponible tant que le tarif n’est pas configuré.</p>
+            <div id="nursing-zones" class="nursing-options"></div>
+            <p id="nursing-no-zones" class="nursing-muted" hidden>Aucune zone infirmière n’est encore ouverte par NEXA.</p>
+          </fieldset>
+
+          <fieldset class="nursing-fieldset">
+            <legend>Semaines et périodes de travail</legend>
+            <p>Les jours et heures sont définis par NEXA en heure locale d’Haïti. Choisissez le lundi de chaque semaine et les périodes pendant lesquelles vous travaillez.</p>
+            <div class="nursing-week-builder">
+              <label class="nursing-field" for="week-start">Lundi de la semaine
+                <input id="week-start" type="date" required>
+              </label>
+              <div id="nursing-periods" class="nursing-options"></div>
+              <button id="add-week" class="nursing-button nursing-button--quiet" type="button">Ajouter cette semaine / ce week-end</button>
+            </div>
+            <ul id="nursing-weeks" class="nursing-week-list"></ul>
+            <p id="nursing-no-weeks" class="nursing-muted">Aucune semaine ou aucun week-end n’est programmé.</p>
+          </fieldset>
+
+          <p class="nursing-note">NEXA vérifie votre profil avant sa publication dans le répertoire. Les tarifs sont définis par l’administration; les réservations n’apparaissent dans cet espace qu’après leur paiement.</p>
+          <button id="save-nursing-profile" class="nursing-button" type="submit">Enregistrer mon profil infirmier</button>
+        </form>
+        <section class="nursing-orders" aria-labelledby="nursing-orders-title">
+          <div class="nursing-orders__heading">
+            <div><p class="nursing-eyebrow">NEXA - CARE</p><h2 id="nursing-orders-title">Réservations infirmières payées</h2></div>
+            <button id="nursing-orders-retry" class="nursing-button nursing-button--quiet" type="button" hidden>Actualiser</button>
+          </div>
+          <p class="nursing-note">Une réservation concerne un patient pour toute la période hebdomadaire. Après entente avec lui, inscrivez chaque horaire et les soins prévus selon la modalité choisie par NEXA. Après la visite, le patient confirme le soin et vous remet un code de clôture.</p>
+          <p id="nursing-orders-loading" class="nursing-status" role="status" hidden>Chargement des réservations…</p>
+          <p id="nursing-orders-error" class="nursing-alert" role="alert" hidden></p>
+          <p id="nursing-orders-empty" class="nursing-muted" hidden>Aucune réservation infirmière payée.</p>
+          <p id="nursing-visits-loading" class="nursing-status" role="status" hidden>Chargement des prestations planifiées…</p>
+          <p id="nursing-visits-error" class="nursing-alert" role="alert" hidden></p>
+          <button id="nursing-visits-retry" class="nursing-button nursing-button--quiet" type="button" hidden>Réessayer de charger les prestations</button>
+          <ul id="nursing-orders-list" class="nursing-order-list"></ul>
+          <button id="nursing-orders-more" class="nursing-button nursing-button--quiet" type="button" hidden>Afficher les réservations plus anciennes</button>
+          <button id="nursing-visits-more" class="nursing-button nursing-button--quiet" type="button" hidden>Afficher les prestations suivantes</button>
+        </section>
+      </div>
+    </section>
+  </main>
+
+    <footer class="nexa-footer">
+    <div class="nexa-footer__inner">
+      <section class="nexa-footer__brand" aria-label="À propos de NEXARIS">
+        <span class="nexa-footer__mark" aria-hidden="true">N</span>
+        <strong>NEXARIS MEDICAL CENTER</strong>
+        <p>Pharmacie, laboratoire, soins et imagerie réunis dans un même espace santé.</p>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-services">
+        <h2 class="nexa-footer__heading" id="nexa-footer-services">NOS SERVICES</h2>
+        <nav aria-label="Services NEXARIS">
+          <a href="./catalog.html?type=pharmacies">Nexa - Pharma</a>
+          <a href="./catalog.html?type=laboratories">Nexa - Lab</a>
+          <a href="./care.html">Nexa - Care</a>
+          <a href="./catalog.html?type=imaging-centers">Nexa - Imaging</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-professionals">
+        <h2 class="nexa-footer__heading" id="nexa-footer-professionals">ESPACE PROFESSIONNEL</h2>
+        <nav aria-label="Candidatures et accès professionnels">
+          <a href="./candidature-medecin.html">Candidature médecin</a>
+          <a href="./candidature-infirmier.html">Candidature infirmière</a>
+          <a href="./candidature-partenaire.html">Candidature pharmacie, laboratoire ou imagerie</a>
+          <a href="./espace-professionnel.html">Accès médecin</a>
+          <a href="./espace-professionnel-infirmier.html">Accès infirmier</a>
+          <a href="./espace-centre.html">Accès laboratoire ou imagerie</a>
+          <a href="./espace-pharmacie.html">Accès pharmacie</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-information">
+        <h2 class="nexa-footer__heading" id="nexa-footer-information">INFORMATIONS</h2>
+        <nav aria-label="Informations légales">
+          <a href="./conditions.html">Conditions</a>
+          <a href="./confidentialite.html">Confidentialité</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-payments">
+        <h2 class="nexa-footer__heading" id="nexa-footer-payments">PAIEMENTS ACCEPTÉS</h2>
+        <div class="nexa-footer__payments" aria-label="MonCash et Wallet NEXA">
+          <span class="nexa-footer__payment"><i class="fas fa-mobile-screen-button" aria-hidden="true"></i> MonCash</span>
+          <span class="nexa-footer__payment"><i class="fas fa-wallet" aria-hidden="true"></i> Wallet NEXA</span>
+        </div>
+      </section>
+      <div class="nexa-footer__copyright">
+        <span>© <span id="current-year"></span> NEXARIS MEDICAL CENTER. Tous droits réservés.</span>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="./app.js"></script>
+  <script type="module" src="./espace-professionnel-infirmier.js"></script>
+</body>
+</html>

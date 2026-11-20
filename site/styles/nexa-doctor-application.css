@@ -1,0 +1,113 @@
+body.doctor-application {
+  color: #212a30;
+  background: #fff;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+body.doctor-application h1,
+body.doctor-application h2,
+body.doctor-application h3,
+body.doctor-application strong {
+  font-family: Montserrat, Roboto, Arial, sans-serif;
+}
+
+.doctor-application-page {
+  display: grid;
+  grid-template-columns: minmax(24px, 1fr) minmax(0, 900px) minmax(24px, 1fr);
+  width: 100%;
+  margin: 0 auto 4rem;
+  color: #212a30;
+}
+
+.doctor-application-page > .nursing-application-hero {
+  grid-column: 1 / -1;
+  width: auto;
+  margin: 0;
+  padding: clamp(2.8rem, 6vw, 4.7rem) max(24px, calc((100% - 1180px) / 2));
+  color: #fff;
+  border-radius: 0 0 24px 24px;
+  background: #1278cc;
+}
+
+.doctor-application-page .nursing-application-eyebrow {
+  color: #d9f1ff;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.doctor-application-page .nursing-application-hero h1 {
+  max-width: 700px;
+  color: #fff;
+  font-family: Montserrat, Roboto, Arial, sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  letter-spacing: -.04em;
+}
+
+.doctor-application-page .nursing-application-hero > p:last-child {
+  max-width: 680px;
+  color: rgba(255, 255, 255, .94);
+}
+
+.doctor-application-page > .nursing-application-card {
+  grid-column: 2;
+  width: 100%;
+  margin: 2rem 0 0;
+  border-color: #e2eaf1;
+  border-radius: 16px;
+  box-shadow: 0 12px 36px rgba(16, 51, 82, .08);
+}
+
+.doctor-application-page .nursing-application-status h2,
+.doctor-application-page .nursing-application-success h2 {
+  font-family: Montserrat, Roboto, Arial, sans-serif;
+}
+
+.doctor-application-page .nursing-application-button {
+  border-color: #0879c9;
+  background: #0879c9;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.doctor-application-page .nursing-application-button:hover,
+.doctor-application-page .nursing-application-button:focus-visible {
+  background: #0569af;
+}
+
+.doctor-application-page .nursing-application-button--quiet {
+  border-color: #cbdde9;
+  color: #103c6e;
+  background: #fff;
+}
+
+.doctor-application-page .nursing-application-button--quiet:hover,
+.doctor-application-page .nursing-application-button--quiet:focus-visible {
+  background: #f3f8fc;
+}
+
+.doctor-application-page .nursing-patient-number {
+  color: #103c6e !important;
+  background: #e7f0fa;
+}
+
+.doctor-application-page input:focus-visible,
+.doctor-application-page textarea:focus-visible,
+.doctor-application-page button:focus-visible,
+.doctor-application-page a:focus-visible {
+  outline: 3px solid #55b6ee;
+  outline-offset: 3px;
+}
+
+@media (max-width: 620px) {
+  .doctor-application-page {
+    grid-template-columns: 12px minmax(0, 1fr) 12px;
+    margin-bottom: 2.5rem;
+  }
+
+  .doctor-application-page > .nursing-application-hero {
+    padding: 2.5rem 1rem 2.8rem;
+    border-radius: 0 0 18px 18px;
+  }
+
+  .doctor-application-page > .nursing-application-card {
+    margin-top: 1rem;
+  }
+}

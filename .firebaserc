@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "demo-nexaris",
+    "nexaris": "nexaris-1339d"
+  }
+}

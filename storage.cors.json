@@ -1,0 +1,14 @@
+[
+  {
+    "origin": [
+      "https://nexarishaiti.com",
+      "https://www.nexarishaiti.com",
+      "https://nexarismedicalcenter.github.io",
+      "http://localhost:3000",
+      "http://localhost:3001"
+    ],
+    "method": ["POST", "GET", "HEAD"],
+    "responseHeader": ["Content-Type", "ETag", "x-goog-resumable"],
+    "maxAgeSeconds": 3600
+  }
+]

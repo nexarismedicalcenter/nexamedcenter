@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0f493f">
+  <title>Espace partenaire laboratoire et imagerie | NEXARIS MEDICAL CENTER</title>
+  <meta name="description" content="Portail sécurisé des centres laboratoire et imagerie partenaires NEXARIS.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./styles/nexa-site.css">
+  <link rel="stylesheet" href="./styles/nexa-provider.css">
+</head>
+<body>
+  <header class="nexa-site-header">
+    <div class="nexa-site-header__inner">
+      <a class="nexa-site-header__brand" href="./index.html" aria-label="NEXARIS MEDICAL CENTER, accueil">
+        <span class="nexa-site-header__logo" aria-hidden="true">+</span>
+        <span class="nexa-site-header__identity"><span class="nexa-site-header__name">NEXARIS</span><span class="nexa-site-header__label">Medical Center</span></span>
+      </a>
+      <button class="nexa-site-header__toggle" type="button" aria-controls="nexa-navigation" aria-expanded="false" aria-label="Ouvrir le menu"><i class="fas fa-bars" aria-hidden="true"></i></button>
+      <nav id="nexa-navigation" class="nexa-site-header__nav" aria-label="Services NEXARIS">
+        <a href="./catalog.html?type=pharmacies">Nexa - Pharma</a>
+        <a href="./catalog.html?type=laboratories">Nexa - Lab</a>
+        <a href="./care.html">Nexa - Care</a>
+        <a href="./catalog.html?type=imaging-centers">Nexa - Imaging</a>
+      </nav>
+      <a class="nexa-site-header__cta" href="./espace-patient.html">Mon espace</a>
+    </div>
+  </header>
+
+  <main class="nexa-provider-page" id="main-content">
+    <section class="nexa-provider-hero">
+      <div class="nexa-provider-wrap">
+        <p class="nexa-provider-eyebrow">NEXA - LAB · NEXA - IMAGING</p>
+        <h1>Portail des centres partenaires.</h1>
+        <p>Suivez les commandes qui vous sont attribuées et transmettez les résultats terminés à la revue sécurisée NEXA.</p>
+      </div>
+    </section>
+
+    <section class="nexa-provider-wrap nexa-provider-content" aria-live="polite">
+      <p id="centre-loading" class="nexa-provider-message" role="status">Vérification de votre accès…</p>
+
+      <div id="centre-login" class="nexa-provider-card" hidden>
+        <p class="nexa-provider-eyebrow">Connexion sécurisée</p>
+        <h2>Compte centre NEXA</h2>
+        <p>Utilisez le compte associé à votre laboratoire ou centre d’imagerie vérifié.</p>
+        <form id="centre-login-form" class="nexa-provider-form">
+          <label for="centre-email">Adresse e-mail<input id="centre-email" name="email" type="email" autocomplete="username" maxlength="254" required></label>
+          <label for="centre-password">Mot de passe<input id="centre-password" name="password" type="password" autocomplete="current-password" required></label>
+          <p id="centre-login-error" class="nexa-provider-error" role="alert" hidden></p>
+          <p id="centre-reset-notice" class="nexa-provider-notice" role="status" aria-live="polite" hidden></p>
+          <button id="centre-password-reset" class="nexa-provider-button nexa-provider-button--quiet" type="button">Mot de passe oublié ?</button>
+          <button id="centre-login-submit" class="nexa-provider-button" type="submit">Se connecter</button>
+        </form>
+      </div>
+
+      <div id="centre-denied" class="nexa-provider-card" hidden>
+        <h2>Accès centre vérifié requis</h2>
+        <p id="centre-denied-message" class="nexa-provider-error" role="alert"></p>
+        <button id="centre-denied-sign-out" class="nexa-provider-button nexa-provider-button--quiet" type="button">Changer de compte</button>
+        <a class="nexa-provider-link" href="./index.html#professionals">Retour à NEXARIS</a>
+      </div>
+
+      <div id="centre-editor" class="nexa-provider-card" hidden>
+        <div class="nexa-provider-heading">
+          <div><p id="centre-type-label" class="nexa-provider-eyebrow">PARTENAIRE VÉRIFIÉ</p><h2 id="centre-name">Centre NEXA</h2></div>
+          <button id="centre-sign-out" class="nexa-provider-button nexa-provider-button--quiet" type="button">Se déconnecter</button>
+        </div>
+        <p class="nexa-provider-callout">Les commandes affichées sont attribuées à votre centre et ont un règlement confirmé. Les résultats restent privés jusqu’à leur validation par NEXA. N’envoyez que les documents correspondant au patient et à l’examen indiqués.</p>
+        <p id="centre-notice" class="nexa-provider-notice" role="status" aria-live="polite" hidden></p>
+        <p id="centre-error" class="nexa-provider-error" role="alert" hidden></p>
+        <section class="nexa-provider-slots" aria-labelledby="centre-orders-title">
+          <div class="nexa-provider-heading"><div><h3 id="centre-orders-title">Commandes et résultats</h3><p class="nexa-provider-help">La recherche utilise le numéro complet de commande ou le NMC patient.</p></div><button id="centre-reload" class="nexa-provider-button nexa-provider-button--quiet" type="button">Actualiser</button></div>
+          <form id="centre-search-form" class="nexa-provider-form" role="search">
+            <label for="centre-search">Numéro de commande ou NMC<input id="centre-search" name="q" autocomplete="off" maxlength="100" placeholder="NMC-LAB-0008 ou NMC-0000009"></label>
+            <button class="nexa-provider-button nexa-provider-button--quiet" type="submit">Rechercher</button>
+          </form>
+          <p id="centre-orders-loading" class="nexa-provider-message" role="status" hidden>Chargement des commandes…</p>
+          <p id="centre-orders-empty" class="nexa-provider-help" hidden>Aucune commande pour cette recherche.</p>
+          <ul id="centre-orders-list" class="nexa-provider-list nexa-diagnostic-orders" aria-label="Commandes du centre"></ul>
+          <button id="centre-load-more" class="nexa-provider-button nexa-provider-button--quiet" type="button" hidden>Charger les commandes précédentes</button>
+        </section>
+        <section class="nexa-provider-slots" id="support" aria-labelledby="centre-support-title" hidden>
+          <div class="nexa-provider-heading"><div><h3 id="centre-support-title">Support laboratoire NEXA</h3><p class="nexa-provider-help">Réservé aux comptes laboratoire vérifiés. Ne saisissez aucun nom de patient, numéro NMC, résultat, diagnostic ou autre renseignement médical.</p></div><button id="centre-support-reload" class="nexa-provider-button nexa-provider-button--quiet" type="button">Actualiser</button></div>
+          <p id="centre-support-notice" class="nexa-provider-notice" role="status" aria-live="polite" hidden></p>
+          <p id="centre-support-error" class="nexa-provider-error" role="alert" hidden></p>
+          <form id="centre-support-form" class="nexa-provider-form">
+            <label for="centre-support-category">Catégorie<select id="centre-support-category" name="category" required>
+              <option value="commande">Commande</option><option value="examen">Examen</option><option value="resultat">Résultat</option><option value="paiement">Paiement</option><option value="remboursement">Remboursement</option><option value="decaissement">Décaissement</option><option value="compte">Compte</option><option value="technique">Technique</option>
+            </select></label>
+            <label for="centre-support-subject">Sujet<input id="centre-support-subject" name="subject" minlength="4" maxlength="180" required></label>
+            <label for="centre-support-description">Description<textarea id="centre-support-description" name="description" minlength="10" maxlength="3000" rows="4" required></textarea></label>
+            <button id="centre-support-submit" class="nexa-provider-button" type="submit">Envoyer au support</button>
+          </form>
+          <p id="centre-support-loading" class="nexa-provider-message" role="status" hidden>Chargement des demandes…</p>
+          <p id="centre-support-empty" class="nexa-provider-help" hidden>Aucune demande de support.</p>
+          <ul id="centre-support-list" class="nexa-provider-list" aria-label="Demandes de support"></ul>
+        </section>
+      </div>
+    </section>
+  </main>
+
+    <footer class="nexa-footer">
+    <div class="nexa-footer__inner">
+      <section class="nexa-footer__brand" aria-label="À propos de NEXARIS">
+        <span class="nexa-footer__mark" aria-hidden="true">N</span>
+        <strong>NEXARIS MEDICAL CENTER</strong>
+        <p>Pharmacie, laboratoire, soins et imagerie réunis dans un même espace santé.</p>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-services">
+        <h2 class="nexa-footer__heading" id="nexa-footer-services">NOS SERVICES</h2>
+        <nav aria-label="Services NEXARIS">
+          <a href="./catalog.html?type=pharmacies">Nexa - Pharma</a>
+          <a href="./catalog.html?type=laboratories">Nexa - Lab</a>
+          <a href="./care.html">Nexa - Care</a>
+          <a href="./catalog.html?type=imaging-centers">Nexa - Imaging</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-professionals">
+        <h2 class="nexa-footer__heading" id="nexa-footer-professionals">ESPACE PROFESSIONNEL</h2>
+        <nav aria-label="Candidatures et accès professionnels">
+          <a href="./candidature-medecin.html">Candidature médecin</a>
+          <a href="./candidature-infirmier.html">Candidature infirmière</a>
+          <a href="./candidature-partenaire.html">Candidature pharmacie, laboratoire ou imagerie</a>
+          <a href="./espace-professionnel.html">Accès médecin</a>
+          <a href="./espace-professionnel-infirmier.html">Accès infirmier</a>
+          <a href="./espace-centre.html">Accès laboratoire ou imagerie</a>
+          <a href="./espace-pharmacie.html">Accès pharmacie</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-information">
+        <h2 class="nexa-footer__heading" id="nexa-footer-information">INFORMATIONS</h2>
+        <nav aria-label="Informations légales">
+          <a href="./conditions.html">Conditions</a>
+          <a href="./confidentialite.html">Confidentialité</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-payments">
+        <h2 class="nexa-footer__heading" id="nexa-footer-payments">PAIEMENTS ACCEPTÉS</h2>
+        <div class="nexa-footer__payments" aria-label="MonCash et Wallet NEXA">
+          <span class="nexa-footer__payment"><i class="fas fa-mobile-screen-button" aria-hidden="true"></i> MonCash</span>
+          <span class="nexa-footer__payment"><i class="fas fa-wallet" aria-hidden="true"></i> Wallet NEXA</span>
+        </div>
+      </section>
+      <div class="nexa-footer__copyright">
+        <span>© <span id="current-year"></span> NEXARIS MEDICAL CENTER. Tous droits réservés.</span>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="./app.js"></script>
+  <script type="module" src="./espace-centre.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0f493f">
+  <title>Espace médecin | NEXARIS MEDICAL CENTER</title>
+  <meta name="description" content="Gérez les créneaux Nexa - Care de votre profil médecin vérifié.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./styles/nexa-site.css">
+  <link rel="stylesheet" href="./styles/nexa-provider.css">
+</head>
+<body>
+  <header class="nexa-site-header">
+    <div class="nexa-site-header__inner">
+      <a class="nexa-site-header__brand" href="./index.html" aria-label="NEXARIS MEDICAL CENTER, accueil">
+        <span class="nexa-site-header__logo" aria-hidden="true">+</span>
+        <span class="nexa-site-header__identity"><span class="nexa-site-header__name">NEXARIS</span><span class="nexa-site-header__label">Medical Center</span></span>
+      </a>
+      <button class="nexa-site-header__toggle" type="button" aria-controls="nexa-navigation" aria-expanded="false" aria-label="Ouvrir le menu"><i class="fas fa-bars" aria-hidden="true"></i></button>
+      <nav id="nexa-navigation" class="nexa-site-header__nav" aria-label="Services NEXARIS">
+        <a href="./catalog.html?type=pharmacies">Nexa - Pharma</a>
+        <a href="./catalog.html?type=laboratories">Nexa - Lab</a>
+        <a href="./care.html">Nexa - Care</a>
+        <a href="./catalog.html?type=imaging-centers">Nexa - Imaging</a>
+      </nav>
+      <a class="nexa-site-header__cta" href="./espace-patient.html">Mon espace</a>
+    </div>
+  </header>
+
+  <main class="nexa-provider-page" id="main-content">
+    <section class="nexa-provider-hero">
+      <div class="nexa-provider-wrap">
+        <p class="nexa-provider-eyebrow">NEXA - CARE · PORTAIL MÉDECIN</p>
+        <h1>Gérez vos disponibilités.</h1>
+        <p>Publiez vos créneaux de téléconsultation ou de visite médicale à domicile. Les horaires sont saisis en heure d’Haïti.</p>
+      </div>
+    </section>
+
+    <section class="nexa-provider-wrap nexa-provider-content" aria-live="polite">
+      <p id="provider-loading" class="nexa-provider-message" role="status">Vérification de votre accès…</p>
+
+      <div id="provider-login" class="nexa-provider-card" hidden>
+        <p class="nexa-provider-eyebrow">Connexion sécurisée</p>
+        <h2>Compte médecin NEXA</h2>
+        <p>Connectez-vous au compte associé à votre profil médecin vérifié.</p>
+        <form id="provider-login-form" class="nexa-provider-form">
+          <label for="provider-email">Adresse e-mail<input id="provider-email" name="email" type="email" autocomplete="username" maxlength="254" required></label>
+          <label for="provider-password">Mot de passe<input id="provider-password" name="password" type="password" autocomplete="current-password" required></label>
+          <p id="provider-login-error" class="nexa-provider-error" role="alert" hidden></p>
+          <p id="provider-reset-notice" class="nexa-provider-message" role="status" aria-live="polite" hidden></p>
+          <button id="provider-login-submit" class="nexa-provider-button" type="submit">Se connecter</button>
+          <button id="provider-password-reset" class="nexa-provider-button nexa-provider-button--quiet" type="button">Mot de passe oublié ?</button>
+        </form>
+      </div>
+
+      <div id="provider-denied" class="nexa-provider-card" hidden>
+        <h2>Accès médecin vérifié requis</h2>
+        <p id="provider-denied-message" class="nexa-provider-message" role="alert"></p>
+        <a class="nexa-provider-link" href="./index.html#professionals">Retour à NEXARIS</a>
+      </div>
+
+      <div id="provider-editor" class="nexa-provider-card" hidden>
+        <div class="nexa-provider-heading">
+          <div><p class="nexa-provider-eyebrow">PROFIL VÉRIFIÉ</p><h2 id="provider-name">Médecin NEXA</h2></div>
+          <button id="provider-sign-out" class="nexa-provider-button nexa-provider-button--quiet" type="button">Se déconnecter</button>
+        </div>
+        <p class="nexa-provider-callout">Les rendez-vous payés et les visites à domicile confirmées sont affichés ici. Vous pouvez accepter une téléconsultation, ouvrir la fiche médicale pendant la période d’accès autorisée, rejoindre la séance vidéo et clôturer une visite à domicile après le compte rendu du patient avec le code qui vous a été communiqué.</p>
+        <p id="provider-notice" class="nexa-provider-notice" role="status" aria-live="polite" hidden></p>
+        <p id="provider-error" class="nexa-provider-error" role="alert" hidden></p>
+
+        <section class="nexa-provider-slots" aria-labelledby="provider-notifications-title">
+          <div class="nexa-provider-heading">
+            <div><h3 id="provider-notifications-title">Notifications NEXA</h3><p class="nexa-provider-help">Les informations patient restent dans cet espace sécurisé. Les alertes e-mail et push ne contiennent pas ces détails.</p></div>
+            <button id="provider-notifications-reload" class="nexa-provider-button nexa-provider-button--quiet" type="button">Actualiser</button>
+          </div>
+          <p id="provider-notifications-loading" class="nexa-provider-message" role="status" hidden>Chargement des notifications…</p>
+          <p id="provider-notifications-error" class="nexa-provider-error" role="alert" hidden></p>
+          <p id="provider-notifications-empty" class="nexa-provider-help" hidden>Aucune notification pour le moment.</p>
+          <ul id="provider-notifications-list" class="nexa-provider-list" aria-label="Notifications NEXA"></ul>
+        </section>
+
+        <section class="nexa-provider-slots" aria-labelledby="provider-photo-title">
+          <div class="nexa-provider-heading"><div><h3 id="provider-photo-title">Photo de votre profil public</h3><p class="nexa-provider-help">Votre photo sera visible aux patients après votre consentement et l’approbation de NEXA. Un changement de photo masque le profil jusqu’à la nouvelle revue.</p></div></div>
+          <img id="provider-photo-preview" class="nexa-provider-profile-photo" alt="Aperçu de la photo du profil médecin" hidden>
+          <p id="provider-photo-status" class="nexa-provider-message" role="status" aria-live="polite">Aucune photo déposée.</p>
+          <label class="nexa-provider-form" for="provider-photo-file">Choisir une photo JPEG, PNG ou WebP
+            <input id="provider-photo-file" name="profilePhoto" type="file" accept="image/jpeg,image/png,image/webp">
+          </label>
+          <label class="nexa-provider-photo-consent"><input id="provider-photo-consent" type="checkbox"> J’accepte que cette photo apparaisse dans le répertoire public NEXA après approbation.</label>
+          <button id="provider-photo-upload" class="nexa-provider-button" type="button">Téléverser la photo</button>
+          <p id="provider-photo-error" class="nexa-provider-error" role="alert" hidden></p>
+        </section>
+
+        <section aria-labelledby="availability-form-title">
+          <h3 id="availability-form-title">Publier un créneau</h3>
+          <form id="availability-form" class="nexa-provider-form">
+            <label for="availability-service">Service
+              <select id="availability-service" name="serviceType" required>
+                <option value="TELECONSULTATION">Téléconsultation · créneau de 30 minutes</option>
+                <option id="home-visit-option" value="HOME_VISIT" hidden>Visite médicale à domicile · 1 heure</option>
+              </select>
+            </label>
+            <label for="availability-start">Début du créneau, heure d’Haïti
+              <input id="availability-start" name="startsAt" type="datetime-local" step="1800" required>
+            </label>
+            <p id="home-visit-note" class="nexa-provider-help" hidden>La publication des visites à domicile nécessite un tarif et des zones activés par NEXA.</p>
+            <button id="availability-submit" class="nexa-provider-button" type="submit">Publier le créneau</button>
+          </form>
+        </section>
+
+        <section class="nexa-provider-slots" aria-labelledby="availability-list-title">
+          <div class="nexa-provider-heading"><h3 id="availability-list-title">Créneaux des 90 prochains jours</h3><button id="availability-reload" class="nexa-provider-button nexa-provider-button--quiet" type="button">Actualiser</button></div>
+          <p id="availability-loading" class="nexa-provider-message" role="status" hidden>Chargement des créneaux…</p>
+          <p id="availability-empty" class="nexa-provider-help" hidden>Aucun créneau publié pour le moment.</p>
+          <ul id="availability-list" class="nexa-provider-list" aria-label="Vos créneaux disponibles et réservés"></ul>
+        </section>
+
+        <section class="nexa-provider-slots" aria-labelledby="provider-appointments-title">
+          <div class="nexa-provider-heading"><h3 id="provider-appointments-title">Rendez-vous</h3><button id="appointments-reload" class="nexa-provider-button nexa-provider-button--quiet" type="button">Actualiser</button></div>
+          <p id="appointments-loading" class="nexa-provider-message" role="status" hidden>Chargement des rendez-vous…</p>
+          <p id="appointments-error" class="nexa-provider-error" role="alert" hidden></p>
+          <p id="appointments-empty" class="nexa-provider-help" hidden>Aucun rendez-vous enregistré.</p>
+          <ul id="appointments-list" class="nexa-provider-list" aria-label="Vos rendez-vous"></ul>
+        </section>
+
+        <section class="nexa-provider-slots" aria-labelledby="standalone-records-title">
+          <div class="nexa-provider-heading">
+            <div><h3 id="standalone-records-title">Dossiers cliniques autorisés par le patient</h3><p class="nexa-provider-help">Un patient peut vous envoyer un code temporaire depuis son espace. Le numéro NMC seul ne donne aucun accès; le code autorise la consultation pendant 24 heures après sa réclamation.</p></div>
+            <button id="standalone-records-reload" class="nexa-provider-button nexa-provider-button--quiet" type="button">Actualiser</button>
+          </div>
+          <form id="standalone-record-form" class="nexa-provider-form">
+            <label for="standalone-patient-number">Numéro patient NMC
+              <input id="standalone-patient-number" name="patientNumber" type="text" inputmode="text" autocomplete="off" pattern="NMC-[0-9]{7}" maxlength="11" placeholder="NMC-0000001" required>
+            </label>
+            <label for="standalone-access-code">Code temporaire transmis par le patient
+              <input id="standalone-access-code" name="accessCode" type="password" inputmode="text" autocomplete="off" pattern="[A-Za-z0-9_-]{32}" minlength="32" maxlength="32" required>
+            </label>
+            <button id="standalone-record-submit" class="nexa-provider-button" type="submit">Vérifier le code et ouvrir le dossier</button>
+          </form>
+          <p id="standalone-record-feedback" class="nexa-provider-message" role="status" aria-live="polite" hidden></p>
+          <p id="standalone-record-error" class="nexa-provider-error" role="alert" hidden></p>
+          <p id="standalone-records-loading" class="nexa-provider-message" role="status" hidden>Chargement des dossiers autorisés…</p>
+          <p id="standalone-records-empty" class="nexa-provider-help" hidden>Aucun dossier n’est actuellement accessible. Demandez au patient de vous transmettre son code temporaire.</p>
+          <ul id="standalone-records-list" class="nexa-provider-list" aria-label="Dossiers cliniques autonomes accessibles"></ul>
+        </section>
+
+        <section id="resultats-patient" class="nexa-provider-slots" aria-labelledby="provider-result-inbox-title">
+          <div class="nexa-provider-heading">
+            <div><h3 id="provider-result-inbox-title">Résultats transmis par vos patients</h3><p class="nexa-provider-help">Seuls les résultats liés à une ordonnance que vous avez validée apparaissent ici.</p></div>
+            <button id="provider-results-reload" class="nexa-provider-button nexa-provider-button--quiet" type="button">Actualiser</button>
+          </div>
+          <p id="provider-results-loading" class="nexa-provider-message" role="status" hidden>Chargement des résultats…</p>
+          <p id="provider-results-error" class="nexa-provider-error" role="alert" hidden></p>
+          <p id="provider-results-empty" class="nexa-provider-help" hidden>Aucun résultat transmis pour le moment.</p>
+          <ul id="provider-results-list" class="nexa-provider-list" aria-label="Résultats de vos patients"></ul>
+        </section>
+      </div>
+    </section>
+  </main>
+
+    <footer class="nexa-footer">
+    <div class="nexa-footer__inner">
+      <section class="nexa-footer__brand" aria-label="À propos de NEXARIS">
+        <span class="nexa-footer__mark" aria-hidden="true">N</span>
+        <strong>NEXARIS MEDICAL CENTER</strong>
+        <p>Pharmacie, laboratoire, soins et imagerie réunis dans un même espace santé.</p>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-services">
+        <h2 class="nexa-footer__heading" id="nexa-footer-services">NOS SERVICES</h2>
+        <nav aria-label="Services NEXARIS">
+          <a href="./catalog.html?type=pharmacies">Nexa - Pharma</a>
+          <a href="./catalog.html?type=laboratories">Nexa - Lab</a>
+          <a href="./care.html">Nexa - Care</a>
+          <a href="./catalog.html?type=imaging-centers">Nexa - Imaging</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-professionals">
+        <h2 class="nexa-footer__heading" id="nexa-footer-professionals">ESPACE PROFESSIONNEL</h2>
+        <nav aria-label="Candidatures et accès professionnels">
+          <a href="./candidature-medecin.html">Candidature médecin</a>
+          <a href="./candidature-infirmier.html">Candidature infirmière</a>
+          <a href="./candidature-partenaire.html">Candidature pharmacie, laboratoire ou imagerie</a>
+          <a href="./espace-professionnel.html">Accès médecin</a>
+          <a href="./espace-professionnel-infirmier.html">Accès infirmier</a>
+          <a href="./espace-centre.html">Accès laboratoire ou imagerie</a>
+          <a href="./espace-pharmacie.html">Accès pharmacie</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-information">
+        <h2 class="nexa-footer__heading" id="nexa-footer-information">INFORMATIONS</h2>
+        <nav aria-label="Informations légales">
+          <a href="./conditions.html">Conditions</a>
+          <a href="./confidentialite.html">Confidentialité</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-payments">
+        <h2 class="nexa-footer__heading" id="nexa-footer-payments">PAIEMENTS ACCEPTÉS</h2>
+        <div class="nexa-footer__payments" aria-label="MonCash et Wallet NEXA">
+          <span class="nexa-footer__payment"><i class="fas fa-mobile-screen-button" aria-hidden="true"></i> MonCash</span>
+          <span class="nexa-footer__payment"><i class="fas fa-wallet" aria-hidden="true"></i> Wallet NEXA</span>
+        </div>
+      </section>
+      <div class="nexa-footer__copyright">
+        <span>© <span id="current-year"></span> NEXARIS MEDICAL CENTER. Tous droits réservés.</span>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="./app.js"></script>
+  <script type="module" src="./espace-professionnel.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0f493f">
+  <title>État du paiement | NEXARIS MEDICAL CENTER</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../../styles/nexa-health.css">
+  <link rel="stylesheet" href="../../styles/nexa-site.css">
+  <link rel="stylesheet" href="../../styles/nexa-auth.css">
+</head>
+<body class="nexa-auth-page">
+  <header class="nexa-site-header">
+    <div class="nexa-site-header__inner">
+      <a class="nexa-site-header__brand" href="../../index.html" aria-label="NEXARIS MEDICAL CENTER, accueil">
+        <span class="nexa-site-header__logo" aria-hidden="true"><i class="fas fa-plus"></i></span>
+        <span class="nexa-site-header__identity"><span class="nexa-site-header__name">NEXARIS</span><span class="nexa-site-header__label">Medical Center</span></span>
+      </a>
+      <button class="nexa-site-header__toggle" type="button" aria-controls="nexa-navigation" aria-expanded="false" aria-label="Ouvrir le menu"><span class="sr-only">Ouvrir le menu</span><i class="fas fa-bars" aria-hidden="true"></i></button>
+      <nav id="nexa-navigation" class="nexa-site-header__nav" aria-label="Services NEXARIS">
+        <a class="nexa-site-header__link" href="../../catalog.html?type=pharmacies">Nexa - Pharma</a>
+        <a class="nexa-site-header__link" href="../../catalog.html?type=laboratories">Nexa - Lab</a>
+        <a class="nexa-site-header__link" href="../../care.html" aria-current="page">Nexa - Care</a>
+        <a class="nexa-site-header__link" href="../../catalog.html?type=imaging-centers">Nexa - Imaging</a>
+      </nav>
+      <a class="nexa-site-header__cta" href="../../espace-patient.html" aria-label="Mon espace"><i class="fas fa-user" aria-hidden="true"></i><span>Mon espace</span></a>
+    </div>
+  </header>
+  <main class="nexa-auth-layout nexa-auth-layout--single" id="main-content">
+    <section class="nexa-auth-intro" aria-labelledby="page-title">
+      <p class="nexa-auth-eyebrow">NEXARIS · MonCash</p>
+      <h1 id="page-title">Vérification du paiement</h1>
+      <p>Le statut est confirmé depuis NEXARIS. Le retour du navigateur depuis MonCash ne suffit pas à confirmer un paiement.</p>
+      <p class="nexa-auth-privacy">Si le paiement a été reçu mais que le créneau a expiré, ne payez pas une seconde fois. NEXA rapprochera la transaction.</p>
+    </section>
+    <section class="nexa-auth-card" aria-labelledby="payment-title">
+      <div class="nexa-auth-card__heading"><p class="nexa-auth-eyebrow">Statut sécurisé</p><h2 id="payment-title">Votre paiement</h2></div>
+      <p id="payment-status" class="nexa-auth-message nexa-auth-message--notice" role="status" aria-live="polite">Vérification de la transaction…</p>
+      <p id="payment-error" class="nexa-auth-message nexa-auth-message--error" role="alert" hidden></p>
+      <button id="retry-payment-status" class="nexa-auth-button nexa-auth-button--wide" type="button" hidden>Vérifier de nouveau</button>
+      <a id="patient-space-link" class="nexa-auth-button nexa-auth-button--wide" href="../../espace-patient.html" hidden>Ouvrir mon espace patient</a>
+      <p class="nexa-auth-switch"><a href="../../espace-patient.html#commandes">Consulter mes commandes</a> · <a href="../../care.html">Retour à Nexa - Care</a></p>
+    </section>
+  </main>
+  <footer class="nexa-auth-footer">© <span id="current-year"></span> NEXARIS MEDICAL CENTER</footer>
+  <script type="module" src="../../app.js"></script>
+  <script type="module" src="./index.js"></script>
+</body>
+</html>

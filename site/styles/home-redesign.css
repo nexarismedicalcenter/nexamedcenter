@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;600;700&display=swap");
+
+/* Accueil NEXARIS MEDICAL CENTER seulement. Le header, le footer et les autres vues
+   utilisent les styles locaux du site NEXARIS. */
+.nexa-home-redesign {
+  --home-blue: #1268ca;
+  --home-blue-dark: #103c6e;
+  --home-blue-soft: #e7f0fa;
+  --home-gray-100: #f5f6f8;
+  --home-gray-200: #f0f2f4;
+  --home-gray-300: #d8dde2;
+  --home-gray-500: #5a6369;
+  --home-gray-600: #4b555c;
+  --home-gray-800: #212a30;
+  --home-green: #13825c;
+  color: var(--home-gray-800);
+  background: #fff;
+  font-family: Roboto, Arial, sans-serif;
+}
+.nexa-home-redesign h1,
+.nexa-home-redesign h2,
+.nexa-home-redesign h3,
+.nexa-home-redesign strong { font-family: Montserrat, Roboto, Arial, sans-serif; }
+.nexa-home-redesign .nexa-home-wrap { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+.nexa-home-redesign .nexa-home-hero { overflow: hidden; background: var(--home-gray-100); }
+.nexa-home-redesign .nexa-home-hero__inner { min-height: 520px; display: grid; grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr); align-items: center; gap: clamp(2rem, 5vw, 4.4rem); padding-block: clamp(3rem, 6vw, 5.6rem); }
+.nexa-home-redesign .nexa-home-hero__copy { position: relative; z-index: 1; }
+.nexa-home-redesign .nexa-home-eyebrow,
+.nexa-home-redesign .nexa-home-kicker { display: inline-flex; align-items: center; gap: .55rem; color: var(--home-blue); font-size: .75rem; font-weight: 800; letter-spacing: .1em; }
+.nexa-home-redesign .nexa-home-eyebrow { padding: .58rem .8rem; border-radius: 999px; background: #fff; box-shadow: 0 3px 12px rgba(25,55,85,.06); }
+.nexa-home-redesign .nexa-home-hero h1 { max-width: 590px; margin: 1.35rem 0 1rem; color: var(--home-gray-800); font-size: clamp(2.6rem, 5vw, 4.5rem); font-weight: 700; letter-spacing: -.055em; line-height: 1.08; }
+.nexa-home-redesign .nexa-home-hero__copy > p { max-width: 530px; margin: 0; color: var(--home-gray-600); font-size: clamp(1.05rem, 1.6vw, 1.2rem); line-height: 1.65; }
+.nexa-home-redesign .nexa-home-hero__actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.7rem; }
+.nexa-home-redesign .nexa-home-button { min-height: 50px; display: inline-flex; align-items: center; justify-content: center; gap: .75rem; padding: .85rem 1.15rem; border: 1px solid transparent; border-radius: 10px; font-family: Roboto, Arial, sans-serif; font-size: .95rem; font-weight: 700; text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+.nexa-home-redesign .nexa-home-button:hover { transform: translateY(-2px); }
+.nexa-home-redesign .nexa-home-button--primary { color: #fff; background: var(--home-blue); box-shadow: 0 7px 18px rgba(18,104,202,.2); }
+.nexa-home-redesign .nexa-home-button--primary:hover { color: #fff; background: #105bb1; box-shadow: 0 10px 24px rgba(18,104,202,.26); }
+.nexa-home-redesign .nexa-home-button--light { color: var(--home-blue-dark); border-color: var(--home-gray-300); background: #fff; }
+.nexa-home-redesign .nexa-home-button--light:hover { color: var(--home-blue); border-color: var(--home-blue); }
+.nexa-home-redesign .nexa-home-trust { display: flex; align-items: center; gap: .8rem; margin-top: 2rem; }
+.nexa-home-redesign .nexa-home-trust__icon { width: 42px; height: 42px; display: grid; flex: 0 0 auto; place-items: center; border-radius: 50%; color: var(--home-green); background: #e6f7ec; font-size: 1.05rem; }
+.nexa-home-redesign .nexa-home-trust strong,
+.nexa-home-redesign .nexa-home-trust small { display: block; }
+.nexa-home-redesign .nexa-home-trust strong { font-size: .87rem; }
+.nexa-home-redesign .nexa-home-trust small { margin-top: .2rem; color: var(--home-gray-500); font-size: .8rem; }
+.nexa-home-redesign .nexa-home-hero__visual { position: relative; padding: 0 0 1.3rem 1.3rem; }
+.nexa-home-redesign .nexa-home-hero__image-frame { overflow: hidden; aspect-ratio: 1.15; border-radius: 24px; background: #d7eeea; box-shadow: 0 24px 65px rgba(24,52,65,.16); }
+.nexa-home-redesign .nexa-home-hero__image-frame img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 68% center; }
+.nexa-home-redesign .nexa-home-hero__floating { position: absolute; right: -10px; bottom: 0; display: flex; align-items: center; gap: .75rem; max-width: 270px; padding: .85rem 1rem; border: 1px solid rgba(225,232,237,.8); border-radius: 14px; background: #fff; box-shadow: 0 12px 32px rgba(30,51,68,.13); }
+.nexa-home-redesign .nexa-home-hero__floating > span { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; color: var(--home-green); background: #e6f7ec; }
+.nexa-home-redesign .nexa-home-hero__floating strong,
+.nexa-home-redesign .nexa-home-hero__floating small { display: block; }
+.nexa-home-redesign .nexa-home-hero__floating strong { font-size: .82rem; }
+.nexa-home-redesign .nexa-home-hero__floating small { margin-top: .2rem; color: var(--home-gray-500); font-size: .75rem; }
+
+.nexa-home-redesign .nexa-home-services { position: relative; z-index: 2; margin-top: -1.8rem; }
+.nexa-home-redesign .nexa-home-services__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; }
+.nexa-home-redesign .nexa-home-service { min-height: 114px; display: grid; grid-template-columns: 46px minmax(0,1fr) auto; align-items: center; gap: .8rem; padding: 1rem; color: inherit; border: 1px solid #e5e9ed; border-radius: 13px; background: #fff; box-shadow: 0 8px 24px rgba(33,52,69,.08); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.nexa-home-redesign .nexa-home-service:hover { transform: translateY(-4px); border-color: #b7d3ee; box-shadow: 0 14px 30px rgba(33,52,69,.13); }
+.nexa-home-redesign .nexa-home-service__icon { width: 46px; height: 46px; display: block; border-radius: 12px; object-fit: contain; }
+.nexa-home-redesign .nexa-home-service__icon--blue { color: #1268ca; background: #e7f0fa; }
+.nexa-home-redesign .nexa-home-service__icon--green { color: #15835d; background: #e6f7ec; }
+.nexa-home-redesign .nexa-home-service__icon--purple { color: #7053bf; background: #f0ebfb; }
+.nexa-home-redesign .nexa-home-service__icon--orange { color: #a75b1a; background: #fff0df; }
+.nexa-home-redesign .nexa-home-service strong,
+.nexa-home-redesign .nexa-home-service small { display: block; }
+.nexa-home-redesign .nexa-home-service strong { font-size: .84rem; line-height: 1.35; }
+.nexa-home-redesign .nexa-home-service small { margin-top: .34rem; color: var(--home-gray-500); font-size: .75rem; line-height: 1.4; }
+.nexa-home-redesign .nexa-home-service__arrow { color: #78848d; font-size: .75rem; }
+
+.nexa-home-redesign .nexa-home-main { padding: 0 0 4rem; }
+.nexa-home-redesign .nexa-home-benefits { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(2rem, 6vw, 5.5rem); padding-block: clamp(5rem, 9vw, 8rem) clamp(4rem, 7vw, 6rem); }
+.nexa-home-redesign .nexa-home-benefits__visual { position: relative; min-width: 0; }
+.nexa-home-redesign .nexa-home-benefits__visual img { width: 100%; max-height: 450px; display: block; aspect-ratio: 1.42; object-fit: cover; border-radius: 20px; background: #f4f5f3; }
+.nexa-home-redesign .nexa-home-benefits__stamp { position: absolute; right: -18px; bottom: 22px; display: inline-flex; align-items: center; gap: .55rem; padding: .8rem 1rem; border: 1px solid #e5e9ed; border-radius: 11px; color: var(--home-blue-dark); background: #fff; box-shadow: 0 8px 25px rgba(33,52,69,.1); font-size: .82rem; font-weight: 700; }
+.nexa-home-redesign .nexa-home-benefits__stamp i { color: #d55e6b; }
+.nexa-home-redesign .nexa-home-benefits__copy h2,
+.nexa-home-redesign .nexa-home-section-heading h2,
+.nexa-home-redesign .nexa-home-pro h2 { margin: .75rem 0 .7rem; color: var(--home-gray-800); font-size: clamp(1.8rem, 3vw, 2.65rem); font-weight: 700; letter-spacing: -.045em; line-height: 1.18; }
+.nexa-home-redesign .nexa-home-benefits__copy > p,
+.nexa-home-redesign .nexa-home-section-heading p,
+.nexa-home-redesign .nexa-home-pro p { color: var(--home-gray-500); font-size: 1rem; line-height: 1.65; }
+.nexa-home-redesign .nexa-home-benefit-list { display: grid; gap: 1.05rem; margin: 1.5rem 0 1.7rem; padding: 0; list-style: none; }
+.nexa-home-redesign .nexa-home-benefit-list li { display: grid; grid-template-columns: 30px minmax(0,1fr); align-items: start; gap: .8rem; }
+.nexa-home-redesign .nexa-home-benefit-list li > span { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; color: var(--home-blue); background: var(--home-blue-soft); font-size: .7rem; }
+.nexa-home-redesign .nexa-home-benefit-list strong,
+.nexa-home-redesign .nexa-home-benefit-list small { display: block; }
+.nexa-home-redesign .nexa-home-benefit-list strong { font-size: .91rem; }
+.nexa-home-redesign .nexa-home-benefit-list small { margin-top: .25rem; color: var(--home-gray-500); font-size: .82rem; line-height: 1.5; }
+.nexa-home-redesign .nexa-home-text-link { display: inline-flex; align-items: center; gap: .55rem; color: var(--home-blue); font-size: .9rem; font-weight: 700; text-decoration: none; }
+.nexa-home-redesign .nexa-home-text-link:hover { color: var(--home-blue-dark); text-decoration: underline; }
+.nexa-home-redesign .nexa-home-directory-section { padding-block: 2rem 4rem; }
+.nexa-home-redesign .nexa-home-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 1.3rem; margin-bottom: 1.5rem; }
+.nexa-home-redesign .nexa-home-section-heading h2 { margin-top: .55rem; font-size: clamp(1.65rem, 2.8vw, 2.25rem); }
+.nexa-home-redesign .nexa-home-section-heading p { margin: 0; font-size: .95rem; }
+.nexa-home-redesign .nexa-home-section-heading > .nexa-home-text-link { flex: 0 0 auto; margin-bottom: .35rem; }
+.nexa-home-redesign #health-home-medicines,
+.nexa-home-redesign #health-home-doctors { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.nexa-home-redesign .health-card { border-color: #e5e9ed; border-radius: 14px; box-shadow: 0 5px 18px rgba(33,52,69,.055); }
+.nexa-home-redesign #health-home-medicines > .health-medicine-product-card { border-color: #e5e9ed; border-radius: 14px; box-shadow: 0 5px 18px rgba(33,52,69,.055); }
+.nexa-home-redesign #health-home-medicines .health-btn.primary,
+.nexa-home-redesign #health-home-doctors .health-btn.primary { color: #fff; background: var(--home-blue); }
+.nexa-home-redesign .nexa-home-pro { margin-top: 1.2rem; padding: 2.5rem 0; background: var(--home-gray-100); }
+.nexa-home-redesign .nexa-home-pro__inner { display: grid; grid-template-columns: 58px minmax(0,1fr) auto; align-items: center; gap: 1.2rem; }
+.nexa-home-redesign .nexa-home-pro__icon { width: 58px; height: 58px; display: grid; place-items: center; border-radius: 16px; color: var(--home-blue); background: var(--home-blue-soft); font-size: 1.4rem; }
+.nexa-home-redesign .nexa-home-pro h2 { margin: .42rem 0; font-size: clamp(1.3rem, 2.5vw, 1.9rem); }
+.nexa-home-redesign .nexa-home-pro p { margin: 0; font-size: .9rem; }
+
+@media (max-width: 1000px) {
+  .nexa-home-redesign .nexa-home-hero__inner { min-height: 450px; gap: 2rem; }
+  .nexa-home-redesign .nexa-home-services__grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .nexa-home-redesign #health-home-medicines,
+  .nexa-home-redesign #health-home-doctors { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 700px) {
+  .nexa-home-redesign .nexa-home-wrap { width: min(100% - 32px, 540px); }
+  .nexa-home-redesign .nexa-home-hero__inner { grid-template-columns: 1fr; gap: 2rem; padding-block: 2.5rem 3.5rem; }
+  .nexa-home-redesign .nexa-home-hero h1 { max-width: 500px; font-size: clamp(2.45rem, 10vw, 3.45rem); }
+  .nexa-home-redesign .nexa-home-hero__copy > p { font-size: 1rem; }
+  .nexa-home-redesign .nexa-home-hero__visual { width: min(100%, 510px); margin-inline: auto; padding-left: .5rem; }
+  .nexa-home-redesign .nexa-home-hero__image-frame { aspect-ratio: 1.35; border-radius: 17px; }
+  .nexa-home-redesign .nexa-home-hero__floating { right: -3px; }
+  .nexa-home-redesign .nexa-home-services { margin-top: -1.25rem; }
+  .nexa-home-redesign .nexa-home-service { min-height: 104px; grid-template-columns: 40px minmax(0,1fr); gap: .65rem; padding: .8rem; }
+  .nexa-home-redesign .nexa-home-service__icon { width: 40px; height: 40px; }
+  .nexa-home-redesign .nexa-home-service__arrow { display: none; }
+  .nexa-home-redesign .nexa-home-benefits { grid-template-columns: 1fr; gap: 2.3rem; padding-block: 4rem; }
+  .nexa-home-redesign .nexa-home-benefits__visual img { aspect-ratio: 1.5; }
+  .nexa-home-redesign .nexa-home-benefits__stamp { right: 10px; bottom: 12px; font-size: .75rem; }
+  .nexa-home-redesign .nexa-home-section-heading { align-items: start; flex-direction: column; gap: .7rem; }
+  .nexa-home-redesign .nexa-home-section-heading > .nexa-home-text-link { margin: 0; }
+  .nexa-home-redesign .nexa-home-directory-section { padding-block: 1.5rem 3rem; }
+  .nexa-home-redesign .nexa-home-pro__inner { grid-template-columns: 48px minmax(0,1fr); gap: .9rem; }
+  .nexa-home-redesign .nexa-home-pro__icon { width: 48px; height: 48px; font-size: 1.15rem; }
+  .nexa-home-redesign .nexa-home-pro__inner > .nexa-home-button { grid-column: 1 / -1; justify-self: start; }
+}
+@media (max-width: 440px) {
+  .nexa-home-redesign .nexa-home-services__grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .nexa-home-redesign .nexa-home-service { min-height: 155px; }
+  .nexa-home-redesign #health-home-medicines,
+  .nexa-home-redesign #health-home-doctors { grid-template-columns: 1fr; }
+  .nexa-home-redesign .nexa-home-hero__actions { align-items: stretch; flex-direction: column; }
+  .nexa-home-redesign .nexa-home-hero__actions .nexa-home-button { width: 100%; }
+  .nexa-home-redesign .nexa-home-hero__floating { max-width: 230px; padding: .7rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nexa-home-redesign *, .nexa-home-redesign *::before, .nexa-home-redesign *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+/* Composition inspirée des captures de référence, avec une pile mobile dédiée. */
+.nexa-home-redesign .nexa-home-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff;
+  background: #1479c9;
+  border-radius: 0 0 28px 28px;
+}
+.nexa-home-redesign .nexa-home-hero::before,
+.nexa-home-redesign .nexa-home-hero::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+  border-radius: 48% 52% 61% 39% / 43% 46% 54% 57%;
+}
+.nexa-home-redesign .nexa-home-hero::before { width: 390px; height: 330px; right: 4%; top: 5%; background: #13b7e8; opacity: .9; transform: rotate(-18deg); }
+.nexa-home-redesign .nexa-home-hero::after { width: 280px; height: 245px; right: 0; bottom: -18%; background: #ffd044; opacity: .95; transform: rotate(24deg); }
+.nexa-home-redesign .nexa-home-hero__inner { min-height: 470px; grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr); padding-block: 3.2rem 4.2rem; }
+.nexa-home-redesign .nexa-home-eyebrow { color: #fff; background: rgba(7, 61, 118, .22); box-shadow: none; }
+.nexa-home-redesign .nexa-home-hero h1 { max-width: 610px; margin-top: 1.1rem; color: #fff; font-size: clamp(2.8rem, 5.1vw, 4.45rem); }
+.nexa-home-redesign .nexa-home-hero__copy > p { color: rgba(255,255,255,.92); }
+.nexa-home-redesign .nexa-home-hero .nexa-home-button--primary { color: #06315b; background: #fff; box-shadow: 0 8px 24px rgba(2,42,86,.18); }
+.nexa-home-redesign .nexa-home-hero .nexa-home-button--primary:hover { color: #06315b; background: #f1f8ff; }
+.nexa-home-redesign .nexa-home-hero .nexa-home-button--light { color: #fff; border-color: rgba(255,255,255,.58); background: rgba(4,68,132,.18); }
+.nexa-home-redesign .nexa-home-hero .nexa-home-button--light:hover { color: #fff; border-color: #fff; background: rgba(4,68,132,.35); }
+.nexa-home-redesign .nexa-home-trust { color: #fff; }
+.nexa-home-redesign .nexa-home-trust__icon { color: #075ca2; background: #d9f3ff; }
+.nexa-home-redesign .nexa-home-trust small { color: rgba(255,255,255,.8); }
+.nexa-home-redesign .nexa-home-hero__visual { padding: 1rem 0 1.1rem 1.1rem; }
+.nexa-home-redesign .nexa-home-hero__image-frame { aspect-ratio: 1.15; border: 7px solid rgba(255,255,255,.85); border-radius: 44% 56% 38% 62% / 53% 40% 60% 47%; background: #bfe9f8; box-shadow: 0 24px 65px rgba(3,40,83,.24); }
+.nexa-home-redesign .nexa-home-hero__image-frame img { object-position: 58% center; }
+.nexa-home-redesign .nexa-home-hero__floating { right: -4px; bottom: 0; }
+.nexa-home-redesign .nexa-home-services { margin-top: 0; padding-block: 3.75rem 2.2rem; background: #fff; }
+.nexa-home-redesign .nexa-home-services__heading { margin-bottom: 1.6rem; text-align: center; }
+.nexa-home-redesign .nexa-home-services__heading h2 { margin: 0; color: var(--home-blue-dark); font-size: clamp(1.45rem, 1.75vw, 1.65rem); font-weight: 700; letter-spacing: -.025em; line-height: 1.25; }
+.nexa-home-redesign .nexa-home-service { display: flex; flex-direction: column; align-items: center; min-height: 220px; gap: .45rem; padding: 1rem .9rem; text-align: center; border: 0; border-radius: 12px; box-shadow: none; }
+.nexa-home-redesign .nexa-home-service:hover { transform: translateY(-2px); border-color: transparent; box-shadow: none; }
+.nexa-home-redesign .nexa-home-service__icon { width: 78px; height: 78px; margin-bottom: .7rem; padding: 0; border-radius: 0; background: transparent; }
+.nexa-home-redesign .nexa-home-service strong { max-width: 300px; color: var(--home-blue-dark); font-size: .94rem; line-height: 1.35; }
+.nexa-home-redesign .nexa-home-service small { max-width: 330px; color: #41566a; font-size: .9rem; line-height: 1.55; }
+.nexa-home-redesign .nexa-home-service > a,
+.nexa-home-redesign .nexa-home-service__links a { display: inline-block; margin-top: .3rem; color: #0879c9; font-size: .83rem; font-weight: 700; text-decoration: none; }
+.nexa-home-redesign .nexa-home-service > a:hover,
+.nexa-home-redesign .nexa-home-service__links a:hover { text-decoration: underline; }
+.nexa-home-redesign .nexa-home-service__links { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
+.nexa-home-redesign .nexa-home-service__arrow { display: none; }
+.nexa-home-redesign .nexa-home-benefits { gap: clamp(2rem, 5vw, 4.5rem); padding: clamp(2rem, 5vw, 3.75rem); border-radius: 12px; background: #eef6ff; }
+.nexa-home-redesign .nexa-home-benefits__visual img { max-height: 390px; aspect-ratio: 1.2; border-radius: 44% 56% 43% 57% / 48% 45% 55% 52%; }
+.nexa-home-redesign .nexa-home-benefits__stamp { right: -10px; bottom: 12px; }
+.nexa-home-redesign .nexa-home-benefits__copy h2 { color: var(--home-blue-dark); }
+.nexa-home-redesign .nexa-home-pro { margin-top: 1.2rem; padding-block: 3.4rem; color: #fff; background: #062b50; }
+.nexa-home-redesign .nexa-home-pro__inner { grid-template-columns: 58px minmax(0,1fr) auto; }
+.nexa-home-redesign .nexa-home-pro__icon { color: #fff; background: #1479c9; }
+.nexa-home-redesign .nexa-home-pro .nexa-home-kicker { color: #8edbff; }
+.nexa-home-redesign .nexa-home-pro h2 { color: #fff; }
+.nexa-home-redesign .nexa-home-pro p { color: rgba(255,255,255,.8); }
+.nexa-home-redesign .nexa-home-pro .nexa-home-button--primary { color: #fff; background: #1479c9; box-shadow: none; }
+.nexa-home-redesign .nexa-home-pro .nexa-home-button--primary:hover { background: #0c69b4; }
+
+@media (max-width: 1000px) {
+  .nexa-home-redesign .nexa-home-hero__inner { min-height: 430px; grid-template-columns: minmax(0, 1.05fr) minmax(270px, .95fr); }
+  .nexa-home-redesign .nexa-home-services__grid { grid-template-columns: repeat(3, minmax(0,1fr)); gap: .25rem; }
+  .nexa-home-redesign .nexa-home-service { min-height: 190px; padding-inline: .65rem; }
+}
+@media (max-width: 700px) {
+  .nexa-home-redesign .nexa-home-hero { border-radius: 0 0 22px 22px; }
+  .nexa-home-redesign .nexa-home-hero::before { width: 245px; height: 200px; right: -10%; top: 54%; }
+  .nexa-home-redesign .nexa-home-hero::after { width: 170px; height: 150px; right: -7%; bottom: 0; }
+  .nexa-home-redesign .nexa-home-hero__inner { min-height: 0; grid-template-columns: 1fr; gap: 1.4rem; padding-block: 2.2rem 3rem; }
+  .nexa-home-redesign .nexa-home-hero h1 { max-width: 520px; margin: .9rem 0 .8rem; font-size: clamp(2.25rem, 10vw, 3.3rem); }
+  .nexa-home-redesign .nexa-home-hero__copy > p { max-width: 540px; font-size: 1rem; }
+  .nexa-home-redesign .nexa-home-hero__actions { gap: .6rem; margin-top: 1.25rem; }
+  .nexa-home-redesign .nexa-home-hero__visual { width: min(100%, 460px); margin: 0 auto; padding: .25rem .5rem .75rem; }
+  .nexa-home-redesign .nexa-home-hero__image-frame { aspect-ratio: 1.42; border-width: 5px; }
+  .nexa-home-redesign .nexa-home-hero__floating { right: 0; bottom: 0; }
+  .nexa-home-redesign .nexa-home-services { padding-block: 2.15rem 1.2rem; }
+  .nexa-home-redesign .nexa-home-services__heading { margin-bottom: .9rem; }
+  .nexa-home-redesign .nexa-home-services__grid { grid-template-columns: minmax(0,1fr); gap: .2rem; }
+  .nexa-home-redesign .nexa-home-service { min-height: 0; gap: .4rem; padding: 1rem .5rem; }
+  .nexa-home-redesign .nexa-home-service__icon { width: 60px; height: 60px; margin-bottom: .35rem; }
+  .nexa-home-redesign .nexa-home-service small { font-size: .9rem; }
+  .nexa-home-redesign .nexa-home-benefits { grid-template-columns: 1fr; gap: 1.6rem; padding: 1.25rem; }
+  .nexa-home-redesign .nexa-home-benefits__visual img { aspect-ratio: 1.55; }
+  .nexa-home-redesign .nexa-home-benefits__stamp { right: 4px; bottom: 8px; max-width: calc(100% - 12px); font-size: .72rem; }
+  .nexa-home-redesign .nexa-home-pro { padding-block: 2.3rem; }
+  .nexa-home-redesign .nexa-home-pro__inner { grid-template-columns: 48px minmax(0,1fr); gap: .85rem; }
+  .nexa-home-redesign .nexa-home-pro__inner > .nexa-home-button { grid-column: 1 / -1; justify-self: stretch; }
+}
+@media (max-width: 440px) {
+  .nexa-home-redesign .nexa-home-hero__actions { align-items: stretch; flex-direction: column; }
+  .nexa-home-redesign .nexa-home-hero__actions .nexa-home-button { width: 100%; }
+  .nexa-home-redesign .nexa-home-hero__floating { max-width: 230px; padding: .7rem; }
+  .nexa-home-redesign .nexa-home-services__grid { grid-template-columns: minmax(0,1fr); }
+  .nexa-home-redesign .nexa-home-service { min-height: 0; padding-inline: .2rem; }
+  .nexa-home-redesign #health-home-medicines,
+  .nexa-home-redesign #health-home-doctors { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0f493f">
+  <title>Espace pharmacie partenaire | NEXARIS MEDICAL CENTER</title>
+  <meta name="description" content="Portail de commandes des pharmacies partenaires NEXARIS.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./styles/nexa-site.css">
+  <link rel="stylesheet" href="./styles/nexa-provider.css">
+  <link rel="stylesheet" href="./styles/nexa-pharmacy-provider.css">
+</head>
+<body>
+  <header class="nexa-site-header">
+    <div class="nexa-site-header__inner">
+      <a class="nexa-site-header__brand" href="./index.html" aria-label="NEXARIS MEDICAL CENTER, accueil">
+        <span class="nexa-site-header__logo" aria-hidden="true">+</span>
+        <span class="nexa-site-header__identity"><span class="nexa-site-header__name">NEXARIS</span><span class="nexa-site-header__label">Medical Center</span></span>
+      </a>
+      <button class="nexa-site-header__toggle" type="button" aria-controls="nexa-navigation" aria-expanded="false" aria-label="Ouvrir le menu"><i class="fas fa-bars" aria-hidden="true"></i></button>
+      <nav id="nexa-navigation" class="nexa-site-header__nav" aria-label="Services NEXARIS">
+        <a href="./catalog.html?type=pharmacies">Nexa - Pharma</a>
+        <a href="./catalog.html?type=laboratories">Nexa - Lab</a>
+        <a href="./care.html">Nexa - Care</a>
+        <a href="./catalog.html?type=imaging-centers">Nexa - Imaging</a>
+      </nav>
+      <a class="nexa-site-header__cta" href="./espace-patient.html">Mon espace</a>
+    </div>
+  </header>
+
+  <main class="nexa-provider-page" id="main-content">
+    <section class="nexa-provider-hero">
+      <div class="nexa-provider-wrap">
+        <p class="nexa-provider-eyebrow">NEXA - PHARMA · PARTENAIRES VÉRIFIÉS</p>
+        <h1>Commandes de votre pharmacie.</h1>
+        <p>Suivez les commandes réglées, préparez-les et confirmez le retrait ou la livraison.</p>
+      </div>
+    </section>
+
+    <section class="nexa-provider-wrap nexa-provider-content" aria-live="polite">
+      <p id="pharmacie-loading" class="nexa-provider-message" role="status">Vérification de votre accès…</p>
+
+      <div id="pharmacie-login" class="nexa-provider-card" hidden>
+        <p class="nexa-provider-eyebrow">Connexion sécurisée</p>
+        <h2>Compte pharmacie NEXA</h2>
+        <p>Utilisez le compte associé à votre pharmacie vérifiée et publiée.</p>
+        <form id="pharmacie-login-form" class="nexa-provider-form">
+          <label for="pharmacie-email">Adresse e-mail<input id="pharmacie-email" name="email" type="email" autocomplete="username" maxlength="254" required></label>
+          <label for="pharmacie-password">Mot de passe<input id="pharmacie-password" name="password" type="password" autocomplete="current-password" required></label>
+          <p id="pharmacie-login-error" class="nexa-provider-error" role="alert" hidden></p>
+          <p id="pharmacie-reset-notice" class="nexa-provider-message" role="status" aria-live="polite" hidden></p>
+          <button id="pharmacie-login-submit" class="nexa-provider-button" type="submit">Se connecter</button>
+          <button id="pharmacie-password-reset" class="nexa-provider-button nexa-provider-button--quiet" type="button">Mot de passe oublié ?</button>
+        </form>
+      </div>
+
+      <div id="pharmacie-denied" class="nexa-provider-card" hidden>
+        <h2>Accès pharmacie vérifiée requis</h2>
+        <p id="pharmacie-denied-message" class="nexa-provider-error" role="alert"></p>
+        <button id="pharmacie-denied-sign-out" class="nexa-provider-button nexa-provider-button--quiet" type="button">Changer de compte</button>
+        <a class="nexa-provider-link" href="./index.html#professionals">Retour à NEXARIS</a>
+      </div>
+
+      <div id="pharmacie-editor" class="nexa-provider-card" hidden>
+        <div class="nexa-provider-heading">
+          <div><p class="nexa-provider-eyebrow">NEXA - PHARMA · PARTENAIRE VÉRIFIÉ</p><h2 id="pharmacie-name">Pharmacie NEXA</h2></div>
+          <button id="pharmacie-sign-out" class="nexa-provider-button nexa-provider-button--quiet" type="button">Se déconnecter</button>
+        </div>
+        <p class="nexa-provider-callout">Seules les commandes payées et rapprochées par NEXA apparaissent ici. Les détails de l’ordonnance et l’identifiant patient ne sont pas affichés. Pour une livraison, les coordonnées nécessaires à la remise sont visibles uniquement pour la pharmacie assignée. Un refus libère les lots réservés et transmet le remboursement à la revue NEXA; le règlement du patient est géré par NEXA.</p>
+        <p id="pharmacie-notice" class="nexa-provider-notice" role="status" aria-live="polite" hidden></p>
+        <p id="pharmacie-error" class="nexa-provider-error" role="alert" hidden></p>
+        <section class="nexa-provider-slots" aria-labelledby="pharmacie-products-title">
+          <div class="nexa-provider-heading">
+            <div><h3 id="pharmacie-products-title">Produits et stock par lot</h3><p class="nexa-provider-help">Une nouvelle fiche ou modification passe en revue NEXA avant publication. N’enregistrez que des médicaments et lots vérifiés par votre pharmacie.</p></div>
+            <button id="pharmacie-product-new" class="nexa-provider-button" type="button">Ajouter un produit</button>
+          </div>
+          <p id="pharmacie-products-loading" class="nexa-provider-message" role="status" hidden>Chargement des produits…</p>
+          <p id="pharmacie-products-empty" class="nexa-provider-help" hidden>Aucun produit enregistré.</p>
+          <p id="pharmacie-products-error" class="nexa-provider-error" role="alert" hidden></p>
+          <ul id="pharmacie-products-list" class="nexa-provider-list nexa-pharmacy-products" aria-label="Produits de la pharmacie"></ul>
+          <form id="pharmacie-product-form" class="nexa-provider-form nexa-pharmacy-product-form" hidden>
+            <h4 id="pharmacie-product-form-title">Nouveau produit</h4>
+            <input id="pharmacie-product-id" name="productId" type="hidden">
+            <div class="nexa-pharmacy-product-grid">
+              <label for="pharmacie-product-name">Nom du médicament<input id="pharmacie-product-name" name="name" maxlength="180" required></label>
+              <label for="pharmacie-product-dci">DCI<input id="pharmacie-product-dci" name="dci" maxlength="180" required></label>
+              <label for="pharmacie-product-dosage">Dosage ou concentration<input id="pharmacie-product-dosage" name="dosage" maxlength="120" required></label>
+              <label for="pharmacie-product-route">Voie d’administration<input id="pharmacie-product-route" name="route" maxlength="120" placeholder="Ex. orale, intramusculaire" required></label>
+              <label for="pharmacie-product-form-value">Forme pharmaceutique<input id="pharmacie-product-form-value" name="pharmaceuticalForm" maxlength="100" required></label>
+              <label for="pharmacie-product-class">Classe thérapeutique<input id="pharmacie-product-class" name="therapeuticClass" maxlength="120" required></label>
+              <label for="pharmacie-product-manufacturer">Fabricant<input id="pharmacie-product-manufacturer" name="manufacturer" maxlength="120"></label>
+              <label for="pharmacie-product-category">Catégorie réglementaire<select id="pharmacie-product-category" name="regulatoryCategory" required><option value="OTC">Sans ordonnance (OTC)</option><option value="PRESCRIPTION">Ordonnance</option><option value="CONTROLLED">Contrôlé</option><option value="NARCOTIC">Stupéfiant</option><option value="SENSITIVE">Sensible</option></select></label>
+              <label for="pharmacie-product-price">Prix unitaire (HTG)<input id="pharmacie-product-price" name="price" type="number" min="1" max="10000000" step="1" required></label>
+              <label id="pharmacie-product-stock-field" for="pharmacie-product-stock">Stock initial<input id="pharmacie-product-stock" name="stock" type="number" min="0" max="1000000" step="1" value="0" required></label>
+            </div>
+            <label class="nexa-pharmacy-check" for="pharmacie-product-prescription"><input id="pharmacie-product-prescription" name="prescriptionRequired" type="checkbox">Ce produit exige une ordonnance</label>
+            <div id="pharmacie-initial-lot-fields" class="nexa-pharmacy-product-grid">
+              <label for="pharmacie-product-lot">Numéro du lot initial<input id="pharmacie-product-lot" name="lotNumber" maxlength="80"></label>
+              <label for="pharmacie-product-expiry">Date d’expiration du lot<input id="pharmacie-product-expiry" name="expirationDate" type="date"></label>
+            </div>
+            <label for="pharmacie-product-description">Description publique<textarea id="pharmacie-product-description" name="publicDescription" maxlength="700" rows="3"></textarea></label>
+            <label class="nexa-pharmacy-check" for="pharmacie-product-cold-chain"><input id="pharmacie-product-cold-chain" name="coldChainRequired" type="checkbox">Produit nécessitant la chaîne du froid (retrait uniquement)</label>
+            <label for="pharmacie-product-delivery-mode">Modalité de remise<select id="pharmacie-product-delivery-mode" name="deliveryMode"><option value="pickup">Retrait en pharmacie</option><option value="delivery">Livraison</option><option value="both">Retrait ou livraison</option></select></label>
+            <fieldset class="nexa-pharmacy-zones"><legend>Zones de livraison et frais par zone</legend><p class="nexa-provider-help">Obligatoire pour activer la livraison; une seule zone peut correspondre à chaque commune.</p><div id="pharmacie-delivery-zones" class="nexa-pharmacy-zone-list"></div><button id="pharmacie-zone-add" class="nexa-provider-button nexa-provider-button--quiet" type="button">Ajouter une zone</button></fieldset>
+            <p id="pharmacie-product-form-message" class="nexa-provider-message" role="status" aria-live="polite" hidden></p>
+            <div class="nexa-pharmacy-product-actions"><button id="pharmacie-product-submit" class="nexa-provider-button" type="submit">Envoyer à la revue NEXA</button><button id="pharmacie-product-cancel" class="nexa-provider-button nexa-provider-button--quiet" type="button">Fermer</button></div>
+          </form>
+        </section>
+        <section class="nexa-provider-slots" aria-labelledby="pharmacie-orders-title">
+          <div class="nexa-provider-heading">
+            <div><h3 id="pharmacie-orders-title">Commandes payées</h3><p class="nexa-provider-help">Jusqu’aux 100 dernières commandes rapprochées par NEXA.</p></div>
+            <button id="pharmacie-reload" class="nexa-provider-button nexa-provider-button--quiet" type="button">Actualiser</button>
+          </div>
+          <p id="pharmacie-orders-loading" class="nexa-provider-message" role="status" hidden>Chargement des commandes…</p>
+          <p id="pharmacie-orders-empty" class="nexa-provider-help" hidden>Aucune commande payée pour le moment.</p>
+          <ul id="pharmacie-orders-list" class="nexa-provider-list nexa-diagnostic-orders" aria-label="Commandes de la pharmacie"></ul>
+        </section>
+      </div>
+    </section>
+  </main>
+
+    <footer class="nexa-footer">
+    <div class="nexa-footer__inner">
+      <section class="nexa-footer__brand" aria-label="À propos de NEXARIS">
+        <span class="nexa-footer__mark" aria-hidden="true">N</span>
+        <strong>NEXARIS MEDICAL CENTER</strong>
+        <p>Pharmacie, laboratoire, soins et imagerie réunis dans un même espace santé.</p>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-services">
+        <h2 class="nexa-footer__heading" id="nexa-footer-services">NOS SERVICES</h2>
+        <nav aria-label="Services NEXARIS">
+          <a href="./catalog.html?type=pharmacies">Nexa - Pharma</a>
+          <a href="./catalog.html?type=laboratories">Nexa - Lab</a>
+          <a href="./care.html">Nexa - Care</a>
+          <a href="./catalog.html?type=imaging-centers">Nexa - Imaging</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-professionals">
+        <h2 class="nexa-footer__heading" id="nexa-footer-professionals">ESPACE PROFESSIONNEL</h2>
+        <nav aria-label="Candidatures et accès professionnels">
+          <a href="./candidature-medecin.html">Candidature médecin</a>
+          <a href="./candidature-infirmier.html">Candidature infirmière</a>
+          <a href="./candidature-partenaire.html">Candidature pharmacie, laboratoire ou imagerie</a>
+          <a href="./espace-professionnel.html">Accès médecin</a>
+          <a href="./espace-professionnel-infirmier.html">Accès infirmier</a>
+          <a href="./espace-centre.html">Accès laboratoire ou imagerie</a>
+          <a href="./espace-pharmacie.html">Accès pharmacie</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-information">
+        <h2 class="nexa-footer__heading" id="nexa-footer-information">INFORMATIONS</h2>
+        <nav aria-label="Informations légales">
+          <a href="./conditions.html">Conditions</a>
+          <a href="./confidentialite.html">Confidentialité</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-payments">
+        <h2 class="nexa-footer__heading" id="nexa-footer-payments">PAIEMENTS ACCEPTÉS</h2>
+        <div class="nexa-footer__payments" aria-label="MonCash et Wallet NEXA">
+          <span class="nexa-footer__payment"><i class="fas fa-mobile-screen-button" aria-hidden="true"></i> MonCash</span>
+          <span class="nexa-footer__payment"><i class="fas fa-wallet" aria-hidden="true"></i> Wallet NEXA</span>
+        </div>
+      </section>
+      <div class="nexa-footer__copyright">
+        <span>© <span id="current-year"></span> NEXARIS MEDICAL CENTER. Tous droits réservés.</span>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="./app.js"></script>
+  <script type="module" src="./espace-pharmacie.js"></script>
+</body>
+</html>

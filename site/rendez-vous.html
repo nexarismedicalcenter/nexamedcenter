@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0f493f">
+  <title>Disponibilités médicales | NEXARIS MEDICAL CENTER</title>
+  <meta name="description" content="Consultez les disponibilités publiées par un professionnel vérifié NEXARIS.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./styles/nexa-health.css">
+  <link rel="stylesheet" href="./styles/nexa-site.css">
+  <link rel="stylesheet" href="./styles/nexa-booking.css">
+</head>
+<body>
+  <header id="nexa-header-root" class="nexa-site-header">
+    <div class="nexa-site-header__inner">
+      <a class="nexa-site-header__brand" href="./index.html" aria-label="NEXARIS MEDICAL CENTER, accueil">
+        <span class="nexa-site-header__logo" aria-hidden="true"><i class="fas fa-plus"></i></span>
+        <span class="nexa-site-header__identity"><span class="nexa-site-header__name">NEXARIS</span><span class="nexa-site-header__label">Medical Center</span></span>
+      </a>
+      <button class="nexa-site-header__toggle" type="button" aria-controls="nexa-navigation" aria-expanded="false">
+        <span class="sr-only">Ouvrir le menu</span><i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <nav id="nexa-navigation" class="nexa-site-header__nav" aria-label="Services NEXARIS">
+        <a href="./catalog.html?type=pharmacies">Nexa - Pharma</a>
+        <a href="./catalog.html?type=laboratories">Nexa - Lab</a>
+        <a href="./care.html" aria-current="page">Nexa - Care</a>
+        <a href="./catalog.html?type=imaging-centers">Nexa - Imaging</a>
+      </nav>
+      <a class="nexa-site-header__cta" href="./espace-patient.html"><i class="fas fa-user" aria-hidden="true"></i><span>Mon espace</span></a>
+    </div>
+  </header>
+
+  <main class="nexa-availability">
+    <section class="nexa-availability__intro" aria-labelledby="availability-title">
+      <div class="nexa-availability__wrap">
+        <a class="nexa-availability__back" href="./care.html"><i class="fas fa-arrow-left" aria-hidden="true"></i> Retour à Nexa - Care</a>
+        <p class="nexa-availability__eyebrow">NEXARIS MEDICAL CENTER · NEXA - CARE</p>
+        <h1 id="availability-title">Disponibilités médicales</h1>
+        <p>Consultez les créneaux publiés par ce professionnel vérifié.</p>
+      </div>
+    </section>
+
+    <section class="nexa-availability__content nexa-availability__wrap" aria-labelledby="provider-name">
+      <div class="nexa-availability__card">
+        <p id="availability-status" class="nexa-availability__status" role="status" aria-live="polite">Chargement des disponibilités…</p>
+        <p id="availability-error" class="nexa-availability__error" role="alert" hidden></p>
+        <button id="availability-retry" class="nexa-availability__button nexa-availability__button--secondary" type="button" hidden>Réessayer</button>
+
+        <div id="provider-summary" class="nexa-availability__provider" hidden>
+          <p class="nexa-availability__provider-label">Professionnel de santé</p>
+          <h2 id="provider-name"></h2>
+          <p id="provider-details"></p>
+          <p id="provider-service"></p>
+          <p id="provider-price" class="nexa-availability__price"></p>
+          <div id="home-visit-options" class="nexa-availability__home-visit" hidden>
+            <label for="home-visit-service">Type de visite à domicile</label>
+            <select id="home-visit-service"></select>
+            <p id="home-visit-zones"></p>
+          </div>
+        </div>
+
+        <fieldset class="nexa-availability__service-picker">
+          <legend>Type de service</legend>
+          <label><input type="radio" name="service-type" value="TELECONSULTATION"><span>Téléconsultation · 25 minutes</span></label>
+          <label><input type="radio" name="service-type" value="HOME_VISIT"><span>Visite médicale à domicile · 1 heure</span></label>
+        </fieldset>
+
+        <h2 class="nexa-availability__slots-title">Créneaux disponibles · heure d’Haïti</h2>
+        <p id="slots-empty" class="nexa-availability__empty" hidden>Aucun créneau disponible pour le moment. Consultez de nouveau cette page plus tard.</p>
+        <ol id="availability-slots" class="nexa-availability__slots" aria-label="Créneaux publiés"></ol>
+        <section id="booking-panel" class="nexa-booking-panel" aria-labelledby="booking-title" hidden>
+          <h2 id="booking-title">Réserver ce créneau</h2>
+          <p id="booking-selected-slot" class="nexa-booking-panel__selected"></p>
+          <form id="booking-form" class="nexa-booking-form">
+            <fieldset id="home-visit-address" class="nexa-booking-form__address" hidden>
+              <legend>Adresse de la visite à domicile</legend>
+              <label for="home-visit-zone">Commune et département desservis</label>
+              <select id="home-visit-zone" name="zone" required></select>
+              <label for="home-visit-address-line">Adresse complète</label>
+              <textarea id="home-visit-address-line" name="addressLine" maxlength="220" rows="3" autocomplete="street-address" required></textarea>
+              <label for="home-visit-phone">Téléphone de contact</label>
+              <input id="home-visit-phone" name="contactPhone" type="tel" inputmode="tel" autocomplete="tel" maxlength="24" required>
+              <p>Cette adresse sera transmise au professionnel chargé de la visite.</p>
+            </fieldset>
+            <p id="booking-error" class="nexa-availability__error" role="alert" hidden></p>
+            <p id="booking-status" class="nexa-availability__status" role="status" aria-live="polite" hidden></p>
+            <button id="reserve-appointment" class="nexa-availability__button" type="submit">Continuer vers le paiement</button>
+          </form>
+          <div id="payment-confirmation" class="nexa-booking-panel__payment" hidden>
+            <h3>Montant à payer</h3>
+            <p id="payment-amount-summary"></p>
+            <p id="wallet-payment-balance" role="status" aria-live="polite">Solde Wallet NEXA : chargement…</p>
+            <p>La réservation reste bloquée pendant 20 minutes. Vous pouvez payer avec votre Wallet NEXA ou MonCash. Pour MonCash, une passerelle sécurisée reçoit uniquement les informations techniques nécessaires au paiement; aucune identité, adresse ou donnée médicale ne lui est transmise.</p>
+            <button id="pay-wallet" class="nexa-availability__button" type="button">Payer avec Wallet NEXA</button>
+            <button id="pay-moncash" class="nexa-availability__button" type="button">Payer avec MonCash</button>
+            <a id="wallet-appointment-link" href="./espace-patient.html" hidden>Voir mes rendez-vous</a>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+    <footer class="nexa-footer">
+    <div class="nexa-footer__inner">
+      <section class="nexa-footer__brand" aria-label="À propos de NEXARIS">
+        <span class="nexa-footer__mark" aria-hidden="true">N</span>
+        <strong>NEXARIS MEDICAL CENTER</strong>
+        <p>Pharmacie, laboratoire, soins et imagerie réunis dans un même espace santé.</p>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-services">
+        <h2 class="nexa-footer__heading" id="nexa-footer-services">NOS SERVICES</h2>
+        <nav aria-label="Services NEXARIS">
+          <a href="./catalog.html?type=pharmacies">Nexa - Pharma</a>
+          <a href="./catalog.html?type=laboratories">Nexa - Lab</a>
+          <a href="./care.html">Nexa - Care</a>
+          <a href="./catalog.html?type=imaging-centers">Nexa - Imaging</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-professionals">
+        <h2 class="nexa-footer__heading" id="nexa-footer-professionals">ESPACE PROFESSIONNEL</h2>
+        <nav aria-label="Candidatures et accès professionnels">
+          <a href="./candidature-medecin.html">Candidature médecin</a>
+          <a href="./candidature-infirmier.html">Candidature infirmière</a>
+          <a href="./candidature-partenaire.html">Candidature pharmacie, laboratoire ou imagerie</a>
+          <a href="./espace-professionnel.html">Accès médecin</a>
+          <a href="./espace-professionnel-infirmier.html">Accès infirmier</a>
+          <a href="./espace-centre.html">Accès laboratoire ou imagerie</a>
+          <a href="./espace-pharmacie.html">Accès pharmacie</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-information">
+        <h2 class="nexa-footer__heading" id="nexa-footer-information">INFORMATIONS</h2>
+        <nav aria-label="Informations légales">
+          <a href="./conditions.html">Conditions</a>
+          <a href="./confidentialite.html">Confidentialité</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-payments">
+        <h2 class="nexa-footer__heading" id="nexa-footer-payments">PAIEMENTS ACCEPTÉS</h2>
+        <div class="nexa-footer__payments" aria-label="MonCash et Wallet NEXA">
+          <span class="nexa-footer__payment"><i class="fas fa-mobile-screen-button" aria-hidden="true"></i> MonCash</span>
+          <span class="nexa-footer__payment"><i class="fas fa-wallet" aria-hidden="true"></i> Wallet NEXA</span>
+        </div>
+      </section>
+      <div class="nexa-footer__copyright">
+        <span>© <span id="current-year"></span> NEXARIS MEDICAL CENTER. Tous droits réservés.</span>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="./app.js"></script>
+  <script type="module" src="./rendez-vous.js"></script>
+</body>
+</html>

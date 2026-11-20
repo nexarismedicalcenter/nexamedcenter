@@ -1,0 +1,22 @@
+.nexa-patient-results__heading { display: flex; align-items: center; justify-content: space-between; gap: .8rem; }
+.nexa-patient-results__heading h2 { margin: 0; }
+.nexa-patient-results__heading button { min-height: 42px; }
+.nexa-patient-results__uploads { display: grid; gap: .8rem; margin-block: 1rem; }
+.nexa-patient-results__exam { display: grid; gap: .75rem; padding: 1rem; border: 1px solid #d8e7e0; border-radius: 12px; background: #f8fbf9; }
+.nexa-patient-results__exam h3 { margin: 0; color: #244940; font-size: 1rem; }
+.nexa-patient-results__exam p { margin: 0; color: #526c65; font-size: .84rem; line-height: 1.5; }
+.nexa-patient-results__exam label { display: grid; gap: .4rem; color: #31554c; font-size: .82rem; font-weight: 750; }
+.nexa-patient-results__exam input[type="file"] { max-width: 100%; color: #334c46; font: inherit; font-size: .82rem; }
+.nexa-patient-results__confirm { display: flex !important; grid-template-columns: auto 1fr; align-items: start; gap: .55rem !important; font-weight: 600 !important; }
+.nexa-patient-results__confirm input { margin-top: .2rem; }
+.nexa-patient-results__files { margin: 0; padding-left: 1.2rem; color: #526c65; font-size: .8rem; }
+.nexa-patient-results__feedback { min-height: 1.3em; color: #31554c; font-size: .82rem; }
+.nexa-patient-results__submit,.nexa-patient-results__file { justify-self: start; min-height: 42px; padding: .6rem .85rem; border: 1px solid #0f493f; border-radius: 9px; color: #fff; background: #0f493f; font: inherit; font-size: .82rem; font-weight: 800; cursor: pointer; }
+.nexa-patient-results__file { margin: .25rem .35rem .25rem 0; color: #244940; background: #fff; }
+.nexa-patient-results__submit:disabled,.nexa-patient-results__file:disabled { opacity: .6; cursor: wait; }
+.nexa-patient-results__submit:focus-visible,.nexa-patient-results__file:focus-visible,.nexa-patient-results__heading button:focus-visible,.nexa-patient-results__exam input:focus-visible { outline: 3px solid #51b89f; outline-offset: 3px; }
+.nexa-patient-results__privacy { color: #607a73; font-size: .78rem; line-height: 1.5; }
+@media (max-width: 560px) {
+  .nexa-patient-results__heading { align-items: flex-start; flex-direction: column; }
+  .nexa-patient-results__exam { padding: .8rem; }
+}

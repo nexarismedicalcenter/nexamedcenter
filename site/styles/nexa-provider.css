@@ -1,0 +1,122 @@
+.nexa-provider-page { min-height: 70vh; background: #f6faf8; }
+.nexa-provider-wrap { width: min(960px, calc(100% - 40px)); margin-inline: auto; }
+.nexa-provider-hero { padding: clamp(2.5rem, 7vw, 5rem) 0; color: #fff; background: #1278cc; }
+.nexa-provider-hero h1 { max-width: 720px; margin: 0; font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.05; letter-spacing: -.04em; }
+.nexa-provider-hero p:last-child { max-width: 680px; margin: 1rem 0 0; color: rgba(255,255,255,.9); line-height: 1.6; }
+.nexa-provider-eyebrow { margin: 0 0 .55rem; color: #08735e; font-size: .72rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.nexa-provider-hero .nexa-provider-eyebrow { color: rgba(255,255,255,.86); }
+.nexa-provider-content { display: grid; gap: 1rem; padding-block: 2rem 4rem; }
+.nexa-provider-card { display: grid; gap: 1rem; padding: clamp(1.1rem, 3vw, 2rem); border: 1px solid #e0e9e5; border-radius: 16px; background: #fff; box-shadow: 0 12px 34px rgba(19,61,57,.07); }
+.nexa-provider-card[hidden],.nexa-provider-form [hidden],.nexa-provider-message[hidden],.nexa-provider-error[hidden],.nexa-provider-notice[hidden],.nexa-provider-help[hidden] { display: none; }
+.nexa-provider-slots[hidden] { display: none; }
+.nexa-provider-card h2,.nexa-provider-card h3 { margin: 0; color: #183d36; }
+.nexa-provider-card h2 { font-size: clamp(1.35rem, 3vw, 1.8rem); }
+.nexa-provider-card h3 { font-size: 1.05rem; }
+.nexa-provider-card > p { margin: 0; color: #526c65; font-size: .9rem; line-height: 1.6; }
+.nexa-provider-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.nexa-provider-heading h3 { margin: 0; }
+.nexa-provider-callout,.nexa-provider-help { padding: .85rem 1rem; border-radius: 10px; color: #526c65; background: #f4f8f6; font-size: .85rem; line-height: 1.55; }
+.nexa-provider-profile-photo { width: 112px; height: 112px; border: 1px solid #d7e6df; border-radius: 50%; object-fit: cover; background: #f4f8f6; }
+.nexa-provider-photo-consent { display: grid; grid-template-columns: auto 1fr; align-items: start; gap: .55rem; color: #31554c; font-size: .84rem; line-height: 1.5; }
+.nexa-provider-photo-consent input { width: 1.1rem; min-height: 1.1rem; margin-top: .12rem; accent-color: #0f493f; }
+.nexa-provider-message,.nexa-provider-error,.nexa-provider-notice { margin: 0; padding: .8rem .9rem; border-radius: 10px; font-size: .88rem; line-height: 1.5; }
+.nexa-provider-message { color: #31554c; background: #f2f8f5; }
+.nexa-provider-error { color: #8b2929; background: #fff4f2; }
+.nexa-provider-notice { color: #245a49; background: #eaf7f0; }
+.nexa-provider-form { display: grid; gap: .8rem; }
+.nexa-provider-form label { display: grid; gap: .4rem; color: #31554c; font-size: .84rem; font-weight: 750; }
+.nexa-provider-form input,.nexa-provider-form select { box-sizing: border-box; width: 100%; min-height: 46px; padding: .65rem .75rem; border: 1px solid #cadbd4; border-radius: 9px; color: #203a36; background: #fff; font: inherit; }
+.nexa-provider-form input:focus-visible,.nexa-provider-form select:focus-visible,.nexa-provider-button:focus-visible,.nexa-provider-link:focus-visible { outline: 3px solid #51b89f; outline-offset: 3px; }
+.nexa-provider-button { justify-self: start; min-height: 44px; padding: .65rem .9rem; border: 1px solid #0f493f; border-radius: 9px; color: #fff; background: #0f493f; font: inherit; font-size: .85rem; font-weight: 800; cursor: pointer; }
+.nexa-provider-button:disabled { opacity: .6; cursor: wait; }
+.nexa-provider-button--quiet { color: #244940; border-color: #d6e4de; background: #fff; }
+.nexa-provider-link { justify-self: start; color: #08735e; font-weight: 800; }
+.nexa-provider-slots { display: grid; gap: .8rem; padding-top: 1rem; border-top: 1px solid #e1ebe6; }
+.nexa-provider-clinical { display: grid; gap: .6rem; width: 100%; padding-top: .7rem; border-top: 1px solid #e1ebe6; }
+.nexa-provider-list li > .nexa-provider-clinical { flex: 1 1 100%; }
+.nexa-provider-clinical__panel { padding: 1rem; border: 1px solid #d8e7e0; border-radius: 10px; background: #f8fbf9; }
+.nexa-provider-clinical__panel[hidden] { display: none; }
+.nexa-provider-clinical__panel h4 { margin: 0 0 .55rem; color: #244940; }
+.nexa-provider-clinical__history-list { display: grid; gap: .75rem; margin-top: .75rem; }
+.nexa-provider-clinical__block ul { margin: .25rem 0 0; padding-inline-start: 1.2rem; color: #334c46; font-size: .84rem; line-height: 1.5; }
+.nexa-provider-clinical__notice { margin: 0; color: #526c65; font-size: .82rem; line-height: 1.5; }
+.nexa-provider-clinical__form { display: grid; gap: .75rem; margin-top: .8rem; }
+.nexa-provider-clinical__form label { display: grid; gap: .35rem; color: #31554c; font-size: .8rem; font-weight: 750; }
+.nexa-provider-clinical__form textarea,.nexa-provider-clinical__form input { box-sizing: border-box; width: 100%; min-height: 42px; padding: .6rem .7rem; border: 1px solid #cadbd4; border-radius: 8px; color: #203a36; background: #fff; font: inherit; font-size: .88rem; }
+.nexa-provider-clinical__form textarea { resize: vertical; }
+.nexa-provider-clinical__form textarea:focus-visible,.nexa-provider-clinical__form input:focus-visible { outline: 3px solid #51b89f; outline-offset: 2px; }
+.nexa-provider-clinical__vitals { min-width: 0; margin: 0; padding: .8rem; border: 1px solid #d8e7e0; border-radius: 8px; }
+.nexa-provider-clinical__vitals legend { padding-inline: .35rem; color: #31554c; font-size: .82rem; font-weight: 800; }
+.nexa-provider-clinical__vital-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .65rem; }
+.nexa-provider-prescription__medicine { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .65rem; padding: .7rem 0; border-bottom: 1px solid #e1ebe6; }
+.nexa-provider-prescription__medicine label:last-of-type { grid-column: 1 / -1; }
+.nexa-provider-clinical__actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+.nexa-provider-clinical__actions button:disabled,.nexa-provider-clinical__form button:disabled { opacity: .6; cursor: wait; }
+.nexa-provider-clinical__block { display: grid; gap: .35rem; padding: .65rem 0; border-bottom: 1px solid #e1ebe6; }
+.nexa-provider-clinical__block strong { color: #244940; font-size: .84rem; }
+.nexa-provider-clinical__block small { color: #607a73; font-size: .76rem; }
+.nexa-provider-clinical__block p { margin: 0; color: #334c46; font-size: .86rem; line-height: 1.55; white-space: pre-wrap; overflow-wrap: anywhere; }
+.nexa-provider-clinical__facts { display: grid; grid-template-columns: minmax(8rem, .65fr) 1fr; gap: .45rem .8rem; margin: .8rem 0; }
+.nexa-provider-clinical__facts dt { color: #31554c; font-size: .82rem; font-weight: 800; }
+.nexa-provider-clinical__facts dd { margin: 0; color: #334c46; font-size: .84rem; line-height: 1.45; overflow-wrap: anywhere; }
+.nexa-provider-result-follow-up { flex: 1 1 100%; padding-top: .7rem; border-top: 1px solid #e1ebe6; }
+.nexa-provider-result-follow-up > summary { width: fit-content; color: #08735e; font-weight: 800; cursor: pointer; }
+.nexa-provider-result-follow-up__forms { display: grid; gap: .85rem; padding-top: .8rem; }
+.nexa-provider-result-follow-up__form { display: grid; gap: .55rem; padding: .85rem; border: 1px solid #d8e7e0; border-radius: 10px; background: #f8fbf9; }
+.nexa-provider-result-follow-up__form h4 { margin: 0; color: #244940; font-size: .9rem; }
+.nexa-provider-result-follow-up__form label { display: grid; gap: .35rem; color: #31554c; font-size: .8rem; font-weight: 750; }
+.nexa-provider-result-follow-up__form textarea,.nexa-provider-result-follow-up__form input,.nexa-provider-result-follow-up__form select { box-sizing: border-box; width: 100%; min-height: 42px; padding: .6rem .7rem; border: 1px solid #cadbd4; border-radius: 8px; color: #203a36; background: #fff; font: inherit; font-size: .88rem; }
+.nexa-provider-result-follow-up__form textarea { resize: vertical; }
+.nexa-provider-result-follow-up__form textarea:focus-visible,.nexa-provider-result-follow-up__form input:focus-visible,.nexa-provider-result-follow-up__form select:focus-visible,.nexa-provider-result-follow-up > summary:focus-visible { outline: 3px solid #51b89f; outline-offset: 2px; }
+.nexa-provider-result-follow-up__feedback { margin: 0; color: #31554c; font-size: .82rem; line-height: 1.45; }
+.nexa-provider-list { display: grid; gap: .65rem; margin: 0; padding: 0; list-style: none; }
+.nexa-provider-list li { display: flex; align-items: center; justify-content: space-between; gap: .8rem; padding: .85rem; border: 1px solid #e1ebe6; border-radius: 11px; background: #fbfdfc; }
+.nexa-provider-list li > div { display: grid; gap: .25rem; min-width: 0; }
+.nexa-provider-list strong { color: #244940; font-size: .9rem; }
+.nexa-provider-list span,.nexa-provider-list small { color: #607a73; font-size: .82rem; line-height: 1.45; }
+.nexa-provider-notification.is-unread { border-color: #b9d8cc; background: #f4fbf8; }
+.nexa-provider-notification__body { margin: 0; color: #526c65; font-size: .84rem; line-height: 1.5; overflow-wrap: anywhere; }
+.nexa-provider-notification time { color: #607a73; font-size: .78rem; line-height: 1.45; }
+.nexa-provider-notification__actions { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem; }
+.nexa-provider-notification__actions .nexa-provider-button { min-height: 38px; padding: .5rem .65rem; }
+.nexa-provider-form textarea { box-sizing: border-box; width: 100%; min-height: 42px; padding: .6rem .7rem; border: 1px solid #cadbd4; border-radius: 8px; color: #203a36; background: #fff; font: inherit; font-size: .88rem; resize: vertical; }
+.nexa-provider-form textarea:focus-visible,.nexa-provider-form input[type="checkbox"]:focus-visible { outline: 3px solid #51b89f; outline-offset: 2px; }
+.nexa-diagnostic-orders > li { display: grid; gap: .9rem; align-items: stretch; }
+.nexa-diagnostic-order__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.nexa-diagnostic-order__top > div { display: grid; gap: .25rem; }
+.nexa-diagnostic-order__status { max-width: 18rem; padding: .4rem .6rem; border-radius: 999px; color: #245a49 !important; background: #eaf7f0; font-weight: 750; text-align: center; }
+.nexa-diagnostic-lines { display: grid; gap: .7rem; margin: 0; padding: 0; list-style: none; }
+.nexa-diagnostic-lines > li { display: grid; gap: .65rem; padding: .8rem; border: 1px solid #e1ebe6; border-radius: 10px; background: #fff; }
+.nexa-diagnostic-lines > li > .nexa-provider-help,.nexa-diagnostic-lines > li > .nexa-provider-error { margin: 0; }
+.nexa-diagnostic-upload,.nexa-diagnostic-refusal { padding: .8rem; border: 1px solid #d8e7e0; border-radius: 10px; background: #f8fbf9; }
+.nexa-diagnostic-files { display: grid; gap: .45rem; margin: 0; padding: 0; list-style: none; }
+.nexa-diagnostic-files > li { display: grid; grid-template-columns: minmax(0,1fr) minmax(10rem,.65fr) auto; align-items: center; gap: .6rem; padding: .65rem; border: 1px solid #e1ebe6; border-radius: 8px; background: #fff; }
+.nexa-diagnostic-files label { display: grid; gap: .3rem; color: #31554c; font-size: .78rem; font-weight: 750; }
+.nexa-diagnostic-files select { box-sizing: border-box; width: 100%; min-height: 40px; padding: .5rem; border: 1px solid #cadbd4; border-radius: 8px; color: #203a36; background: #fff; font: inherit; }
+.nexa-diagnostic-files select:focus-visible,.nexa-diagnostic-upload input:focus-visible,.nexa-diagnostic-upload textarea:focus-visible,.nexa-diagnostic-refusal textarea:focus-visible { outline: 3px solid #51b89f; outline-offset: 2px; }
+.nexa-diagnostic-confirm { grid-template-columns: auto 1fr !important; align-items: start; }
+.nexa-diagnostic-confirm input { width: 1.1rem; min-height: 1.1rem; margin-top: .12rem; accent-color: #0f493f; }
+.nexa-diagnostic-order__actions { display: flex; flex-wrap: wrap; align-items: start; gap: .8rem; }
+.nexa-diagnostic-refusal { display: grid; gap: .6rem; width: min(100%, 28rem); }
+.nexa-diagnostic-refusal label { display: grid; gap: .4rem; color: #31554c; font-size: .82rem; font-weight: 750; }
+.nexa-diagnostic-refusal textarea { box-sizing: border-box; width: 100%; min-height: 42px; padding: .6rem .7rem; border: 1px solid #cadbd4; border-radius: 8px; color: #203a36; background: #fff; font: inherit; }
+.nexa-provider-mission-close { display: grid; flex: 1 1 100%; gap: .55rem; margin-top: .75rem; padding-top: .8rem; border-top: 1px solid #e1ebe6; }
+.nexa-provider-mission-close h4 { margin: 0; color: #244940; font-size: .9rem; }
+.nexa-provider-mission-close__form { display: grid; grid-template-columns: minmax(12rem,.8fr) auto; align-items: end; gap: .55rem; }
+.nexa-provider-mission-close__form label { display: grid; gap: .35rem; color: #31554c; font-size: .8rem; font-weight: 750; }
+.nexa-provider-mission-close__form input { box-sizing: border-box; width: 100%; min-height: 42px; padding: .6rem .7rem; border: 1px solid #cadbd4; border-radius: 8px; color: #203a36; background: #fff; font: inherit; letter-spacing: .18em; }
+.nexa-provider-mission-close__form input:focus-visible { outline: 3px solid #51b89f; outline-offset: 2px; }
+.nexa-provider-mission-close__message { grid-column: 1 / -1; margin: 0; color: #31554c; font-size: .82rem; line-height: 1.45; }
+.nexa-provider-mission-close__message:empty { display: none; }
+@media (max-width: 620px) {
+  .nexa-provider-wrap { width: min(100% - 28px, 960px); }
+  .nexa-provider-heading,.nexa-provider-list li { align-items: flex-start; flex-direction: column; }
+  .nexa-diagnostic-order__top { flex-direction: column; }
+  .nexa-diagnostic-files > li { grid-template-columns: 1fr; }
+  .nexa-provider-clinical__facts { grid-template-columns: 1fr; gap: .15rem; }
+  .nexa-provider-clinical__facts dd { margin-bottom: .4rem; }
+  .nexa-provider-clinical__vital-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .nexa-provider-prescription__medicine { grid-template-columns: 1fr; }
+  .nexa-provider-prescription__medicine label:last-of-type { grid-column: auto; }
+  .nexa-provider-mission-close__form { grid-template-columns: 1fr; }
+}

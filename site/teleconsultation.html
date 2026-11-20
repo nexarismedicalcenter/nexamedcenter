@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0f493f">
+  <title>Téléconsultation | NEXARIS MEDICAL CENTER</title>
+  <meta name="description" content="Séance vidéo sécurisée Nexa - Care.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./styles/nexa-site.css">
+  <link rel="stylesheet" href="./styles/nexa-teleconsultation.css">
+</head>
+<body>
+  <header class="nexa-site-header">
+    <div class="nexa-site-header__inner">
+      <a class="nexa-site-header__brand" href="./index.html" aria-label="NEXARIS MEDICAL CENTER, accueil">
+        <span class="nexa-site-header__logo" aria-hidden="true">+</span>
+        <span class="nexa-site-header__identity"><span class="nexa-site-header__name">NEXARIS</span><span class="nexa-site-header__label">Medical Center</span></span>
+      </a>
+      <button class="nexa-site-header__toggle" type="button" aria-controls="nexa-navigation" aria-expanded="false" aria-label="Ouvrir le menu"><span class="sr-only">Ouvrir le menu</span><i class="fas fa-bars" aria-hidden="true"></i></button>
+      <nav id="nexa-navigation" class="nexa-site-header__nav" aria-label="Services NEXARIS">
+        <a class="nexa-site-header__link" href="./catalog.html?type=pharmacies">Nexa - Pharma</a>
+        <a class="nexa-site-header__link" href="./catalog.html?type=laboratories">Nexa - Lab</a>
+        <a class="nexa-site-header__link" href="./care.html" aria-current="page">Nexa - Care</a>
+        <a class="nexa-site-header__link" href="./catalog.html?type=imaging-centers">Nexa - Imaging</a>
+      </nav>
+      <a class="nexa-site-header__cta" href="./espace-patient.html" aria-label="Mon espace"><i class="fas fa-user" aria-hidden="true"></i><span>Mon espace</span></a>
+    </div>
+  </header>
+
+  <main class="nexa-teleconsultation" id="main-content">
+    <section class="nexa-teleconsultation__hero">
+      <div class="nexa-teleconsultation__wrap">
+        <p class="nexa-teleconsultation__eyebrow">NEXA - CARE · SÉANCE PRIVÉE</p>
+        <h1>Téléconsultation</h1>
+        <p>Votre séance vidéo est accessible uniquement aux participants du rendez-vous confirmé.</p>
+      </div>
+    </section>
+
+    <section class="nexa-teleconsultation__wrap nexa-teleconsultation__content" aria-live="polite">
+      <p id="teleconsultation-loading" class="nexa-teleconsultation__message" role="status">Vérification de votre rendez-vous…</p>
+      <p id="teleconsultation-error" class="nexa-teleconsultation__error" role="alert" hidden></p>
+      <p id="teleconsultation-notice" class="nexa-teleconsultation__message" role="status" hidden></p>
+
+      <div id="teleconsultation-session" class="nexa-teleconsultation__card" hidden>
+        <div class="nexa-teleconsultation__heading">
+          <div><h2>Votre rendez-vous</h2><p id="teleconsultation-time" class="nexa-teleconsultation__time"></p></div>
+          <p id="video-countdown" class="nexa-teleconsultation__countdown" role="timer" aria-live="off" hidden></p>
+        </div>
+        <p id="teleconsultation-status" class="nexa-teleconsultation__message" role="status">La salle est prête à l’heure prévue.</p>
+
+        <div class="nexa-teleconsultation__video-grid">
+          <section class="nexa-teleconsultation__video-card" aria-label="Votre caméra">
+            <h3>Votre caméra</h3>
+            <div id="local-video" class="nexa-teleconsultation__video"><span>Votre caméra apparaîtra ici après autorisation.</span></div>
+          </section>
+          <section class="nexa-teleconsultation__video-card" aria-label="Autre participant">
+            <h3>Autre participant</h3>
+            <div id="remote-video" class="nexa-teleconsultation__video"><span>En attente de l’autre participant…</span></div>
+          </section>
+        </div>
+
+        <div class="nexa-teleconsultation__actions" aria-label="Commandes de la séance">
+          <button id="invite-participant" class="nexa-teleconsultation__button" type="button">Inviter l’autre participant</button>
+          <button id="join-session" class="nexa-teleconsultation__button nexa-teleconsultation__button--secondary" type="button">Rejoindre directement</button>
+          <button id="accept-invitation" class="nexa-teleconsultation__button" type="button" hidden>Accepter et rejoindre</button>
+          <button id="refuse-invitation" class="nexa-teleconsultation__button nexa-teleconsultation__button--quiet" type="button" hidden>Décliner l’invitation</button>
+          <button id="toggle-microphone" class="nexa-teleconsultation__button nexa-teleconsultation__button--secondary" type="button" hidden>Couper le micro</button>
+          <button id="toggle-camera" class="nexa-teleconsultation__button nexa-teleconsultation__button--secondary" type="button" hidden>Couper la caméra</button>
+          <button id="leave-session" class="nexa-teleconsultation__button nexa-teleconsultation__button--quiet" type="button" hidden>Quitter l’appel vidéo</button>
+          <button id="complete-consultation" class="nexa-teleconsultation__button nexa-teleconsultation__button--danger" type="button" hidden>Terminer la consultation</button>
+        </div>
+
+        <section class="nexa-teleconsultation__history" aria-labelledby="call-history-title">
+          <h3 id="call-history-title">Historique des appels</h3>
+          <p id="call-history-empty">Aucun appel n’a été lancé.</p>
+          <ol id="call-history-list"></ol>
+        </section>
+
+        <section class="nexa-session-messages" aria-labelledby="session-messages-title">
+          <div>
+            <p class="nexa-session-messages__eyebrow">Échange lié au rendez-vous</p>
+            <h3 id="session-messages-title">Messages de la séance</h3>
+            <p class="nexa-session-messages__privacy">Seuls les deux participants peuvent consulter ces messages. Ils sont supprimés après 30 jours.</p>
+          </div>
+          <p id="session-messages-status" class="nexa-teleconsultation__message" role="status" hidden></p>
+          <p id="session-messages-error" class="nexa-teleconsultation__error" role="alert" hidden></p>
+          <p id="session-messages-loading" class="nexa-session-messages__empty" role="status">Chargement des messages…</p>
+          <p id="session-messages-empty" class="nexa-session-messages__empty" hidden>Aucun message pour le moment.</p>
+          <ol id="session-messages-list" class="nexa-session-messages__list" aria-live="polite" aria-relevant="additions text"></ol>
+          <form id="session-message-form" class="nexa-session-messages__form" hidden>
+            <label for="session-message-text">Votre message</label>
+            <textarea id="session-message-text" name="text" rows="3" maxlength="4000" required aria-describedby="session-message-help"></textarea>
+            <div class="nexa-session-messages__form-footer">
+              <small id="session-message-help">N’envoyez pas d’informations en dehors de cette consultation.</small>
+              <button id="session-message-submit" class="nexa-teleconsultation__button" type="submit">Envoyer le message</button>
+            </div>
+          </form>
+          <div id="session-media-actions" class="nexa-session-messages__media-actions" hidden>
+            <label id="session-photo-label" class="nexa-teleconsultation__button nexa-teleconsultation__button--secondary">
+              Ajouter une photo
+              <input id="session-photo-input" class="nexa-session-messages__file-input" type="file" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp">
+            </label>
+            <button id="session-voice-button" class="nexa-teleconsultation__button nexa-teleconsultation__button--secondary" type="button">Enregistrer un message vocal</button>
+            <span id="session-media-progress" class="nexa-session-messages__progress" role="status" hidden></span>
+          </div>
+          <p id="session-media-limits" class="nexa-session-messages__privacy" aria-live="polite" hidden></p>
+          <p id="session-messages-closed" class="nexa-session-messages__closed" hidden>L’envoi est fermé. L’historique reste consultable pendant sa durée de conservation.</p>
+        </section>
+        <p class="nexa-teleconsultation__emergency">N’utilisez pas la vidéo NEXA pour les urgences médicales. En cas d’urgence, contactez les services d’urgence locaux.</p>
+      </div>
+    </section>
+  </main>
+
+    <footer class="nexa-footer">
+    <div class="nexa-footer__inner">
+      <section class="nexa-footer__brand" aria-label="À propos de NEXARIS">
+        <span class="nexa-footer__mark" aria-hidden="true">N</span>
+        <strong>NEXARIS MEDICAL CENTER</strong>
+        <p>Pharmacie, laboratoire, soins et imagerie réunis dans un même espace santé.</p>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-services">
+        <h2 class="nexa-footer__heading" id="nexa-footer-services">NOS SERVICES</h2>
+        <nav aria-label="Services NEXARIS">
+          <a href="./catalog.html?type=pharmacies">Nexa - Pharma</a>
+          <a href="./catalog.html?type=laboratories">Nexa - Lab</a>
+          <a href="./care.html">Nexa - Care</a>
+          <a href="./catalog.html?type=imaging-centers">Nexa - Imaging</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-professionals">
+        <h2 class="nexa-footer__heading" id="nexa-footer-professionals">ESPACE PROFESSIONNEL</h2>
+        <nav aria-label="Candidatures et accès professionnels">
+          <a href="./candidature-medecin.html">Candidature médecin</a>
+          <a href="./candidature-infirmier.html">Candidature infirmière</a>
+          <a href="./candidature-partenaire.html">Candidature pharmacie, laboratoire ou imagerie</a>
+          <a href="./espace-professionnel.html">Accès médecin</a>
+          <a href="./espace-professionnel-infirmier.html">Accès infirmier</a>
+          <a href="./espace-centre.html">Accès laboratoire ou imagerie</a>
+          <a href="./espace-pharmacie.html">Accès pharmacie</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-information">
+        <h2 class="nexa-footer__heading" id="nexa-footer-information">INFORMATIONS</h2>
+        <nav aria-label="Informations légales">
+          <a href="./conditions.html">Conditions</a>
+          <a href="./confidentialite.html">Confidentialité</a>
+        </nav>
+      </section>
+      <section class="nexa-footer__column" aria-labelledby="nexa-footer-payments">
+        <h2 class="nexa-footer__heading" id="nexa-footer-payments">PAIEMENTS ACCEPTÉS</h2>
+        <div class="nexa-footer__payments" aria-label="MonCash et Wallet NEXA">
+          <span class="nexa-footer__payment"><i class="fas fa-mobile-screen-button" aria-hidden="true"></i> MonCash</span>
+          <span class="nexa-footer__payment"><i class="fas fa-wallet" aria-hidden="true"></i> Wallet NEXA</span>
+        </div>
+      </section>
+      <div class="nexa-footer__copyright">
+        <span>© <span id="current-year"></span> NEXARIS MEDICAL CENTER. Tous droits réservés.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="https://download.agora.io/sdk/release/AgoraRTC_N-4.24.8.js"></script>
+  <script type="module" src="./app.js"></script>
+  <script type="module" src="./teleconsultation.js"></script>
+</body>
+</html>
