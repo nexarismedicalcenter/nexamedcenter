@@ -1,0 +1,22 @@
+# NEXARIS MEDICAL CENTER
+
+> Site public de NEXARIS MEDICAL CENTER, présenté en français. Il réunit les espaces Nexa - Pharma, Nexa - Lab, Nexa - Care et Nexa - Imaging.
+
+Utilisez les liens ci-dessous pour découvrir les services et les parcours professionnels publiquement présentés. Ce fichier est un index d’orientation pour les agents et modèles de langage; il ne remplace ni le sitemap ni les contrôles d’accès du site.
+
+Les espaces patient et professionnel, les rendez-vous, les paiements et les informations médicales nécessitent des contrôles applicatifs. Ne tentez pas d’accéder à des comptes, données de santé ou informations personnelles; ne déduisez pas de renseignements médicaux à partir des pages publiques.
+
+## Pages publiques
+
+- [Accueil](https://nexarishaiti.com/): présentation de NEXARIS MEDICAL CENTER et accès aux quatre pôles.
+- [Nexa - Care](https://nexarishaiti.com/care.html): téléconsultation, soins et visites à domicile.
+- [Répertoire des services](https://nexarishaiti.com/catalog.html): services et professionnels publiquement répertoriés.
+- [Rejoindre NEXARIS](https://nexarishaiti.com/professionnels.html): choix des parcours professionnels.
+- [Candidature médecin](https://nexarishaiti.com/candidature-medecin.html): parcours d’affiliation médecin.
+- [Candidature infirmière](https://nexarishaiti.com/candidature-infirmier.html): parcours d’affiliation infirmière.
+- [Candidature partenaire](https://nexarishaiti.com/candidature-partenaire.html): affiliation pharmacie, laboratoire ou centre d’imagerie.
+
+## Références
+
+- [Sitemap XML](https://nexarishaiti.com/sitemap.xml): URLs publiques proposées aux moteurs de recherche.
+- [Robots.txt](https://nexarishaiti.com/robots.txt): règles de découverte et adresse du sitemap.
